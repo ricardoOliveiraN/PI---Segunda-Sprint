@@ -28,6 +28,11 @@ input {
     margin: 0px 0px 5px 0px;
 }
 
+input::placeholder {
+    padding-left: 3px;
+}
+
+
 .class_cadastro {
     display: flex;
     align-items: top;
@@ -37,23 +42,24 @@ input {
     height: 400px;
     margin: 150px 0px 0px 0px;
     border-radius: 20px;
+    position: fixed;
 }
 
 .class_signup {
     display: flex;
     flex-direction: column;
-    margin: 0px 200px 0px 0px;
+    margin: 0px 225px 0px 0px;
 }
 
 #img_logo {
     width: 150px;
-    margin: 0px 0px 0px -68px;
+    margin: 0px 0px 0px -50px;
 }
 
 #lbl_signup {
     font-size: 18px;
     font-weight: 800;
-    margin: -15px 0px 10px 0px;
+    margin: -15px 0px 10px -6px;
 }
 
 .class_registro {
@@ -74,6 +80,7 @@ input {
 
 #link_login {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .class_mensagem {
@@ -89,7 +96,7 @@ input {
     background-size: cover;
     background-position: center;
     height: 400px;
-    width: 300px;
+    width: 325px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,14 +105,8 @@ input {
     font-size: 20px;
     opacity: 0.6;
     position: fixed;
-    margin: 0px 0px 0px 0px;
-}
-
-#img_fundo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center; 
+    margin: 0px 25px 0px 0px;
+    border-radius: 0px 20px 20px 0px;
 }
 
 .class_textos {
@@ -128,3 +129,107 @@ input {
     margin: 10px 0px 10px 0px;
 }
 
+
+/* TELA DE LOGIN */
+
+.class_login {
+    display: flex;
+    align-items: top;
+    justify-content: right;
+    background-color: #013220;
+    width: 650px;
+    height: 400px;
+    margin: 150px 0px 0px 0px;
+    border-radius: 20px;
+    position: fixed;
+}
+
+.class_signin {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 0px 0px;
+}
+
+#img_logo2 {
+    width: 150px;
+    margin: 0px 0px 35px 155px;
+}
+
+#lbl_signin {
+    font-size: 18px;
+    font-weight: 800;
+    margin: 10px 0px 20px -6px;
+}
+
+.class_registro2 {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    margin: 0px 20px 0px 0px;
+}
+
+#lbl_esqueceu {
+    margin: 0px 0px 0px 80px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#btn_acessar {
+    background-color: #FF9800;
+    color: white;
+    height: 30px;
+    width: 100px;
+    border-radius: 5px;
+    margin: 20px 0px 5px 0px;
+    font-weight: 600;
+}
+
+#link_cadastro {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.class_mensagem2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 180px 0px 0px;
+}
+
+.class_fundo2 {
+    background-image: url('fundo-lupulo.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    width: 325px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 20px;
+    opacity: 0.6;
+    position: fixed;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.class_textos2 {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+#msg5 {
+    background-color: #FF9800;
+    border-radius: 5px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px 10px 0px;
+}
