@@ -173,7 +173,7 @@ input::placeholder {
     align-items: center;
 }
 
-#txt_senha2 {
+#inp_senha2 {
     position: fixed;
     margin: 25px 0px 0px -100px;
 }
