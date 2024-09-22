@@ -191,6 +191,7 @@ input::placeholder {
     font-size: 14px;
     cursor: pointer;
     font-weight: 600;
+    text-decoration: underline;
 }
 
 #btn_acessar {
@@ -203,9 +204,25 @@ input::placeholder {
     font-weight: 800;
 }
 
+.class_NovoCadastro {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
 #link_cadastro {
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    border: 1px solid;
+    border-radius: 5px;
+    color: #FF9800;
+    font-weight: 800;
     cursor: pointer;
+    margin: 10px 0px 0px 0px;
+    height: 30px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .class_mensagem2 {

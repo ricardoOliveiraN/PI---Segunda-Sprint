@@ -11,11 +11,11 @@ function AbrirCadastro() {
 }
 
 function VisualizarSenha() {
-    if (txt_senha2.type === 'password') { // Se o tipo da input for password 
-        txt_senha2.type = 'text'; // Transforma em text, ou seja, deixa a senha visível
+    if (inp_senha2.type == 'password') { // Se o tipo da input for password 
+        inp_senha2.type = 'text'; // Transforma em text, ou seja, deixa a senha visível
         img_olho3.src = 'Imagens/olho_fechado.png'; // Abre a imagem do olho fechado
     } else {
-        txt_senha2.type = 'password'; // Caso a senha já esteja como text (visível), volta a ser password e esconde a senha
+        inp_senha2.type = 'password'; // Caso a senha já esteja como text (visível), volta a ser password e esconde a senha
         img_olho3.src = 'Imagens/olho_aberto.png'; // Abre a imagem do olho aberto
     }
 }
