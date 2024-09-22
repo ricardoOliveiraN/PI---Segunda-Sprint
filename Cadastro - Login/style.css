@@ -1,4 +1,4 @@
-* {
+* { 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,18 +16,18 @@ button {
     cursor: pointer;
     transition: 0.2s;
 }
-
+/* Animação do botão */
 button:hover {
     transform: scale(1.1);
 }
-
+/* Padronização de todos os inputs */
 input {
     border-radius: 5px;
     width: 200px;
     height: 30px;
     margin: 0px 0px 5px 0px;
 }
-
+/* Coloca um espaço no placeholder */
 input::placeholder {
     padding-left: 3px;
 }
