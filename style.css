@@ -72,10 +72,10 @@ input::placeholder {
     background-color: #FF9800;
     color: white;
     height: 30px;
-    width: 100px;
+    width: 120px;
     border-radius: 5px;
     margin: 20px 0px 5px 0px;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 #link_login {
@@ -92,7 +92,7 @@ input::placeholder {
 }
 
 .class_fundo {
-    background-image: url('fundo-lupulo.jpg');
+    background-image: url('Imagens/fundo-lupulo.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -148,7 +148,6 @@ input::placeholder {
 .class_signin {
     display: flex;
     flex-direction: column;
-    margin: 0px 0px 0px 0px;
 }
 
 #img_logo2 {
@@ -169,10 +168,29 @@ input::placeholder {
     margin: 0px 20px 0px 0px;
 }
 
+.class_olhos {
+    display: flex;
+    align-items: center;
+}
+
+#txt_senha2 {
+    position: fixed;
+    margin: 25px 0px 0px -100px;
+}
+
+#img_olho3 {
+    position: fixed;
+    width: 20px;
+    margin: 2px 0px 0px 73px;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
 #lbl_esqueceu {
-    margin: 0px 0px 0px 80px;
+    margin: 29px 0px 0px 80px;
     font-size: 14px;
     cursor: pointer;
+    font-weight: 600;
 }
 
 #btn_acessar {
@@ -182,7 +200,7 @@ input::placeholder {
     width: 100px;
     border-radius: 5px;
     margin: 20px 0px 5px 0px;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 #link_cadastro {
@@ -199,7 +217,7 @@ input::placeholder {
 }
 
 .class_fundo2 {
-    background-image: url('fundo-lupulo.jpg');
+    background-image: url('Imagens/fundo-lupulo.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
