@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+body {
+        font-family: 'Lato', sans-serif;
+
+        }
+
+      /* header   */
+.class_Header{
+    display: flex;
+    height: 120px;
+    background-color: #013220;
+    width: 100%;
+}
+
+.class_Container{
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+}
+
+.class_Header .class_Container {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.class_Header .class_Container a{
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+}
+
+.class_Header .class_Container img{
+    display: flex;
+    height: 105px;
+}
+
+.class_Header .class_Container .Class_Navbar{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    width:400px;
+}
+
+.Class_BTNEntrar{
+    width: 60px;
+    height: 30px;
+    background-color:  #FF9800;
+    border-color: #03020000;
+    color: white;
+    border-radius: 10px;
+}
+
+.Class_BTNCadastrar{
+    width: 70px;
+    height: 30px;
+    background-color:  #FF9800;
+    border-color: #03020000;
+    color: white;
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: white;
+    color: #FF9800;
+}
+/* footer */
+
+.class_Footer{
+    background-color: #013220;
+    height: 170px;
+    align-items: center;
+}
+
+
+.class_Footer img{
+    display: flex;
+    height: 130px;
+}
+
+.class_Footer .class_Container h1{
+    display: flex;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+}
+.class_Footer .class_ImgRedes{
+    display: flex;
+    height: 50px;
+}
