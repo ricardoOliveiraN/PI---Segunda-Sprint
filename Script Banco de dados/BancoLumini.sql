@@ -39,7 +39,7 @@ CREATE TABLE usuario (
 		CHECK (tipoUsuario IN('Responsável', 'Comum', 'Convidado')),
 	dtCriacao DATE,
     fkUsuario_Empresa INT,
-		CONSTRAINT fkEmpresa FOREIGN KEY (fkUsuario_Empresa)
+		CONSTRAINT fkReEmpresa FOREIGN KEY (fkUsuario_Empresa)
 		REFERENCES empresa(idEmpresa)
 );
 
@@ -47,12 +47,13 @@ CREATE TABLE talhao (
 	idTalhao INT,
     numero INT,
     areaTalhao INT,
-    fkTalhao_Empresa INT
+    fkTalhao_Empresa INT,
+		CONSTRAINT fkReEmpresa FOREIGN KEY (fkTalhao_Empresa)
+		REFERENCES empresa(idEmpresa)
 );
 
 CREATE TABLE sensor (
 	idSensor INT,
-    talhao INT,
     statusFuncionamento VARCHAR(11),
     dtInstalacao DATE,
     dtUltimaManutencao DATE,
@@ -63,7 +64,8 @@ CREATE TABLE sensor (
 CREATE TABLE dadosSensor (
 	idDadosSensor INT,
     qtdLuz INT,
+	statusLuminosidade VARCHAR(12),
+    alerta CHAR(3),
     momentoCaptura DATETIME,
-    statusLuminosidade VARCHAR(12),
     fkDadosSensor_Sensor INT
 );
