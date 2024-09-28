@@ -47,7 +47,14 @@ CREATE TABLE usuario (
             responsável (pela empresa): adicionar/remover usuários, alterar filtros dos dash, visualizar dash;
 			comum: alterar filtros dos dash, visualizar dash; 
             convidado (empresa terceira): visualizar dash */
+	statusUsuario VARCHAR(7),
+		CONSTRAINT chkStatusCadastro
+        CHECK (statusCadastro IN('ativo', 'inativo')),
 	dtCriacao DATE,
+	dtExclusao DATE,
+		CONSTRAINT chkDtSaida
+        CHECK (dtSaida > dtExclusao),
+        -- data de criação deve ser obrigatoriamente antes que a data de exclusão do usuário
     fkUsuario_Empresa INT,
 		CONSTRAINT fkReUsuario_Empresa FOREIGN KEY (fkUsuario_Empresa)
 		REFERENCES empresa(idEmpresa)
@@ -101,21 +108,30 @@ CREATE TABLE dadosSensor (
 );
 
 INSERT INTO empresa (nomeFantasia, cnpj, tamanhoEmpresa, qtdHectares, cep, uf, cidade, logradouro, complemento, statusCadastro, dtCriacao, dtSaida) VALUES
-	('Agrosil', '12.345.678/0001-90', 'Pequena', 15, '12345-678', 'SP', 'Vale do Ribeira', 'Rua das Flores', 'Casa 1', 'ativo', '2024-08-30', NULL),
+	('Agrosil', '12.345.678/0001-90', 'Pequena', 15, '12345-678', 'SP', 'Vale do Ribeira', 'Rua das Flores', 'Casa 1', 'ativo', '2024-08-30', 2023-09-01),
 	('LúFazendas', '23.456.789/0001-01', 'Média', 20, '23456-789', 'RS', 'Serra Gaúcha', 'Avenida da Paz', 'Lote 10', 'ativo', '2024-08-30', NULL),
-	('Hoppy Hills', '34.567.890/0001-12', 'Pequena', 10, '34567-890', 'GO', 'Chapada dos Veadeiros', 'Estrada das Águas', 'Km 5', 'ativo', '2024-08-30', NULL),
-	('Lúpulo da Terra',  '45.678.901/0001-23', 'Grande', 500, '45678-901', 'SP', 'Campos do Jordão', 'Rua do Lúpulo', 'Chácara 2', 'ativo', '2024-08-30', NULL),
-	('Verde Lúpulo', '56.789.012/0001-34', 'Pequena', 12, '56789-012', 'SC', 'Vale Europeu', 'Travessa do Sol', 'Casa 5', 'inativo', '2019-08-25', '2023-09-01');
+	('Lúpulo da Terra',  '45.678.901/0001-23', 'Grande', 500, '45678-901', 'SP', 'Campos do Jordão', 'Rua do Lúpulo', 'Chácara 2', 'ativo', '2024-08-30', NULL);
 
-INSERT INTO usuario (nome, senha, email, telefone, tipoUsuario, dtCriacao, fkUsuario_Empresa) VALUES
-	('João Silva', MD5('Sol!123'), 'joao.silva@email.com', '11987654321', 'Responsável', '2024-08-30', 1),
-	('Maria Oliveira', MD5('Céu@456'), 'maria.oliveira@email.com', '21987654321', 'Comum', '2024-08-30', 1),
-	('Carlos Souza', MD5('Floresta#789'), 'carlos.souza@email.com', '31987654321', 'Comum', '2024-08-30', 2),
-	('Ana Pereira', MD5('Mar$3Clamo'), 'ana.pereira@email.com', '41987654321', 'Convidado', '2024-08-30', 3),
-	('Ricardo Lima', MD5('Lua%8Cheia'), 'ricardo.lima@email.com', '51987654321', 'Responsável', '2024-08-30', 4),
-	('Fernanda Costa', MD5('Vento&5Fresco'), 'fernanda.costa@email.com', '61987654321', 'Convidado', '2024-08-30', 4),
-	('Juliana Almeida', MD5('Rio*7Clareza'), 'juliana.almeida@email.com', '71987654321', 'Comum', '2024-08-30', 5),
-	('Lucas Santos', MD5('Flor!2Linda'), 'lucas.santos@email.com', '81987654321', 'Convidado', '2024-08-30', 5);
-
-INSERT INTO () VALUES
-	()
+INSERT INTO usuario (nome, senha, email, telefone, tipoUsuario, statusUsuario ,dtCriacao, dtExclusao, fkUsuario_Empresa) VALUES
+	('João Silva', MD5('Sol!123'), 'joao.silva@email.com', '11987654321', 'Responsável', 'inativo','2024-08-30','2023-09-01', 1),
+	('Maria Oliveira', MD5('Céu@456'), 'maria.oliveira@email.com', '21987654321', 'Comum', 'ativo','2024-08-30', null, 2),
+	('Carlos Souza', MD5('Floresta#789'), 'carlos.souza@email.com', '31987654321', 'Responsável', 'ativo','2024-08-30', null, 3),
+	('Ana Pereira', MD5('Mar$3Clamo'), 'ana.pereira@email.com', '41987654321', 'Comum', 'ativo','2024-08-30', null, 3),
+	('Ricardo Lima', MD5('Lua%8Cheia'), 'ricardo.lima@email.com', '51987654321', 'Convidado', 'inativo','2024-08-30', '2024-09-30', 3);
+    
+INSERT INTO talhao (numero, areaTalhao, fkTalhao_Empresa) VALUES
+	(1, 5000, 1),
+	(1, 75000, 2),
+	(2, 150000, 2),
+	(1, 60000, 3),
+	(2, 120000, 3),
+	(3, 300000, 3);
+    
+CREATE TABLE talhao (
+	idTalhao INT PRIMARY KEY AUTO_INCREMENT,
+    numero INT,
+    areaTalhao INT, -- em metros quadrados
+    fkTalhao_Empresa INT,
+		CONSTRAINT fkReTalhao_Empresa FOREIGN KEY (fkTalhao_Empresa)
+		REFERENCES empresa(idEmpresa)
+) AUTO_INCREMENT = 100;
