@@ -99,3 +99,4 @@ CREATE TABLE dadosSensor (
 		CONSTRAINT fkReDadosSensor_Sensor FOREIGN KEY (fkDadosSensor_Sensor)
 		REFERENCES sensor(idSensor)
 );
+
