@@ -89,7 +89,7 @@ CREATE TABLE sensor (
 
 CREATE TABLE dadosSensor (
 	idDadosSensor INT PRIMARY KEY AUTO_INCREMENT,
-    qtdLuz INT,
+    qtdLuz FLOAT,
 		CONSTRAINT chkQtdLuz
         CHECK (qtdLuz >= 0), 
         -- a luminosidade, vinda da voltagem, captada pelo sensor não deve ser negativa
@@ -136,5 +136,15 @@ INSERT INTO sensor (statusFuncionamento, dtInstalacao, dtUltimaManutencao, fkSen
 	('Ativo', '2024-09-20', null, 3, 6), 
 	('Ativo', '2024-09-21', null, 2, 2),
 	('Ativo', '2024-09-30', null, 3, 3); 
-    
 
+INSERT INTO dadosSensor (qtdLuz, statusLuminosidade, alerta, momentoCaptura, fkDadosSensor_Sensor) VALUES
+	(35.50, 'Satisfatória', 'Não', '2024-09-08 08:00:00', 10000),
+	(15.10, 'Baixa', 'Não', '2024-09-08 17:00:00', 10001),
+	(0.50, 'Crítica', 'Sim', '2024-09-11 23:00:00', 10002),
+	(25.80, 'Satisfatória', 'Não', '2024-09-13 07:00:00', 10003),
+	(25.90, 'Satisfatória', 'Não', '2024-09-13 07:00:01', 10003),
+	(45.10, 'Satisfatória', 'Não', '2024-09-25 13:00:00', 10005),
+	(30.90, 'Satisfatória', 'Não', '2024-09-25 14:00:00', 10005),
+	(12.10, 'Baixa', 'Não', '2024-09-26 08:00:00', 10006),
+	(8.70, 'Baixa', 'Não', '2024-09-26 18:00:00', 10007),
+	(50.25, 'Satisfatória', 'Não', '2024-10-04 12:00:00', 10008);
