@@ -27,7 +27,7 @@ CREATE TABLE empresa (
 	dtCriacao DATE,
 	dtSaida DATE,
 		CONSTRAINT chkDtSaida
-        CHECK (dtSaida > dtCriacao) 
+        CHECK (dtSaida > dtCriacao OR dtSaida = null) 
         -- data de criação deve ser obrigatoriamente antes que a data de inativação
 );
 
@@ -48,12 +48,12 @@ CREATE TABLE usuario (
 			comum: alterar filtros dos dash, visualizar dash; 
             convidado (empresa terceira): visualizar dash */
 	statusUsuario VARCHAR(7),
-		CONSTRAINT chkStatusCadastro
-        CHECK (statusCadastro IN('ativo', 'inativo')),
+		CONSTRAINT chkStatusUsuario
+        CHECK (statusUsuario IN('ativo', 'inativo')),
 	dtCriacao DATE,
 	dtExclusao DATE,
-		CONSTRAINT chkDtSaida
-        CHECK (dtSaida > dtExclusao),
+		CONSTRAINT chkDtExclusao
+        CHECK (dtExclusao > dtCriacao OR dtExclusao = null),
         -- data de criação deve ser obrigatoriamente antes que a data de exclusão do usuário
     fkUsuario_Empresa INT,
 		CONSTRAINT fkReUsuario_Empresa FOREIGN KEY (fkUsuario_Empresa)
@@ -108,7 +108,7 @@ CREATE TABLE dadosSensor (
 );
 
 INSERT INTO empresa (nomeFantasia, cnpj, tamanhoEmpresa, qtdHectares, cep, uf, cidade, logradouro, complemento, statusCadastro, dtCriacao, dtSaida) VALUES
-	('Agrosil', '12.345.678/0001-90', 'Pequena', 15, '12345-678', 'SP', 'Vale do Ribeira', 'Rua das Flores', 'Casa 1', 'ativo', '2024-08-20', 2023-09-01),
+	('Agrosil', '12.345.678/0001-90', 'Pequena', 15, '12345-678', 'SP', 'Vale do Ribeira', 'Rua das Flores', 'Casa 1', 'ativo', '2024-08-20', '2023-09-01'),
 	('LúFazendas', '23.456.789/0001-01', 'Média', 20, '23456-789', 'RS', 'Serra Gaúcha', 'Avenida da Paz', 'Lote 10', 'ativo', '2024-08-30', NULL),
 	('Lúpulo da Terra',  '45.678.901/0001-23', 'Grande', 500, '45678-901', 'SP', 'Campos do Jordão', 'Rua do Lúpulo', 'Chácara 2', 'ativo', '2024-09-05', NULL);
 
@@ -128,14 +128,14 @@ INSERT INTO talhao (numero, areaTalhao, fkTalhao_Empresa) VALUES
 	(3, 300000, 3);
 
 INSERT INTO sensor (statusFuncionamento, dtInstalacao, dtUltimaManutencao, fkSensor_Empresa, fkSensor_Talhao) VALUES
-	('Inativo', '2024-09-05', '2024-09-20', 1, 1), 
-	('Inativo', '2024-09-05', null, 1, 2), 
-	('Manutenção', '2024-09-08', null, 2, 3), 
-	('Ativo', '2024-09-10', '2024-09-12', 3, 4),
-	('Inativo', '2024-09-20', null, 2, 5),
-	('Ativo', '2024-09-20', null, 3, 6), 
-	('Ativo', '2024-09-21', null, 2, 2),
-	('Ativo', '2024-09-30', null, 3, 3); 
+	('Inativo', '2024-09-05', '2024-09-20', 1, 100), 
+	('Inativo', '2024-09-05', null, 1, 100), 
+	('Manutenção', '2024-09-08', null, 2, 101), 
+	('Ativo', '2024-09-10', '2024-09-12', 3,102),
+	('Inativo', '2024-09-20', null, 2, 103),
+	('Ativo', '2024-09-20', null, 3, 104), 
+	('Ativo', '2024-09-21', null, 2, 105),
+	('Ativo', '2024-09-30', null, 3, 105); 
 
 INSERT INTO dadosSensor (qtdLuz, statusLuminosidade, alerta, momentoCaptura, fkDadosSensor_Sensor) VALUES
 	(35.50, 'Satisfatória', 'Não', '2024-09-08 08:00:00', 10000),
@@ -143,8 +143,8 @@ INSERT INTO dadosSensor (qtdLuz, statusLuminosidade, alerta, momentoCaptura, fkD
 	(0.50, 'Crítica', 'Sim', '2024-09-11 23:00:00', 10002),
 	(25.80, 'Satisfatória', 'Não', '2024-09-13 07:00:00', 10003),
 	(25.90, 'Satisfatória', 'Não', '2024-09-13 07:00:01', 10003),
-	(45.10, 'Satisfatória', 'Não', '2024-09-25 13:00:00', 10005),
-	(30.90, 'Satisfatória', 'Não', '2024-09-25 14:00:00', 10005),
-	(12.10, 'Baixa', 'Não', '2024-09-26 08:00:00', 10006),
-	(8.70, 'Baixa', 'Não', '2024-09-26 18:00:00', 10007),
-	(50.25, 'Satisfatória', 'Não', '2024-10-04 12:00:00', 10008);
+	(45.10, 'Satisfatória', 'Não', '2024-09-25 13:00:00', 10004),
+	(30.90, 'Satisfatória', 'Não', '2024-09-25 14:00:00', 10004),
+	(12.10, 'Baixa', 'Não', '2024-09-26 08:00:00', 10005),
+	(8.70, 'Baixa', 'Não', '2024-09-26 18:00:00', 10006),
+	(50.25, 'Satisfatória', 'Não', '2024-10-04 12:00:00', 10007);
