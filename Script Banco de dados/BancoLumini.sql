@@ -100,3 +100,22 @@ CREATE TABLE dadosSensor (
 		REFERENCES sensor(idSensor)
 );
 
+INSERT INTO empresa (nomeFantasia, cnpj, tamanhoEmpresa, qtdHectares, cep, uf, cidade, logradouro, complemento, statusCadastro, dtCriacao, dtSaida) VALUES
+	('Agrosil', '12.345.678/0001-90', 'Pequena', 15, '12345-678', 'SP', 'Vale do Ribeira', 'Rua das Flores', 'Casa 1', 'ativo', '2024-08-30', NULL),
+	('LúFazendas', '23.456.789/0001-01', 'Média', 20, '23456-789', 'RS', 'Serra Gaúcha', 'Avenida da Paz', 'Lote 10', 'ativo', '2024-08-30', NULL),
+	('Hoppy Hills', '34.567.890/0001-12', 'Pequena', 10, '34567-890', 'GO', 'Chapada dos Veadeiros', 'Estrada das Águas', 'Km 5', 'ativo', '2024-08-30', NULL),
+	('Lúpulo da Terra',  '45.678.901/0001-23', 'Grande', 500, '45678-901', 'SP', 'Campos do Jordão', 'Rua do Lúpulo', 'Chácara 2', 'ativo', '2024-08-30', NULL),
+	('Verde Lúpulo', '56.789.012/0001-34', 'Pequena', 12, '56789-012', 'SC', 'Vale Europeu', 'Travessa do Sol', 'Casa 5', 'inativo', '2019-08-25', '2023-09-01');
+
+INSERT INTO usuario (nome, senha, email, telefone, tipoUsuario, dtCriacao, fkUsuario_Empresa) VALUES
+	('João Silva', MD5('Sol!123'), 'joao.silva@email.com', '11987654321', 'Responsável', '2024-08-30', 1),
+	('Maria Oliveira', MD5('Céu@456'), 'maria.oliveira@email.com', '21987654321', 'Comum', '2024-08-30', 1),
+	('Carlos Souza', MD5('Floresta#789'), 'carlos.souza@email.com', '31987654321', 'Comum', '2024-08-30', 2),
+	('Ana Pereira', MD5('Mar$3Clamo'), 'ana.pereira@email.com', '41987654321', 'Convidado', '2024-08-30', 3),
+	('Ricardo Lima', MD5('Lua%8Cheia'), 'ricardo.lima@email.com', '51987654321', 'Responsável', '2024-08-30', 4),
+	('Fernanda Costa', MD5('Vento&5Fresco'), 'fernanda.costa@email.com', '61987654321', 'Convidado', '2024-08-30', 4),
+	('Juliana Almeida', MD5('Rio*7Clareza'), 'juliana.almeida@email.com', '71987654321', 'Comum', '2024-08-30', 5),
+	('Lucas Santos', MD5('Flor!2Linda'), 'lucas.santos@email.com', '81987654321', 'Convidado', '2024-08-30', 5);
+
+INSERT INTO () VALUES
+	()
