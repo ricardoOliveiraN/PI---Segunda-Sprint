@@ -3,7 +3,7 @@ CREATE DATABASE lumini;
 USE lumini;
 
 CREATE TABLE empresa (
-	idEmpresa INT,
+	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
     nomeFantasia VARCHAR(45),
     cnpj VARCHAR(18),
     tamanhoEmpresa VARCHAR(45),
@@ -29,31 +29,31 @@ CREATE TABLE empresa (
 );
 
 CREATE TABLE usuario (
-	idUsuario INT,
+	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(45),
     senha VARCHAR (45),
     email VARCHAR(45),
     telefone VARCHAR(16),
-    tipoUsuario VARCHAR(9),
+    tipoUsuario VARCHAR(11),
 		CONSTRAINT chkTipoUsuario
 		CHECK (tipoUsuario IN('Responsável', 'Comum', 'Convidado')),
 	dtCriacao DATE,
     fkUsuario_Empresa INT,
 		CONSTRAINT fkReUsuario_Empresa FOREIGN KEY (fkUsuario_Empresa)
 		REFERENCES empresa(idEmpresa)
-);
+) AUTO_INCREMENT = 1000;
 
 CREATE TABLE talhao (
-	idTalhao INT,
+	idTalhao INT PRIMARY KEY AUTO_INCREMENT,
     numero INT,
     areaTalhao INT,
     fkTalhao_Empresa INT,
 		CONSTRAINT fkReTalhao_Empresa FOREIGN KEY (fkTalhao_Empresa)
 		REFERENCES empresa(idEmpresa)
-);
+) AUTO_INCREMENT = 100;
 
 CREATE TABLE sensor (
-	idSensor INT,
+	idSensor INT PRIMARY KEY AUTO_INCREMENT,
     statusFuncionamento VARCHAR(10),
 		CONSTRAINT chkStatusFuncionamento
 		CHECK (statusFuncionamento IN('Ativo', 'Inativo', 'Manutenção')),
@@ -67,13 +67,21 @@ CREATE TABLE sensor (
     fkSensor_Talhao INT,
 		CONSTRAINT fkReSensor_Talhao FOREIGN KEY (fkSensor_Talhao)
 		REFERENCES empresa(idTalhao)
-);
+) AUTO_INCREMENT 10000;
 
 CREATE TABLE dadosSensor (
-	idDadosSensor INT,
+	idDadosSensor INT PRIMARY KEY AUTO_INCREMENT,
     qtdLuz INT,
+		CONSTRAINT chkQtdLuz
+        CHECK (qtdLuz >= 0), -- a luminosidade, vinda da voltagem, captada pelo sensor não deve ser negativa
 	statusLuminosidade VARCHAR(12),
+		CONSTRAINT chkStatusLuminosidade
+		CHECK (statusLuminosidade IN('Satisfatória', 'Baixa', 'Crítica')),
     alerta CHAR(3),
+		CONSTRAINT chkAlerta
+        CHECK (alerta IN('Sim', 'Não')),
     momentoCaptura DATETIME,
-    fkDadosSensor_Sensor INT
+    fkDadosSensor_Sensor INT,
+		CONSTRAINT fkReDadosSensor_Sensor FOREIGN KEY (fkDadosSensor_Sensor)
+		REFERENCES sensor(idSensor)
 );
