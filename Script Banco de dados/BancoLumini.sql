@@ -62,7 +62,7 @@ CREATE TABLE usuario (
 
 CREATE TABLE talhao (
 	idTalhao INT PRIMARY KEY AUTO_INCREMENT,
-    numero INT,
+    numero INT, -- para identificar os talhoes dentro de uma mesma empresa
     areaTalhao INT, -- em metros quadrados
     fkTalhao_Empresa INT,
 		CONSTRAINT fkReTalhao_Empresa FOREIGN KEY (fkTalhao_Empresa)
@@ -108,9 +108,9 @@ CREATE TABLE dadosSensor (
 );
 
 INSERT INTO empresa (nomeFantasia, cnpj, tamanhoEmpresa, qtdHectares, cep, uf, cidade, logradouro, complemento, statusCadastro, dtCriacao, dtSaida) VALUES
-	('Agrosil', '12.345.678/0001-90', 'Pequena', 15, '12345-678', 'SP', 'Vale do Ribeira', 'Rua das Flores', 'Casa 1', 'ativo', '2024-08-30', 2023-09-01),
+	('Agrosil', '12.345.678/0001-90', 'Pequena', 15, '12345-678', 'SP', 'Vale do Ribeira', 'Rua das Flores', 'Casa 1', 'ativo', '2024-08-20', 2023-09-01),
 	('LúFazendas', '23.456.789/0001-01', 'Média', 20, '23456-789', 'RS', 'Serra Gaúcha', 'Avenida da Paz', 'Lote 10', 'ativo', '2024-08-30', NULL),
-	('Lúpulo da Terra',  '45.678.901/0001-23', 'Grande', 500, '45678-901', 'SP', 'Campos do Jordão', 'Rua do Lúpulo', 'Chácara 2', 'ativo', '2024-08-30', NULL);
+	('Lúpulo da Terra',  '45.678.901/0001-23', 'Grande', 500, '45678-901', 'SP', 'Campos do Jordão', 'Rua do Lúpulo', 'Chácara 2', 'ativo', '2024-09-05', NULL);
 
 INSERT INTO usuario (nome, senha, email, telefone, tipoUsuario, statusUsuario ,dtCriacao, dtExclusao, fkUsuario_Empresa) VALUES
 	('João Silva', MD5('Sol!123'), 'joao.silva@email.com', '11987654321', 'Responsável', 'inativo','2024-08-30','2023-09-01', 1),
@@ -126,12 +126,15 @@ INSERT INTO talhao (numero, areaTalhao, fkTalhao_Empresa) VALUES
 	(1, 60000, 3),
 	(2, 120000, 3),
 	(3, 300000, 3);
+
+INSERT INTO sensor (statusFuncionamento, dtInstalacao, dtUltimaManutencao, fkSensor_Empresa, fkSensor_Talhao) VALUES
+	('Inativo', '2024-09-05', '2024-09-20', 1, 1), 
+	('Inativo', '2024-09-05', null, 1, 2), 
+	('Manutenção', '2024-09-08', null, 2, 3), 
+	('Ativo', '2024-09-10', '2024-09-12', 3, 4),
+	('Inativo', '2024-09-20', null, 2, 5),
+	('Ativo', '2024-09-20', null, 3, 6), 
+	('Ativo', '2024-09-21', null, 2, 2),
+	('Ativo', '2024-09-30', null, 3, 3); 
     
-CREATE TABLE talhao (
-	idTalhao INT PRIMARY KEY AUTO_INCREMENT,
-    numero INT,
-    areaTalhao INT, -- em metros quadrados
-    fkTalhao_Empresa INT,
-		CONSTRAINT fkReTalhao_Empresa FOREIGN KEY (fkTalhao_Empresa)
-		REFERENCES empresa(idEmpresa)
-) AUTO_INCREMENT = 100;
+
