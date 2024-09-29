@@ -46,7 +46,7 @@ CREATE TABLE usuario (
 			permissionamento -> 
             responsável (pela empresa): adicionar/remover usuários, alterar filtros dos dash, visualizar dash;
 			comum: alterar filtros dos dash, visualizar dash; 
-            convidado (empresa terceira): visualizar dash */
+            convidado (empresa terceira): visualizar dash; conta temporária */
 	statusUsuario VARCHAR(7),
 		CONSTRAINT chkStatusUsuario
         CHECK (statusUsuario IN('ativo', 'inativo')),
