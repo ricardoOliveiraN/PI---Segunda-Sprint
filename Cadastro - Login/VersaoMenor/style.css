@@ -92,7 +92,7 @@ input::placeholder {
 }
 
 .class_fundo {
-    background-image: url('Imagens/fundo-lupulo.jpg');
+    background-image: url('../Imagens/fundo-lupulo.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -234,7 +234,7 @@ input::placeholder {
 }
 
 .class_fundo2 {
-    background-image: url('Imagens/fundo-lupulo.jpg');
+    background-image: url('../Imagens/fundo-lupulo.jpg');
     background-size: cover;
     background-position: center;
     height: 400px;

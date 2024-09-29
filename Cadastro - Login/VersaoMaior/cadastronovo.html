@@ -4,37 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tela de cadastro</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stylelogin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="class_cadastro">
+    <div class="class_TelaCadastro">
         <div class="class_signup">
-            <img src="Imagens/logo.png" id="img_logo">
+            <div class="class_home">
+                <img src="../Imagens/logo.png" id="img_logo2">
+                <span>HOME</span>
+            </div>
             <div class="class_registro">
-                <span id="lbl_signup">SIGN UP</span>
+                <span id="lbl_signup">CADASTRAR</span>
                 <input type="text" placeholder="Nome">
-                <input type="text" placeholder="CPF">
                 <input type="text" placeholder="Email">
                 <input type="text" placeholder="Celular">
                 <input type="password" placeholder="Senha">
                 <input type="password" placeholder="Confirmar senha">
+                <select>
+                    <option disabled selected value="0">Tipo de usuário</option>
+                    <option value="1">Comum</option>
+                    <option value="2">Convidado</option>
+                </select>
                 <button id="btn_cadastrar">CADASTRAR</button>
-                <span>Já possui uma conta? <span id="link_login" onclick="AbrirLogin()">Faça o login</span></span>
+                <span id="lbl_possui">Já possui uma conta? <a id="link_login" href="./loginnovo.html">Faça o login</a></span>
             </div>
         </div>
         <div class="class_mensagem">
-            <div class="class_fundo">
-            </div>
+            <div class="class_fundo"></div>
             <div class="class_textos">
-                <span id="msg1">TRAZEMOS A SOLUÇÃO</span>
-                <span id="msg2">IDEAL</span>
-                <span id="msg3">PRO SEU NEGÓCIO!</span>
+                <span>TRAZEMOS A SOLUÇÃO</span>
+                <span class="class_ideal" style="font-size: 60px;">IDEAL</span>
+                <span>PRO SEU NEGÓCIO!</span>
             </div>
         </div>
     </div>
 </body> 
 </html> 
-<script src="funcionalidades.js"></script>
+<script src="../VersaoMaior/funcionalidades.js"></script>
