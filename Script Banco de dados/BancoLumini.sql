@@ -27,7 +27,7 @@ CREATE TABLE empresa (
 	dtCriacao DATE,
 	dtSaida DATE,
 		CONSTRAINT chkDtSaida
-        CHECK (dtSaida > dtCriacao) 
+        CHECK (dtSaida > dtCriacao OR dtSaida = null) 
         -- data de criação deve ser obrigatoriamente antes que a data de inativação
 );
 
@@ -46,8 +46,15 @@ CREATE TABLE usuario (
 			permissionamento -> 
             responsável (pela empresa): adicionar/remover usuários, alterar filtros dos dash, visualizar dash;
 			comum: alterar filtros dos dash, visualizar dash; 
-            convidado (empresa terceira): visualizar dash */
+            convidado (empresa terceira): visualizar dash; conta temporária */
+	statusUsuario VARCHAR(7),
+		CONSTRAINT chkStatusUsuario
+        CHECK (statusUsuario IN('ativo', 'inativo')),
 	dtCriacao DATE,
+	dtExclusao DATE,
+		CONSTRAINT chkDtExclusao
+        CHECK (dtExclusao > dtCriacao OR dtExclusao = null),
+        -- data de criação deve ser obrigatoriamente antes que a data de exclusão do usuário
     fkUsuario_Empresa INT,
 		CONSTRAINT fkReUsuario_Empresa FOREIGN KEY (fkUsuario_Empresa)
 		REFERENCES empresa(idEmpresa)
@@ -55,7 +62,7 @@ CREATE TABLE usuario (
 
 CREATE TABLE talhao (
 	idTalhao INT PRIMARY KEY AUTO_INCREMENT,
-    numero INT,
+    numero INT, -- para identificar os talhoes dentro de uma mesma empresa
     areaTalhao INT, -- em metros quadrados
     fkTalhao_Empresa INT,
 		CONSTRAINT fkReTalhao_Empresa FOREIGN KEY (fkTalhao_Empresa)
@@ -82,7 +89,7 @@ CREATE TABLE sensor (
 
 CREATE TABLE dadosSensor (
 	idDadosSensor INT PRIMARY KEY AUTO_INCREMENT,
-    qtdLuz INT,
+    qtdLuz FLOAT,
 		CONSTRAINT chkQtdLuz
         CHECK (qtdLuz >= 0), 
         -- a luminosidade, vinda da voltagem, captada pelo sensor não deve ser negativa
@@ -99,3 +106,45 @@ CREATE TABLE dadosSensor (
 		CONSTRAINT fkReDadosSensor_Sensor FOREIGN KEY (fkDadosSensor_Sensor)
 		REFERENCES sensor(idSensor)
 );
+
+INSERT INTO empresa (nomeFantasia, cnpj, tamanhoEmpresa, qtdHectares, cep, uf, cidade, logradouro, complemento, statusCadastro, dtCriacao, dtSaida) VALUES
+	('Agrosil', '12.345.678/0001-90', 'Pequena', 15, '12345-678', 'SP', 'Vale do Ribeira', 'Rua das Flores', 'Casa 1', 'ativo', '2024-08-20', '2023-09-01'),
+	('LúFazendas', '23.456.789/0001-01', 'Média', 20, '23456-789', 'RS', 'Serra Gaúcha', 'Avenida da Paz', 'Lote 10', 'ativo', '2024-08-30', NULL),
+	('Lúpulo da Terra',  '45.678.901/0001-23', 'Grande', 500, '45678-901', 'SP', 'Campos do Jordão', 'Rua do Lúpulo', 'Chácara 2', 'ativo', '2024-09-05', NULL);
+
+INSERT INTO usuario (nome, senha, email, telefone, tipoUsuario, statusUsuario ,dtCriacao, dtExclusao, fkUsuario_Empresa) VALUES
+	('João Silva', MD5('Sol!123'), 'joao.silva@email.com', '11987654321', 'Responsável', 'inativo','2024-08-30','2023-09-01', 1),
+	('Maria Oliveira', MD5('Céu@456'), 'maria.oliveira@email.com', '21987654321', 'Comum', 'ativo','2024-08-30', null, 2),
+	('Carlos Souza', MD5('Floresta#789'), 'carlos.souza@email.com', '31987654321', 'Responsável', 'ativo','2024-08-30', null, 3),
+	('Ana Pereira', MD5('Mar$3Clamo'), 'ana.pereira@email.com', '41987654321', 'Comum', 'ativo','2024-08-30', null, 3),
+	('Ricardo Lima', MD5('Lua%8Cheia'), 'ricardo.lima@email.com', '51987654321', 'Convidado', 'inativo','2024-08-30', '2024-09-30', 3);
+    
+INSERT INTO talhao (numero, areaTalhao, fkTalhao_Empresa) VALUES
+	(1, 5000, 1),
+	(1, 75000, 2),
+	(2, 150000, 2),
+	(1, 60000, 3),
+	(2, 120000, 3),
+	(3, 300000, 3);
+
+INSERT INTO sensor (statusFuncionamento, dtInstalacao, dtUltimaManutencao, fkSensor_Empresa, fkSensor_Talhao) VALUES
+	('Inativo', '2024-09-05', '2024-09-20', 1, 100), 
+	('Inativo', '2024-09-05', null, 1, 100), 
+	('Manutenção', '2024-09-08', null, 2, 101), 
+	('Ativo', '2024-09-10', '2024-09-12', 3,102),
+	('Inativo', '2024-09-20', null, 2, 103),
+	('Ativo', '2024-09-20', null, 3, 104), 
+	('Ativo', '2024-09-21', null, 2, 105),
+	('Ativo', '2024-09-30', null, 3, 105); 
+
+INSERT INTO dadosSensor (qtdLuz, statusLuminosidade, alerta, momentoCaptura, fkDadosSensor_Sensor) VALUES
+	(35.50, 'Satisfatória', 'Não', '2024-09-08 08:00:00', 10000),
+	(15.10, 'Baixa', 'Não', '2024-09-08 17:00:00', 10001),
+	(0.50, 'Crítica', 'Sim', '2024-09-11 23:00:00', 10002),
+	(25.80, 'Satisfatória', 'Não', '2024-09-13 07:00:00', 10003),
+	(25.90, 'Satisfatória', 'Não', '2024-09-13 07:00:01', 10003),
+	(45.10, 'Satisfatória', 'Não', '2024-09-25 13:00:00', 10004),
+	(30.90, 'Satisfatória', 'Não', '2024-09-25 14:00:00', 10004),
+	(12.10, 'Baixa', 'Não', '2024-09-26 08:00:00', 10005),
+	(8.70, 'Baixa', 'Não', '2024-09-26 18:00:00', 10006),
+	(50.25, 'Satisfatória', 'Não', '2024-10-04 12:00:00', 10007);
