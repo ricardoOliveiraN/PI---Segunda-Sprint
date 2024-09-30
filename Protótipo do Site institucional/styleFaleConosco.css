@@ -29,7 +29,7 @@ body {
     height: 100%;
 }
 .class_Header .class_Container a{
-    font-size: 16px;
+    font-size: 20px;
     text-decoration: none;
     color: white;
 }
@@ -42,8 +42,9 @@ body {
 .class_Header .class_Container .Class_Navbar{
     display: flex;
     list-style-type: none;
-    justify-content: space-between;
-    width:400px;
+    justify-content: space-evenly;
+    width:60%;
+    height: 25%;
 }
 
 .Class_BTNEntrar{
@@ -52,7 +53,7 @@ body {
     background-color:  #FF9800;
     border-color: #03020000;
     color: white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .Class_BTNCadastrar{
@@ -61,13 +62,127 @@ body {
     background-color:  #FF9800;
     border-color: #03020000;
     color: white;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 button:hover{
     background-color: white;
     color: #FF9800;
 }
+
+
+/* Conteudo */
+
+.class_Conteudo{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.class_Conteudo .class_Titulo{
+    display: flex;
+    flex-direction: row;
+    margin: 41px;
+    justify-content: center;
+    font-size: 30px;
+    color: #013220;
+}
+
+.class_Conteudo .class_Container{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+
+.class_Conteudo .class_Container .class_FlexBox1{
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 120px;
+    padding: 10px;
+}
+.class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 95%;
+    border-bottom: solid #013220 2px;
+}
+.class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h1{
+    color: #FF9800;
+    font-size: 50px;
+}
+
+.class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h2{
+    font-size: 30px;
+    font-weight: normal;
+}
+
+.class_Conteudo .class_Container .class_FlexBox1 h3{
+    font-size: 30px;
+    font-style: bold;
+}
+.class_Conteudo .class_Container .class_FlexBox1 .class_Alinhamento {
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+.class_Conteudo .class_Container .class_FlexBox1 .class_Alinhamento .class_ImgRedes{
+    display: flex;
+    height: 50px;
+    width: 50px;
+}
+
+.class_Conteudo .class_Container .class_FlexBox1 .class_TextoInfo{
+    margin: 10px;
+    color: #013220;
+    font-size: 25px;
+}
+
+.class_Conteudo .class_Container .class_Mensagem{
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+    background-color: #013220;
+    margin: 3%;
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 53px;
+    justify-content: space-evenly;
+}
+
+.class_Conteudo .class_Container .class_Mensagem ::placeholder{
+    color: #036e47bd;
+    font-size: 20px;
+  }
+
+.class_Conteudo .class_Container .class_Mensagem input{
+    padding: 20px;
+    border-radius: 5px;
+    height: 35px;
+}
+
+.class_Conteudo .class_Container .class_Mensagem .class_IptMensagem{
+    padding: 20px;
+    border-radius: 5px;
+    height: 300px;
+}
+
+
+
+
+
+
+
+
+
+
 /* footer */
 
 .class_Footer{
@@ -76,6 +191,10 @@ button:hover{
     align-items: center;
 }
 
+.class_Footer .class_Container{
+    background-color: #013220;
+    align-items: center;
+}
 
 .class_Footer img{
     display: flex;
@@ -84,7 +203,7 @@ button:hover{
 
 .class_Footer .class_Container h1{
     display: flex;
-    font-size: 16px;
+    font-size: 20px;
     text-decoration: none;
     color: white;
 }
