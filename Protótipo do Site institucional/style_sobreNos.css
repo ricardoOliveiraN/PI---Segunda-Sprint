@@ -1,0 +1,249 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* HEADER */
+
+        .header {
+            background-color: #013220;
+            height: 80px;
+        }
+
+        .header .conteudo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 2%;
+            font-size: 14px;
+        }
+
+        .header .logo {
+            justify-content: left;
+        }
+
+        .header .navBar {
+            color: white;
+            justify-content: space-between;
+            display: flex;
+            width: 32%;
+        }
+
+        .header .conteudo .login {
+            display: flex;
+            width: 12%;
+            justify-content: space-between;
+            margin-right: 4%;
+        }
+
+        .header .conteudo .login .botao {
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            border-radius: 3px;
+        }
+
+        .entrar {
+            width: 60px;
+            color: white;
+            background-color: #ff9800;
+        }
+
+        .cadastrar {
+            width: 80px;
+            color: #ff9800;
+            border: 1px solid #ff9800;
+        }
+
+        .header .logo img {
+            height: 80px;
+        }
+
+        /* BODY */
+        /* SOBRE A EMPRESA */
+        /* BIO DA EMPRESA */
+
+        .body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .sobreEmpresa {
+            display: flex;
+            width: 85%;
+            flex-direction: column;
+            margin-bottom: 100px;
+        }
+
+        .sobreEmpresa .bio {
+            margin: 40px 0;
+            padding: 0 14%;
+        }
+
+        .bio .titulo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .titulo .logo img {
+            height: 120px;
+            margin-bottom: 10px;
+        }
+
+
+        .sobreEmpresa .bio .texto p {
+            text-indent: 30px;
+            line-height: 18px;
+            text-align: justify;
+        }
+
+        h1 {
+            color: #013220;
+            font-size: 40px;
+
+        }
+
+        /* MISSÃO VISÃO E VALORES */
+
+
+        .topicos {
+            margin: 40px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            justify-content: space-between;
+        }
+
+        .topicos p {
+            line-height: 22px;
+            text-align: center;
+        }
+
+        .topicos .container {
+            width: 30%;
+            box-shadow: 0px 0px 3px gray;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .topicos .container .titulo {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            font-size: 35px;
+            color: #ff9800;
+        }
+
+        .topicos .container .texto {
+            margin: 0 8%;
+        }
+
+        /* SOBRE A EQUIPE */
+
+        .sobreEquipe {
+            background-color: #013220;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .conteudoSobreEquipe {
+            margin: 40px 0;
+            width: 70%;
+        }
+
+        .conteudoSobreEquipe .titulo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px;
+        }
+
+        .conteudoSobreEquipe .titulo h1 {
+            color: #fafaff;
+            font-size: 40px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .cardsTrio {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 90%;
+        }
+
+        .card {
+            background-color: #fafaff;
+            width: 24%;
+            margin: 3%;
+            height: 300px;
+            box-shadow: 0px 0px 3px #68a357;
+        }
+
+        .card .foto {
+            height: 50%;
+            width: 100%;
+
+        }
+
+        .card .foto img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .card .bio {
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+        }
+
+        .card .titulo {
+            margin: 10px;
+        }
+
+        .card .titulo h6 {
+            font-size: 18px;
+        }
+
+        .card .bio {
+            margin: 10px;
+        }
+
+        .card .bio p {
+            display: flex;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+
+        .footerSobreEquipe {
+            background-color: #ff9800;
+            height: 35px;
+            width: 100%;
+        }
+
+        /* FOOTER */
+
+        .footer {
+            background-color: #013220;
+        }
