@@ -15,8 +15,8 @@ body {
 
 .class_Header{
     height: 80px ;
-    background-color: rgb(30, 59, 30);
-    border-bottom: 2px solid rgb(40, 54, 19);
+    background-color: #013220;
+    border-bottom: 2px solid #013220;
     display: flex;
     justify-content: space-between;
 }
@@ -51,15 +51,15 @@ body {
 .class_ModificaZero_Zero{
     display: flex;
     justify-content: space-between;
-    width: 17%;
+    width: 235px;
     margin-right:52px;
     align-items: center;
 }
  .class_ModificadoUm{
     display: flex;
-    border: 2px solid orange;
+    border: 2px solid #FF9800;
     border-radius: 5px;
-    background-color: orange;
+    background-color: #FF9800;
     width: 80px;  
     justify-content: center;
     font-size: 19px;
@@ -70,14 +70,14 @@ body {
 }
 .class_ModificadoDois{
     display: flex;
-    border: 2px solid orange;
+    border: 2px solid #FF9800;
     border-radius: 5px;
     width: 100px;
     justify-content: center;
     font-size: 19px;
     height: 35px;
     align-items: center;
-    color:orange;
+    color:#FF9800;
     text-decoration: none; 
 }
 
@@ -89,7 +89,7 @@ body {
     justify-content: space-between;
 }
 .class_Banner .class_Container img{
-    width: 23%;
+    width: 28%;
 
 }
 .class_Banner .class_Container{
@@ -99,6 +99,8 @@ body {
 }
 .class_Banner p{
     font-size: 64px;
+    color: #013220;
+    font-weight: bold;
 }
 .class_Banner .class_Container img{
     margin-bottom: 23px;
@@ -172,7 +174,7 @@ body {
 
 
 .class_Titulo{
-    color: rgb(30, 59, 30);
+    color: #013220;
     font-size: 40px;
     height: 22px;
     font-weight: bold;
@@ -185,8 +187,8 @@ body {
 
 .class_Footer{
     
-    background-color: rgb(30, 59, 30);
-    border-bottom: 2px solid rgb(40, 54, 19);
+    background-color: #013220;
+    border-bottom: 2px solid #013220;
     display: flex;
     justify-content: space-between;
 }
@@ -206,5 +208,11 @@ body {
     margin: 0; 
     width: 80%;
     color:white;
+}
+.class_Footer .class_Container div{
+    justify-content: space-evenly;
+    display: flex;
+    width: 199px;
+    align-items: center;
 }
 
