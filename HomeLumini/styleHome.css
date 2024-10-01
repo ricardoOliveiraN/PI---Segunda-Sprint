@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+body{
+    background-color: #FFFEFA;
+}
+nav{
+    background-color: #013220;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+nav img{
+    width: 15%;
+}
+nav .class_LinksMenu{
+    width: 50%;
+}
+nav .class_LinksMenu ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 500;
+    font-size: 1.12rem;
+}
+nav .class_LinksMenu a{
+    text-decoration: none;
+    color: #FFFEFA;
+}
+nav .class_LinksMenu a:hover{
+    color: #FF9800;
+    font-weight: 700;
+}
+nav .class_BotoesMenu{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+nav .class_BotoesMenu button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #013220;
+    font-size: 1.0rem;
+    border: 2.3px solid #FF9800;
+    color: #FF9800;
+    cursor: pointer;
+
+}
+nav .class_BotoesMenu button:hover{
+    background-color: #FF9800;
+    color: #FFFEFA;
+    box-shadow: 0px 0px 10px #FF9800;
+}
+.class_ImgInicial{
+    background-image: url(imgHOMElupulo.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 440px;
+}
+.class_ImgInicial h3{
+    color: #FFFEFA;
+    width: 400px;
+    font-size: 68px;
+    margin-left: 20%;
+    padding-top: 75px;
+}
+.class_ImgInicial span{
+    color: #FF9800;
+    font-style: italic;
+    text-shadow: 0px 0px 60px #eaff00;
+}
+
+/* MAIN - CONTEUDO PRINCIPAL */
+
+main{
+    width: 80%;
+    margin: auto;
+    margin-top: 80px;
+}
+main .class_SobreNosHOME{
+
+    display: flex;
+}
+main .class_SobreNosHOME .class_ConteudoSobreNosHOME, .class_ImgSobreNosHOME{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center
+}
+main .class_ConteudoSobreNosHOME h2{
+    font-size: 40px;
+    color: #013220;
+}
+main .class_ConteudoSobreNosHOME p{
+    font-size: 20px;
+    text-align: justify;
+    color: #0F1108;
+}
+main .class_ConteudoSobreNosHOME button{
+    /* IDEIA PARA QUANDO JUNTAR
+    DA PARA FAZER UMA CLASSE .BOTAO E CHAMAR PARA TODOS
+    OS BUTTON ASSIM, NAO PRECISA FICAR REPETINDO INFORMAÇÕES */
+    font-size: 20px;
+    padding: 13px 25px;
+    border-radius: 5px;
+    border: 2.3px solid #FF9800;
+    color: #FF9800;
+    background-color: #FFFEFA;
+    font-weight: 700;
+    cursor: pointer;
+}
+main .class_ConteudoSobreNosHOME button:hover{
+    background-color: #FF9800;
+    color: #FFFEFA;
+    box-shadow: 0px 0px 10px #FF9800;
+}
+main .class_ImgSobreNosHOME img{
+    width: 400px;
+    height: 400px;
+}
