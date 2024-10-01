@@ -1,73 +1,61 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    }
-
-body {
-        font-family: 'Lato', sans-serif;
-
-        }
-
-      /* header   */
-.class_Header{
-    display: flex;
-    height: 120px;
+    font-family: 'Lato', sans-serif;
+}
+body{
+    background-color: #FFFEFA;
+}
+nav{
     background-color: #013220;
-    width: 100%;
-}
-
-.class_Container{
+    padding-left: 10%;
+    padding-right: 10%;
     display: flex;
-    width: 90%;
-    justify-content: space-between;
-}
-
-.class_Header .class_Container {
     justify-content: space-between;
     align-items: center;
-    height: 100%;
+    height: 90px;
 }
-.class_Header .class_Container a{
-    font-size: 20px;
+nav img{
+    width: 15%;
+}
+nav .class_LinksMenu{
+    width: 50%;
+}
+nav .class_LinksMenu ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 500;
+    font-size: 1.12rem;
+}
+nav .class_LinksMenu a{
     text-decoration: none;
-    color: white;
+    color: #FFFEFA;
 }
-
-.class_Header .class_Container img{
-    display: flex;
-    height: 105px;
-}
-
-.class_Header .class_Container .Class_Navbar{
-    display: flex;
-    list-style-type: none;
-    justify-content: space-evenly;
-    width:60%;
-    height: 25%;
-}
-
-.Class_BTNEntrar{
-    width: 60px;
-    height: 30px;
-    background-color:  #FF9800;
-    border-color: #03020000;
-    color: white;
-    border-radius: 5px;
-}
-
-.Class_BTNCadastrar{
-    width: 70px;
-    height: 30px;
-    background-color:  #FF9800;
-    border-color: #03020000;
-    color: white;
-    border-radius: 5px;
-}
-
-button:hover{
-    background-color: white;
+nav .class_LinksMenu a:hover{
     color: #FF9800;
+    font-weight: 700;
+}
+nav .class_BotoesMenu{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+nav .class_BotoesMenu button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #013220;
+    font-size: 1.0rem;
+    border: 2.3px solid #FF9800;
+    color: #FF9800;
+    cursor: pointer;
+
+}
+nav .class_BotoesMenu button:hover{
+    background-color: #FF9800;
+    color: #FFFEFA;
+    box-shadow: 0px 0px 10px #FF9800;
 }
 
 

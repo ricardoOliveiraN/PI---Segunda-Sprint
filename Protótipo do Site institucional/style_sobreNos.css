@@ -1,69 +1,62 @@
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+body{
+    background-color: #FFFEFA;
+}
+nav{
+    background-color: #013220;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+nav img{
+    width: 15%;
+}
+nav .class_LinksMenu{
+    width: 50%;
+}
+nav .class_LinksMenu ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 500;
+    font-size: 1.12rem;
+}
+nav .class_LinksMenu a{
+    text-decoration: none;
+    color: #FFFEFA;
+}
+nav .class_LinksMenu a:hover{
+    color: #FF9800;
+    font-weight: 700;
+}
+nav .class_BotoesMenu{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+nav .class_BotoesMenu button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #013220;
+    font-size: 1.0rem;
+    border: 2.3px solid #FF9800;
+    color: #FF9800;
+    cursor: pointer;
 
-        body {
-            font-family: 'Lato', sans-serif;
-        }
-
-        /* HEADER */
-
-        .header {
-            background-color: #013220;
-            height: 80px;
-        }
-
-        .header .conteudo {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 0 2%;
-            font-size: 14px;
-        }
-
-        .header .logo {
-            justify-content: left;
-        }
-
-        .header .navBar {
-            color: white;
-            justify-content: space-between;
-            display: flex;
-            width: 32%;
-        }
-
-        .header .conteudo .login {
-            display: flex;
-            width: 12%;
-            justify-content: space-between;
-            margin-right: 4%;
-        }
-
-        .header .conteudo .login .botao {
-            height: 30px;
-            align-items: center;
-            justify-content: center;
-            display: flex;
-            border-radius: 3px;
-        }
-
-        .entrar {
-            width: 60px;
-            color: white;
-            background-color: #ff9800;
-        }
-
-        .cadastrar {
-            width: 80px;
-            color: #ff9800;
-            border: 1px solid #ff9800;
-        }
-
-        .header .logo img {
-            height: 80px;
-        }
+}
+nav .class_BotoesMenu button:hover{
+    background-color: #FF9800;
+    color: #FFFEFA;
+    box-shadow: 0px 0px 10px #FF9800;
+}
 
         /* BODY */
         /* SOBRE A EMPRESA */
