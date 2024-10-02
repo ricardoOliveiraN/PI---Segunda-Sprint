@@ -40,6 +40,13 @@ nav .class_LinksMenu a:hover{
     color: #FF9800;
     font-weight: 700;
 }
+nav .class_BotoesMenu button:hover a{
+    color: white; 
+}
+nav .class_BotoesMenu a{
+    text-decoration: none;
+    color: #FF9800;    
+}
 nav .class_BotoesMenu{
     width: 200px;
     display: flex;
