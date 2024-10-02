@@ -230,13 +230,40 @@ nav .class_BotoesMenu button:hover{
 
 
         .footerSobreEquipe {
-            background-color: #ff9800;
-            height: 35px;
+            background-color: white;
+            height: 5px;
             width: 100%;
         }
 
         /* FOOTER */
 
-        .footer {
+        .class_Footer{
+    
             background-color: #013220;
+            border-bottom: 2px solid #013220;
+            display: flex;
+            justify-content: center;
+        }
+        .class_Footer .class_Container {
+            display: flex;
+            width: 80%;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        .class_Footer .class_Container img{
+            width: 11%;
+        }
+        .class_Footer .class_Container p {
+            flex-grow: 1;
+            text-align: center;
+            margin: 0; 
+            width: 80%;
+            color:white;
+        }
+        .class_Footer .class_Container div{
+            justify-content: space-evenly;
+            display: flex;
+            width: 199px;
+            align-items: center;
         }

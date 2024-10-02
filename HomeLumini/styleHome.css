@@ -287,32 +287,33 @@ main .class_ImgSobreNosHOME2 img {
 
 /* RODAPE */
 
-footer{
+.class_Footer{
+    
     background-color: #013220;
-    height: 90px;
+    border-bottom: 2px solid #013220;
+    display: flex;
+    justify-content: center;
 }
-.class_Rodape{
-    height: 100%;
+.class_Footer .class_Container {
+    display: flex;
     width: 80%;
-    margin: auto;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    justify-items: center;
-}
-.class_Rodape p{
-    font-size: 12px;
-    color: #fffefa;
-}
-.class_RedeSociaisRodape{
-    display: flex;
     align-items: center;
+    height: 100%;
+}
+.class_Footer .class_Container img{
     width: 11%;
-    justify-content: space-between;
 }
-.class_RedeSociaisRodape img{
-    width: 30px;
+.class_Footer .class_Container p {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0; 
+    width: 80%;
+    color:white;
 }
-.class_RedeSociaisRodape .icon-yt img{
-    width: 40px;
+.class_Footer .class_Container div{
+    justify-content: space-evenly;
+    display: flex;
+    width: 199px;
+    align-items: center;
 }

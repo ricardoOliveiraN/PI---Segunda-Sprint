@@ -174,28 +174,32 @@ nav .class_BotoesMenu button:hover{
 /* footer */
 
 .class_Footer{
+    
     background-color: #013220;
-    height: 170px;
+    border-bottom: 2px solid #013220;
+    display: flex;
+    justify-content: center;
+}
+.class_Footer .class_Container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
-
-.class_Footer .class_Container{
-    background-color: #013220;
+.class_Footer .class_Container img{
+    width: 11%;
+}
+.class_Footer .class_Container p {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0; 
+    width: 80%;
+    color:white;
+}
+.class_Footer .class_Container div{
+    justify-content: space-evenly;
+    display: flex;
+    width: 199px;
     align-items: center;
-}
-
-.class_Footer img{
-    display: flex;
-    height: 130px;
-}
-
-.class_Footer .class_Container h1{
-    display: flex;
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-}
-.class_Footer .class_ImgRedes{
-    display: flex;
-    height: 50px;
 }
