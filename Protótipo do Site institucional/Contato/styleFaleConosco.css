@@ -16,8 +16,11 @@ nav{
     align-items: center;
     height: 90px;
 }
-nav img{
+.MenuLogo{
     width: 15%;
+}
+.MenuLogo a img{
+    width: 100%;
 }
 nav .class_LinksMenu{
     width: 50%;
@@ -64,7 +67,6 @@ nav .class_BotoesMenu button:hover{
 .class_Conteudo{
     display: flex;
     flex-direction: column;
-
 }
 
 .class_Conteudo .class_Titulo{
@@ -74,6 +76,10 @@ nav .class_BotoesMenu button:hover{
     justify-content: center;
     font-size: 30px;
     color: #013220;
+}
+
+.class_Conteudo .class_Titulo h1{
+    font-size: 40px;
 }
 
 .class_Conteudo .class_Container{
@@ -88,7 +94,6 @@ nav .class_BotoesMenu button:hover{
     align-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 120px;
     padding: 10px;
 }
 .class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria{
@@ -101,7 +106,8 @@ nav .class_BotoesMenu button:hover{
 }
 .class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h1{
     color: #FF9800;
-    font-size: 50px;
+    font-size: 30px;
+    margin-top: 40px;
 }
 
 .class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h2{
@@ -109,26 +115,39 @@ nav .class_BotoesMenu button:hover{
     font-weight: normal;
 }
 
+#zapCompras {
+    margin-bottom: 40px;
+}
+
+#arroba {
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
 .class_Conteudo .class_Container .class_FlexBox1 h3{
     font-size: 30px;
     font-style: bold;
+    margin-bottom: 40px;
 }
 .class_Conteudo .class_Container .class_FlexBox1 .class_Alinhamento {
     display: flex;
     width: 90%;
-    justify-content: space-evenly;
+    justify-content: left;
 }
 
 .class_Conteudo .class_Container .class_FlexBox1 .class_Alinhamento .class_ImgRedes{
     display: flex;
-    height: 50px;
     width: 50px;
+    margin-left: -10px;
+    margin-right: 50px;
 }
 
 .class_Conteudo .class_Container .class_FlexBox1 .class_TextoInfo{
     margin: 10px;
     color: #013220;
     font-size: 25px;
+    width: 500px;
+    margin-bottom: 50px;
 }
 
 .class_Conteudo .class_Container .class_Mensagem{
@@ -162,15 +181,6 @@ nav .class_BotoesMenu button:hover{
     height: 300px;
 }
 
-
-
-
-
-
-
-
-
-
 /* footer */
 
 .class_Footer{
@@ -196,6 +206,7 @@ nav .class_BotoesMenu button:hover{
     margin: 0; 
     width: 80%;
     color:white;
+    font-size: 18px;
 }
 .class_Footer .class_Container div{
     justify-content: space-evenly;

@@ -16,8 +16,11 @@ nav{
     align-items: center;
     height: 90px;
 }
-nav img{
+.MenuLogo{
     width: 15%;
+}
+.MenuLogo a img{
+    width: 100%;
 }
 nav .class_LinksMenu{
     width: 50%;
@@ -67,13 +70,13 @@ nav .class_BotoesMenu button:hover{
 }
 
 .class_Banner{
-    height: 266px;
+    margin-top: 70px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
 }
 .class_Banner .class_Container img{
-    width: 28%;
-
+    height: 120px;
 }
 .class_Banner .class_Container{
     justify-content: center;
@@ -81,7 +84,7 @@ nav .class_BotoesMenu button:hover{
     height: 100%;
 }
 .class_Banner p{
-    font-size: 64px;
+    font-size: 40px;
     color: #013220;
     font-weight: bold;
 }
@@ -95,7 +98,6 @@ nav .class_BotoesMenu button:hover{
     height: 1597px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 146px;
 }
 .class_Textos .class_Container{
     flex-direction: column;
@@ -159,8 +161,8 @@ nav .class_BotoesMenu button:hover{
 .class_Titulo{
     color: #013220;
     font-size: 40px;
-    height: 22px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 .class_TextoMenor{
     font-size: 20px;

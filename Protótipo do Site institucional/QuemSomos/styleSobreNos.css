@@ -16,8 +16,11 @@ nav{
     align-items: center;
     height: 90px;
 }
-nav img{
+.MenuLogo{
     width: 15%;
+}
+.MenuLogo a img{
+    width: 100%;
 }
 nav .class_LinksMenu{
     width: 50%;
@@ -94,9 +97,9 @@ nav .class_BotoesMenu button:hover{
 
 
         .sobreEmpresa .bio .texto p {
-            text-indent: 30px;
             line-height: 18px;
             text-align: justify;
+            font-size: 20px;
         }
 
         h1 {
@@ -260,6 +263,7 @@ nav .class_BotoesMenu button:hover{
             margin: 0; 
             width: 80%;
             color:white;
+            font-size: 18px;
         }
         .class_Footer .class_Container div{
             justify-content: space-evenly;
