@@ -1,13 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
 }
-body{
+
+body {
     background-color: #FFFEFA;
 }
-nav{
+
+nav {
     background-color: #013220;
     padding-left: 10%;
     padding-right: 10%;
@@ -15,49 +17,60 @@ nav{
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    /* position: static; */
+    box-shadow: 0px 0px 10px #0F1108;
 }
-nav img{
+
+nav img {
     width: 15%;
 }
-nav .class_LinksMenu{
+
+nav .class_LinksMenu {
     width: 50%;
 }
-nav .class_LinksMenu ul{
+
+nav .class_LinksMenu ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
     font-weight: 500;
     font-size: 1.12rem;
 }
-nav .class_LinksMenu a{
+
+nav .class_LinksMenu a {
     text-decoration: none;
     color: #FFFEFA;
 }
-nav .class_LinksMenu a:hover{
+
+nav .class_LinksMenu a:hover {
     color: #FF9800;
     font-weight: 700;
 }
-nav .class_BotoesMenu{
+
+nav .class_BotoesMenu {
     width: 200px;
     display: flex;
     justify-content: space-around;
 }
-nav .class_BotoesMenu button{
+
+nav .class_BotoesMenu button {
     padding: 10px 15px;
     border-radius: 5px;
-    background-color: #013220;
+    background-color: #01322000;
     font-size: 1.0rem;
     border: 2.3px solid #FF9800;
     color: #FF9800;
     cursor: pointer;
 
 }
-nav .class_BotoesMenu button:hover{
+
+nav .class_BotoesMenu button:hover {
     background-color: #FF9800;
     color: #FFFEFA;
     box-shadow: 0px 0px 10px #FF9800;
 }
-.class_ImgInicial{
+
+.class_ImgInicial {
     background-image: url(imgHOMElupulo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -65,14 +78,16 @@ nav .class_BotoesMenu button:hover{
     width: 100%;
     height: 440px;
 }
-.class_ImgInicial h3{
+
+.class_ImgInicial h3 {
     color: #FFFEFA;
     width: 400px;
     font-size: 68px;
     margin-left: 20%;
     padding-top: 75px;
 }
-.class_ImgInicial span{
+
+.class_ImgInicial span {
     color: #FF9800;
     font-style: italic;
     text-shadow: 0px 0px 60px #eaff00;
@@ -80,32 +95,53 @@ nav .class_BotoesMenu button:hover{
 
 /* MAIN - CONTEUDO PRINCIPAL */
 
-main{
+.PARTE1 {
     width: 80%;
     margin: auto;
-    margin-top: 80px;
 }
-main .class_SobreNosHOME{
-
+main .class_SobreNosHOME {
     display: flex;
+    justify-content: space-between;
+    margin: 80px;
 }
-main .class_SobreNosHOME .class_ConteudoSobreNosHOME, .class_ImgSobreNosHOME{
-    width: 50%;
+
+main .class_SobreNosHOME .class_ConteudoSobreNosHOME {
+    width: 46%;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
     align-items: center
 }
-main .class_ConteudoSobreNosHOME h2{
+
+.class_ImgSobreNosHOME {
+    width: 46%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-end
+}
+
+.class_ImgSobreNosHOME2 {
+    width: 46%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-start
+}
+
+main .class_ConteudoSobreNosHOME h2 {
     font-size: 40px;
     color: #013220;
 }
-main .class_ConteudoSobreNosHOME p{
+
+main .class_ConteudoSobreNosHOME p {
     font-size: 20px;
+    padding: 20px 0px;
     text-align: justify;
     color: #0F1108;
 }
-main .class_ConteudoSobreNosHOME button{
+
+main .class_ConteudoSobreNosHOME button {
     /* IDEIA PARA QUANDO JUNTAR
     DA PARA FAZER UMA CLASSE .BOTAO E CHAMAR PARA TODOS
     OS BUTTON ASSIM, NAO PRECISA FICAR REPETINDO INFORMAÇÕES */
@@ -114,16 +150,169 @@ main .class_ConteudoSobreNosHOME button{
     border-radius: 5px;
     border: 2.3px solid #FF9800;
     color: #FF9800;
-    background-color: #FFFEFA;
+    background-color: #fffefa00;
     font-weight: 700;
     cursor: pointer;
 }
-main .class_ConteudoSobreNosHOME button:hover{
+
+main .class_ConteudoSobreNosHOME button:hover {
     background-color: #FF9800;
     color: #FFFEFA;
     box-shadow: 0px 0px 10px #FF9800;
 }
-main .class_ImgSobreNosHOME img{
-    width: 400px;
-    height: 400px;
+
+main .class_ImgSobreNosHOME img {
+    width: 85%;
+}
+
+main .class_ImgSobreNosHOME2 img {
+    width: 85%;
+
+}
+
+/* PARTE2 SIMULADOR FINANCEIRO */
+
+.PARTE2 {
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #013220;
+}
+.class_SimuladorHome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.PARTE2 h2 {
+    font-size: 40px;
+    color: #FFFEFA;
+    margin: 60px 0px;
+}
+.class_ContainerCardSimuladorHome{
+    display: flex;
+    justify-content: space-around;
+}
+.class_CardSimuladorHome{
+    width: 28%;
+    height: 340px;
+    padding: 0px 30px;
+    background-color: #90d26d00;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: 6px solid #FFFEFA;
+}
+.class_CardSimuladorHome:hover{
+    background-color: #90d26d;
+    border: none;
+    box-shadow: 0px 0px 10px #90d26d;
+}
+.class_CardSimuladorHome img{
+    height: 35%;
+    margin-bottom: 30px;
+}
+.class_CardSimuladorHome p{
+    font-size: 20px;
+    text-align: center;
+    color: #FFFEFA;
+}
+.PARTE2 button{
+    font-size: 20px;
+    padding: 13px 25px;
+    border-radius: 5px;
+    border: 2.3px solid #FF9800;
+    color: #FF9800;
+    background-color: #fffefa00;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 30px 0px 60px 0px;
+}
+
+.PARTE2 button:hover{
+    background-color: #FF9800;
+    color: #fffefa;
+    box-shadow: 0px 0px 10px #FF9800;
+}
+
+/* PARTE3 CONTATO */
+
+.PARTE3{
+    width: 80%;
+    margin: auto;
+    color: #0F1108;
+}
+.PARTE3 h2{
+    font-size: 40px;
+    color: #013220;
+    margin: 60px 0px 10px 0px;
+}
+.PARTE3 p{
+    font-size: 20px;
+}
+.class_CardsContatoHome{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.class_CardsContatoHome h2, p{
+    font-size: 18px;
+    margin: 5px 0px;
+}
+.class_card2ContatoHome{
+    border-left: 3px solid #FF9800;
+    padding-left: 10%;
+}
+.class_card1ContatoHom{
+    padding-right: 10%;
+}
+.PARTE3 button{
+    font-size: 20px;
+    padding: 13px 25px;
+    border-radius: 5px;
+    border: 2.3px solid #FF9800;
+    color: #FF9800;
+    background-color: #fffefa00;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 30px 0px 60px 0px;
+}
+
+.PARTE3 button:hover{
+    background-color: #FF9800;
+    color: #fffefa;
+    box-shadow: 0px 0px 10px #FF9800;
+}
+
+/* RODAPE */
+
+footer{
+    background-color: #013220;
+    height: 90px;
+}
+.class_Rodape{
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+}
+.class_Rodape p{
+    font-size: 12px;
+    color: #fffefa;
+}
+.class_RedeSociaisRodape{
+    display: flex;
+    align-items: center;
+    width: 11%;
+    justify-content: space-between;
+}
+.class_RedeSociaisRodape img{
+    width: 30px;
+}
+.class_RedeSociaisRodape .icon-yt img{
+    width: 40px;
 }
