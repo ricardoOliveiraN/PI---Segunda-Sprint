@@ -109,6 +109,7 @@ nav .class_BotoesMenu button:hover{
             font-size: 20px;
         }
 
+
         h1 {
             color: #013220;
             font-size: 40px;
@@ -148,6 +149,10 @@ nav .class_BotoesMenu button:hover{
             align-items: center;
             font-size: 35px;
             color: #ff9800;
+        }
+
+        .negrito{
+            font-weight: bold;
         }
 
         .topicos .container .texto {
