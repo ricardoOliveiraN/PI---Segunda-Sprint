@@ -34,12 +34,11 @@ select {
     margin: 0px 0px 40px 0px;
     font-size: 18px;
     color: rgba(0, 0, 0, 0.6);
-    padding-left: 10px;
 }
 
 /* Coloca um espaço no placeholder */
 input::placeholder {
-    padding-left: 13px;
+    padding-left: 3px;
 }
 
 /* TELA LOGIN */
