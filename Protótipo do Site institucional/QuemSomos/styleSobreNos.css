@@ -1,69 +1,72 @@
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+body{
+    background-color: #FFFEFA;
+}
+nav{
+    background-color: #013220;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+.MenuLogo{
+    width: 15%;
+}
+.MenuLogo a img{
+    width: 100%;
+}
+nav .class_LinksMenu{
+    width: 50%;
+}
+nav .class_LinksMenu ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 500;
+    font-size: 1.12rem;
+}
+nav .class_LinksMenu a{
+    text-decoration: none;
+    color: #FFFEFA;
+}
+nav .class_LinksMenu a:hover{
+    color: #FF9800;
+    font-weight: 700;
+}
+nav .class_BotoesMenu button:hover a{
+    color: white; 
+}
+nav .class_BotoesMenu a{
+    text-decoration: none;
+    color: #FF9800;    
+}
+nav .class_BotoesMenu{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+nav .class_BotoesMenu button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #013220;
+    font-size: 1.0rem;
+    border: 2.3px solid #FF9800;
+    color: #FF9800;
+    cursor: pointer;
 
-        body {
-            font-family: 'Lato', sans-serif;
-        }
-
-        /* HEADER */
-
-        .header {
-            background-color: #013220;
-            height: 80px;
-        }
-
-        .header .conteudo {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 0 2%;
-            font-size: 14px;
-        }
-
-        .header .logo {
-            justify-content: left;
-        }
-
-        .header .navBar {
-            color: white;
-            justify-content: space-between;
-            display: flex;
-            width: 32%;
-        }
-
-        .header .conteudo .login {
-            display: flex;
-            width: 12%;
-            justify-content: space-between;
-            margin-right: 4%;
-        }
-
-        .header .conteudo .login .botao {
-            height: 30px;
-            align-items: center;
-            justify-content: center;
-            display: flex;
-            border-radius: 3px;
-        }
-
-        .entrar {
-            width: 60px;
-            color: white;
-            background-color: #ff9800;
-        }
-
-        .cadastrar {
-            width: 80px;
-            color: #ff9800;
-            border: 1px solid #ff9800;
-        }
-
-        .header .logo img {
-            height: 80px;
-        }
+}
+nav .class_BotoesMenu button:hover{
+    background-color: #FF9800;
+    color: #FFFEFA;
+    box-shadow: 0px 0px 10px #FF9800;
+}
 
         /* BODY */
         /* SOBRE A EMPRESA */
@@ -101,10 +104,11 @@
 
 
         .sobreEmpresa .bio .texto p {
-            text-indent: 30px;
             line-height: 18px;
             text-align: justify;
+            font-size: 20px;
         }
+
 
         h1 {
             color: #013220;
@@ -145,6 +149,10 @@
             align-items: center;
             font-size: 35px;
             color: #ff9800;
+        }
+
+        .negrito{
+            font-weight: bold;
         }
 
         .topicos .container .texto {
@@ -237,13 +245,41 @@
 
 
         .footerSobreEquipe {
-            background-color: #ff9800;
-            height: 35px;
+            background-color: white;
+            height: 5px;
             width: 100%;
         }
 
         /* FOOTER */
 
-        .footer {
+        .class_Footer{
+    
             background-color: #013220;
+            border-bottom: 2px solid #013220;
+            display: flex;
+            justify-content: center;
+        }
+        .class_Footer .class_Container {
+            display: flex;
+            width: 80%;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+        .class_Footer .class_Container img{
+            width: 11%;
+        }
+        .class_Footer .class_Container p {
+            flex-grow: 1;
+            text-align: center;
+            margin: 0; 
+            width: 80%;
+            color:white;
+            font-size: 18px;
+        }
+        .class_Footer .class_Container div{
+            justify-content: space-evenly;
+            display: flex;
+            width: 199px;
+            align-items: center;
         }

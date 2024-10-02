@@ -2,15 +2,8 @@ CREATE DATABASE lumini;
 
 USE lumini;
 
-CREATE TABLE empresa (
-	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
-    nomeFantasia VARCHAR(45),
-    cnpj VARCHAR(18),
-    tamanhoEmpresa VARCHAR(7),
-		CONSTRAINT chkTamanhoEmpresa
-		CHECK (tamanhoEmpresa IN('Pequena', 'Média', 'Grande')), 
-        -- receita operacional em milhão -> pequena: 0,36 - 4,8; média: 4,8 - 300; grande: 300 e além
-	qtdHectares INT,
+CREATE TABLE endereco (
+	idEndereco INT PRIMARY KEY AUTO_INCREMENT,
     cep VARCHAR(9),
     uf CHAR(2),
 		CONSTRAINT chkUF
@@ -20,8 +13,20 @@ CREATE TABLE empresa (
         -- checando para apenas estados brasileiros válidos
     cidade VARCHAR(45),
     logradouro VARCHAR(45),
-    complemento VARCHAR(45),
-    statusCadastro VARCHAR(7),
+    numero VARCHAR(8),
+    complemento VARCHAR(45)
+);
+
+CREATE TABLE empresa (
+	idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
+    nomeFantasia VARCHAR(45),
+    cnpj VARCHAR(18) NOT NULL,
+    tamanhoEmpresa VARCHAR(7),
+		CONSTRAINT chkTamanhoEmpresa
+		CHECK (tamanhoEmpresa IN('Pequeno', 'Médio', 'Grande')), 
+        -- receita operacional em milhão -> pequena: 0,36 - 4,8; média: 4,8 - 300; grande: 300 e além
+	qtdHectares INT,
+    statusCadastro VARCHAR(7) NOT NULL,
 		CONSTRAINT chkStatusCadastro
         CHECK (statusCadastro IN('ativo', 'inativo')),
 	dtCriacao DATE,
@@ -31,19 +36,25 @@ CREATE TABLE empresa (
         -- data de criação deve ser obrigatoriamente antes que a data de inativação
 	fkEmpresa_EmpresaSede INT,
 		CONSTRAINT fkReEmpresa_EmpresaSede FOREIGN KEY (fkEmpresa_EmpresaSede)
-		REFERENCES empresa(idEmpresa)
+		REFERENCES empresa(idEmpresa),
+	fkEmpresa_Endereco INT,
+		CONSTRAINT fkReEmpresa_Endereco 
+        FOREIGN KEY (fkEmpresa_Endereco) 
+        REFERENCES endereco (idEndereco)
 );
 
 CREATE TABLE usuario (
-	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+	idUsuario INT,
+	fkUsuario_Empresa INT,
+    PRIMARY KEY (idUsuario, fkUsuario_Empresa),
     nome VARCHAR(45),
-    senha VARCHAR (45), -- criptografada
+    senha VARCHAR (45) NOT NULL, -- criptografada
     email VARCHAR(45),
 		CONSTRAINT chkEmail
 		CHECK (email LIKE '%@%' AND email LIKE '%.%'),
         -- checando se o formato de email é válido
     telefone VARCHAR(16),
-    tipoUsuario VARCHAR(11),
+    tipoUsuario VARCHAR(11) NOT NULL,
 		CONSTRAINT chkTipoUsuario
 		CHECK (tipoUsuario IN('Responsável', 'Comum', 'Convidado')), /*
 			permissionamento -> 
@@ -58,7 +69,6 @@ CREATE TABLE usuario (
 		CONSTRAINT chkDtExclusao
         CHECK (dtExclusao > dtCriacao OR dtExclusao = null),
         -- data de criação deve ser obrigatoriamente antes que a data de exclusão do usuário
-    fkUsuario_Empresa INT,
 		CONSTRAINT fkReUsuario_Empresa FOREIGN KEY (fkUsuario_Empresa)
 		REFERENCES empresa(idEmpresa)
 ) AUTO_INCREMENT = 1000;
@@ -74,7 +84,7 @@ CREATE TABLE talhao (
 
 CREATE TABLE sensor (
 	idSensor INT PRIMARY KEY AUTO_INCREMENT,
-    statusFuncionamento VARCHAR(10),
+    statusFuncionamento VARCHAR(10) NOT NULL,
 		CONSTRAINT chkStatusFuncionamento
 		CHECK (statusFuncionamento IN('Ativo', 'Inativo', 'Manutenção')),
     dtInstalacao DATE,
@@ -92,7 +102,7 @@ CREATE TABLE sensor (
 
 CREATE TABLE dadosSensor (
 	idDadosSensor INT PRIMARY KEY AUTO_INCREMENT,
-    qtdLuz FLOAT,
+    qtdLuz FLOAT NOT NULL,
 		CONSTRAINT chkQtdLuz
         CHECK (qtdLuz >= 0), 
         -- a luminosidade, vinda da voltagem, captada pelo sensor não deve ser negativa
@@ -104,25 +114,39 @@ CREATE TABLE dadosSensor (
 		CONSTRAINT chkAlerta
         CHECK (alerta IN('Sim', 'Não')),
         -- se houve alerta ou não
-    momentoCaptura DATETIME,
+    momentoCaptura DATETIME NOT NULL,
     fkDadosSensor_Sensor INT,
 		CONSTRAINT fkReDadosSensor_Sensor FOREIGN KEY (fkDadosSensor_Sensor)
 		REFERENCES sensor(idSensor)
 );
 
-INSERT INTO empresa (nomeFantasia, cnpj, tamanhoEmpresa, qtdHectares, cep, uf, cidade, logradouro, complemento, statusCadastro, dtCriacao, dtSaida, fkEmpresa_EmpresaSede) VALUES
-	('Agrosil', '12.345.678/0001-90', 'Pequena', 15, '12345-678', 'SP', 'Vale do Ribeira', 'Rua das Flores', 'Casa 1', 'ativo', '2024-08-20', '2023-09-01', NULL),
-	('LúFazendas', '23.456.789/0001-01', 'Média', 20, '23456-789', 'RS', 'Serra Gaúcha', 'Avenida da Paz', 'Lote 10', 'ativo', '2024-08-30', NULL, NULL),
-	('Lúpulo da Terra',  '45.678.901/0001-23', 'Grande', 500, '45678-901', 'SP', 'Campos do Jordão', 'Rua do Lúpulo', 'Chácara 2', 'ativo', '2024-09-05', NULL, NULL),
-	('Lúpulo da Terra Nordeste',  '54.876.109/0001-23', 'Média', 250, '45678-901', 'BA', 'Senhor do Bonfim', 'Rua da Esperança', 'Lote 2', 'ativo', '2024-09-15', NULL, 3);
+INSERT INTO endereco (cep, uf, cidade, logradouro, numero, complemento) VALUES
+	('12345-678', 'SP', 'Vale do Ribeira', 'Rua das Flores', '27', 'Casa 1'),
+    ('23456-789', 'RS', 'Serra Gaúcha', 'Avenida da Paz', '1000','Lote 10'),
+    ('31266-112', 'SP', 'Campos do Jordão', 'Rua do Lúpulo', '850','Chácara 2'),
+    ('45678-901', 'BA', 'Senhor do Bonfim', 'Rua da Esperança', '232', 'Lote 2');
+
+INSERT INTO empresa (nomeFantasia, cnpj, tamanhoEmpresa, qtdHectares, statusCadastro, dtCriacao, dtSaida, fkEmpresa_EmpresaSede, fkEmpresa_Endereco) VALUES
+	('Agrosil', '12.345.678/0001-90', 'Pequeno', 15, 'inativo', '2024-08-20', '2023-09-01', NULL, 1),
+	('LúFazendas', '23.456.789/0001-01', 'Médio', 20, 'ativo', '2024-08-30', NULL, NULL, 2),
+	('Lúpulo da Terra',  '45.678.901/0001-23', 'Grande', 500, 'ativo', '2024-09-05', NULL, NULL, 3),
+	('Lúpulo da Terra Nordeste',  '54.876.109/0001-23', 'Médio', 250, 'ativo', '2024-09-15', NULL, NULL, 4);
+
+UPDATE empresa
+	SET fkEmpresa_EmpresaSede = 3
+    WHERE idEmpresa  = 3;
     
-INSERT INTO usuario (nome, senha, email, telefone, tipoUsuario, statusUsuario ,dtCriacao, dtExclusao, fkUsuario_Empresa) VALUES
-	('João Silva', MD5('Sol!123'), 'joao.silva@email.com', '11987654321', 'Responsável', 'inativo','2024-08-30','2023-09-01', 1),
-	('Maria Oliveira', MD5('Céu@456'), 'maria.oliveira@email.com', '21987654321', 'Comum', 'ativo','2024-08-30', NULL, 2),
-	('Carlos Souza', MD5('Floresta#789'), 'carlos.souza@email.com', '31987654321', 'Responsável', 'ativo','2024-09-05', NULL, 3),
-	('Ana Pereira', MD5('Mar$3Clamo'), 'ana.pereira@email.com', '41987654321', 'Comum', 'ativo','2024-09-05', NULL, 3),
-	('Ricardo Lima', MD5('Lua%8Cheia'), 'ricardo.lima@email.com', '51987654321', 'Convidado', 'inativo','2024-09-10', '2024-10-10', 3),
-    ('Joane Damaceno', MD5('Vasc0#'), 'joane.damaceno@email.com', '21987123456', 'Responsável', 'ativo','2024-09-15', NULL, 4);
+UPDATE empresa
+	SET fkEmpresa_EmpresaSede = 3
+    WHERE idEmpresa = 4;
+
+INSERT INTO usuario (idUsuario, fkUsuario_Empresa, nome, senha, email, telefone, tipoUsuario, statusUsuario ,dtCriacao, dtExclusao) VALUES
+	(1, 1, 'João Silva', MD5('Sol!123'), 'joao.silva@email.com', '11987654321', 'Responsável', 'inativo','2024-08-30','2023-09-01'),
+	(1, 2, 'Maria Oliveira', MD5('Céu@456'), 'maria.oliveira@email.com', '21987654321', 'Comum', 'ativo','2024-08-30', NULL),
+	(1, 3, 'Carlos Souza', MD5('Floresta#789'), 'carlos.souza@email.com', '31987654321', 'Responsável', 'ativo','2024-09-05', NULL),
+	(2, 3, 'Ana Pereira', MD5('Mar$3Clamo'), 'ana.pereira@email.com', '41987654321', 'Comum', 'ativo','2024-09-05', NULL),
+	(3, 3, 'Ricardo Lima', MD5('Lua%8Cheia'), 'ricardo.lima@email.com', '51987654321', 'Convidado', 'inativo','2024-09-10', '2024-10-10'),
+    (1, 4, 'Joane Damaceno', MD5('Vasc0#'), 'joane.damaceno@email.com', '21987123456', 'Responsável', 'ativo','2024-09-15', NULL);
     
 INSERT INTO talhao (numero, areaTalhao, fkTalhao_Empresa) VALUES
 	(1, 5000, 1),
@@ -156,3 +180,58 @@ INSERT INTO dadosSensor (qtdLuz, statusLuminosidade, alerta, momentoCaptura, fkD
 	(8.70, 'Baixa', 'Não', '2024-09-26 18:00:00', 10006),
 	(50.25, 'Satisfatória', 'Não', '2024-10-04 12:00:00', 10007),
     (16.00, 'Baixa', 'Sim', '2024-10-05 18:00:00', 10008);
+    
+SELECT 
+	filial.nomeFantasia AS Filial,
+    filial.tamanhoEmpresa AS Porte,
+    filial.cnpj AS CNPJ,
+    endereco.cep AS CEP,
+    filial.statusCadastro AS 'Status',
+    CASE WHEN filial.idEmpresa = filial.fkEmpresa_EmpresaSede
+			THEN 'Sede'
+            ELSE 'Filial'
+		END AS 'Filial/Sede',
+	sede.nomeFantasia AS Sede,
+    sede.tamanhoEmpresa AS Porte,
+    sede.cnpj AS CNPJ,sede.statusCadastro AS 'Status'
+    FROM empresa AS filial
+    JOIN empresa AS sede
+		ON filial.fkEmpresa_EmpresaSede = sede.idEmpresa
+	JOIN endereco
+		ON filial.fkEmpresa_Endereco = endereco.IdEndereco;
+        
+SELECT
+	idSensor AS 'ID Sensor',
+    statusFuncionamento AS 'Status',
+    dtInstalacao AS 'Data Instalação',
+    ifnull(dtUltimaManutencao, 'Sem manutenção') AS Manutencao
+    -- DATEDIFF(day, dtUltimaManutencao, now()) AS Dias, -> como mostrar quantos dias desde a ultima manutenção
+	FROM sensor
+    WHERE statusFuncionamento <> 'Manutenção';
+    
+SELECT
+	funcionario.nome AS Funcionário,
+    funcionario.senha AS Senha,
+    funcionario.tipoUsuario AS TipoUsuario,
+    funcionario.statusUsuario AS 'Status',
+    empresa.nomeFantasia AS Empresa
+    FROM usuario AS funcionario
+    JOIN empresa
+		ON funcionario.fkUsuario_Empresa = empresa.idEmpresa
+	WHERE fkEmpresa_EmpresaSede = 3;
+
+SELECT
+	dadosSensor.qtdLuz AS Luminosidade,
+    dadosSensor.statusLuminosidade AS 'Nível de Luz',
+    dadosSensor.momentoCaptura AS 'Momento de Captura',
+    sensor.idSensor AS 'ID Sensor',
+    talhao.numero AS 'Talhão',
+    empresa.nomeFantasia AS 'Empresa'
+    FROM dadosSensor
+    JOIN sensor
+		ON dadosSensor.fkDadosSensor_Sensor = sensor.idSensor
+	JOIN talhao
+		ON sensor.fkSensor_Talhao = talhao.idTalhao
+	JOIN empresa
+		ON sensor.fkSensor_Empresa = empresa.IdEmpresa
+	ORDER BY empresa.nomeFantasia; 

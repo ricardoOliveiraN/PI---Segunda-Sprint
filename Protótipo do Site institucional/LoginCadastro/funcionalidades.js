@@ -1,5 +1,5 @@
 function AbrirCadastro() {
-    const urlTela = 'cadastronovo.html'; // Endereço da página cadastro do html
+    const urlTela = 'TelaCadastro.html'; // Endereço da página cadastro do html
     window.close(); // Fecha a página aberta (login)
     window.open(urlTela); // Abre a página cadastro
 }

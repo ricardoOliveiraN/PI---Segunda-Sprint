@@ -1,9 +1,74 @@
-body {
-    font-family: 'Lato', sans-serif;
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
+body{
+    background-color: #FFFEFA;
+}
+nav{
+    background-color: #013220;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+.MenuLogo{
+    width: 15%;
+}
+.MenuLogo a img{
+    width: 100%;
+}
+nav .class_LinksMenu{
+    width: 50%;
+}
+nav .class_LinksMenu ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 500;
+    font-size: 1.12rem;
+}
+nav .class_LinksMenu a{
+    text-decoration: none;
+    color: #FFFEFA;
+}
+nav .class_LinksMenu a:hover{
+    color: #FF9800;
+    font-weight: 700;
+}
+nav .class_BotoesMenu button:hover a{
+    color: white; 
+}
+nav .class_BotoesMenu a{
+    text-decoration: none;
+    color: #FF9800;    
+}
+nav .class_BotoesMenu{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+nav .class_BotoesMenu button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #013220;
+    font-size: 1.0rem;
+    border: 2.3px solid #FF9800;
+    color: #FF9800;
+    cursor: pointer;
+
+}
+nav .class_BotoesMenu button:hover{
+    background-color: #FF9800;
+    color: #FFFEFA;
+    box-shadow: 0px 0px 10px #FF9800;
+}
+
+/* BANNER */
 
 .class_Container{
     display: flex;
@@ -11,86 +76,14 @@ body {
     margin: auto;
 }
 
-/* HEADER */
-
-.class_Header{
-    height: 80px ;
-    background-color: #013220;
-    border-bottom: 2px solid #013220;
-    display: flex;
-    justify-content: space-between;
-}
-.class_Header .class_Container img{
-    width: 23%;
-
-}
-.class_Header .class_Container{
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-.class_Header .class_ModificaZeroA{
-    text-decoration: none; 
-    color: white;
-}
-.class_Header .class_Menu {
-    display: flex;
-    color: white;
-    justify-content: center;
-    width: 810px;
-    align-items: center;   
-}
-.class_ModificaZero{
-    display: flex;
-    font-size: 16px;
-    margin: 0px 15px 0px 15px;
-    justify-content: space-between;
-    width: 63%;
-}
-
-.class_ModificaZero_Zero{
-    display: flex;
-    justify-content: space-between;
-    width: 235px;
-    margin-right:52px;
-    align-items: center;
-}
- .class_ModificadoUm{
-    display: flex;
-    border: 2px solid #FF9800;
-    border-radius: 5px;
-    background-color: #FF9800;
-    width: 80px;  
-    justify-content: center;
-    font-size: 19px;
-    height: 35px;
-    align-items: center;
-    text-decoration: none; 
-    color: white;
-}
-.class_ModificadoDois{
-    display: flex;
-    border: 2px solid #FF9800;
-    border-radius: 5px;
-    width: 100px;
-    justify-content: center;
-    font-size: 19px;
-    height: 35px;
-    align-items: center;
-    color:#FF9800;
-    text-decoration: none; 
-}
-
-/* BANNER */
-
 .class_Banner{
-    height: 266px;
+    margin-top: 70px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
 }
 .class_Banner .class_Container img{
-    width: 28%;
-
+    height: 120px;
 }
 .class_Banner .class_Container{
     justify-content: center;
@@ -98,7 +91,7 @@ body {
     height: 100%;
 }
 .class_Banner p{
-    font-size: 64px;
+    font-size: 40px;
     color: #013220;
     font-weight: bold;
 }
@@ -112,7 +105,6 @@ body {
     height: 1597px;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 146px;
 }
 .class_Textos .class_Container{
     flex-direction: column;
@@ -176,8 +168,8 @@ body {
 .class_Titulo{
     color: #013220;
     font-size: 40px;
-    height: 22px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 .class_TextoMenor{
     font-size: 20px;
@@ -194,7 +186,7 @@ body {
 }
 .class_Footer .class_Container {
     display: flex;
-    width: 100%;
+    width: 80%;
     justify-content: space-between;
     align-items: center;
     height: 100%;
@@ -208,6 +200,7 @@ body {
     margin: 0; 
     width: 80%;
     color:white;
+    font-size: 18px;
 }
 .class_Footer .class_Container div{
     justify-content: space-evenly;

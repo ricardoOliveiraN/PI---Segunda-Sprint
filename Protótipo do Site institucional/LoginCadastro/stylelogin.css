@@ -34,12 +34,11 @@ select {
     margin: 0px 0px 40px 0px;
     font-size: 18px;
     color: rgba(0, 0, 0, 0.6);
-    padding-left: 10px;
 }
 
 /* Coloca um espaço no placeholder */
 input::placeholder {
-    padding-left: 13px;
+    padding-left: 3px;
 }
 
 /* TELA LOGIN */
@@ -99,13 +98,14 @@ input::placeholder {
     margin: 80px 0px 0px 0px;
 }
 
-.class_home2 span {
+.class_home2 a {
     position: fixed;
     font-size: 30px;
     color: #FF9800;
     font-weight: 700;
     margin: 15px 0px 0px -600px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .class_home2 img {
@@ -267,13 +267,14 @@ input::placeholder {
     /* margin: 0px 0px 0px 0px; */
 }
 
-.class_home span {
+.class_home a {
     position: fixed;
     font-size: 30px;
     color: #FF9800;
     font-weight: 700;
     margin: -730px 0px 0px 600px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .class_home img {

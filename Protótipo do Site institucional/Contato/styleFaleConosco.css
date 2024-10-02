@@ -1,73 +1,71 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    }
-
-body {
-        font-family: 'Lato', sans-serif;
-
-        }
-
-      /* header   */
-.class_Header{
-    display: flex;
-    height: 120px;
+    font-family: 'Lato', sans-serif;
+}
+body{
+    background-color: #FFFEFA;
+}
+nav{
     background-color: #013220;
-    width: 100%;
-}
-
-.class_Container{
+    padding-left: 10%;
+    padding-right: 10%;
     display: flex;
-    width: 90%;
-    justify-content: space-between;
-}
-
-.class_Header .class_Container {
     justify-content: space-between;
     align-items: center;
-    height: 100%;
+    height: 90px;
 }
-.class_Header .class_Container a{
-    font-size: 20px;
+.MenuLogo{
+    width: 15%;
+}
+.MenuLogo a img{
+    width: 100%;
+}
+nav .class_LinksMenu{
+    width: 50%;
+}
+nav .class_LinksMenu ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: 500;
+    font-size: 1.12rem;
+}
+nav .class_LinksMenu a{
     text-decoration: none;
-    color: white;
+    color: #FFFEFA;
 }
-
-.class_Header .class_Container img{
-    display: flex;
-    height: 105px;
-}
-
-.class_Header .class_Container .Class_Navbar{
-    display: flex;
-    list-style-type: none;
-    justify-content: space-evenly;
-    width:60%;
-    height: 25%;
-}
-
-.Class_BTNEntrar{
-    width: 60px;
-    height: 30px;
-    background-color:  #FF9800;
-    border-color: #03020000;
-    color: white;
-    border-radius: 5px;
-}
-
-.Class_BTNCadastrar{
-    width: 70px;
-    height: 30px;
-    background-color:  #FF9800;
-    border-color: #03020000;
-    color: white;
-    border-radius: 5px;
-}
-
-button:hover{
-    background-color: white;
+nav .class_LinksMenu a:hover{
     color: #FF9800;
+    font-weight: 700;
+}
+nav .class_BotoesMenu button:hover a{
+    color: white; 
+}
+nav .class_BotoesMenu a{
+    text-decoration: none;
+    color: #FF9800;    
+}
+nav .class_BotoesMenu{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+nav .class_BotoesMenu button{
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #013220;
+    font-size: 1.0rem;
+    border: 2.3px solid #FF9800;
+    color: #FF9800;
+    cursor: pointer;
+
+}
+nav .class_BotoesMenu button:hover{
+    background-color: #FF9800;
+    color: #FFFEFA;
+    box-shadow: 0px 0px 10px #FF9800;
 }
 
 
@@ -76,7 +74,6 @@ button:hover{
 .class_Conteudo{
     display: flex;
     flex-direction: column;
-
 }
 
 .class_Conteudo .class_Titulo{
@@ -86,6 +83,10 @@ button:hover{
     justify-content: center;
     font-size: 30px;
     color: #013220;
+}
+
+.class_Conteudo .class_Titulo h1{
+    font-size: 40px;
 }
 
 .class_Conteudo .class_Container{
@@ -100,7 +101,6 @@ button:hover{
     align-content: center;
     flex-direction: column;
     align-items: center;
-    margin: 120px;
     padding: 10px;
 }
 .class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria{
@@ -113,7 +113,8 @@ button:hover{
 }
 .class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h1{
     color: #FF9800;
-    font-size: 50px;
+    font-size: 30px;
+    margin-top: 40px;
 }
 
 .class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h2{
@@ -121,26 +122,39 @@ button:hover{
     font-weight: normal;
 }
 
+#zapCompras {
+    margin-bottom: 40px;
+}
+
+#arroba {
+    margin-top: 40px;
+    margin-left: 15px;
+}
+
 .class_Conteudo .class_Container .class_FlexBox1 h3{
     font-size: 30px;
     font-style: bold;
+    margin-bottom: 40px;
 }
 .class_Conteudo .class_Container .class_FlexBox1 .class_Alinhamento {
     display: flex;
     width: 90%;
-    justify-content: space-evenly;
+    justify-content: left;
 }
 
 .class_Conteudo .class_Container .class_FlexBox1 .class_Alinhamento .class_ImgRedes{
     display: flex;
-    height: 50px;
     width: 50px;
+    margin-left: -10px;
+    margin-right: 50px;
 }
 
 .class_Conteudo .class_Container .class_FlexBox1 .class_TextoInfo{
     margin: 10px;
     color: #013220;
     font-size: 25px;
+    width: 500px;
+    margin-bottom: 50px;
 }
 
 .class_Conteudo .class_Container .class_Mensagem{
@@ -174,40 +188,36 @@ button:hover{
     height: 300px;
 }
 
-
-
-
-
-
-
-
-
-
 /* footer */
 
 .class_Footer{
+    
     background-color: #013220;
-    height: 170px;
+    border-bottom: 2px solid #013220;
+    display: flex;
+    justify-content: center;
+}
+.class_Footer .class_Container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
-
-.class_Footer .class_Container{
-    background-color: #013220;
+.class_Footer .class_Container img{
+    width: 11%;
+}
+.class_Footer .class_Container p {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0; 
+    width: 80%;
+    color:white;
+    font-size: 18px;
+}
+.class_Footer .class_Container div{
+    justify-content: space-evenly;
+    display: flex;
+    width: 199px;
     align-items: center;
-}
-
-.class_Footer img{
-    display: flex;
-    height: 130px;
-}
-
-.class_Footer .class_Container h1{
-    display: flex;
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-}
-.class_Footer .class_ImgRedes{
-    display: flex;
-    height: 50px;
 }
