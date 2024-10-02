@@ -44,7 +44,9 @@ CREATE TABLE empresa (
 );
 
 CREATE TABLE usuario (
-	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+	idUsuario INT,
+	fkUsuario_Empresa INT,
+    PRIMARY KEY (idUsuario, fkUsuario_Empresa),
     nome VARCHAR(45),
     senha VARCHAR (45) NOT NULL, -- criptografada
     email VARCHAR(45),
@@ -67,7 +69,6 @@ CREATE TABLE usuario (
 		CONSTRAINT chkDtExclusao
         CHECK (dtExclusao > dtCriacao OR dtExclusao = null),
         -- data de criação deve ser obrigatoriamente antes que a data de exclusão do usuário
-    fkUsuario_Empresa INT,
 		CONSTRAINT fkReUsuario_Empresa FOREIGN KEY (fkUsuario_Empresa)
 		REFERENCES empresa(idEmpresa)
 ) AUTO_INCREMENT = 1000;
@@ -139,13 +140,13 @@ UPDATE empresa
 	SET fkEmpresa_EmpresaSede = 3
     WHERE idEmpresa = 4;
 
-INSERT INTO usuario (nome, senha, email, telefone, tipoUsuario, statusUsuario ,dtCriacao, dtExclusao, fkUsuario_Empresa) VALUES
-	('João Silva', MD5('Sol!123'), 'joao.silva@email.com', '11987654321', 'Responsável', 'inativo','2024-08-30','2023-09-01', 1),
-	('Maria Oliveira', MD5('Céu@456'), 'maria.oliveira@email.com', '21987654321', 'Comum', 'ativo','2024-08-30', NULL, 2),
-	('Carlos Souza', MD5('Floresta#789'), 'carlos.souza@email.com', '31987654321', 'Responsável', 'ativo','2024-09-05', NULL, 3),
-	('Ana Pereira', MD5('Mar$3Clamo'), 'ana.pereira@email.com', '41987654321', 'Comum', 'ativo','2024-09-05', NULL, 3),
-	('Ricardo Lima', MD5('Lua%8Cheia'), 'ricardo.lima@email.com', '51987654321', 'Convidado', 'inativo','2024-09-10', '2024-10-10', 3),
-    ('Joane Damaceno', MD5('Vasc0#'), 'joane.damaceno@email.com', '21987123456', 'Responsável', 'ativo','2024-09-15', NULL, 4);
+INSERT INTO usuario (idUsuario, fkUsuario_Empresa, nome, senha, email, telefone, tipoUsuario, statusUsuario ,dtCriacao, dtExclusao) VALUES
+	(1, 1, 'João Silva', MD5('Sol!123'), 'joao.silva@email.com', '11987654321', 'Responsável', 'inativo','2024-08-30','2023-09-01'),
+	(1, 2, 'Maria Oliveira', MD5('Céu@456'), 'maria.oliveira@email.com', '21987654321', 'Comum', 'ativo','2024-08-30', NULL),
+	(1, 3, 'Carlos Souza', MD5('Floresta#789'), 'carlos.souza@email.com', '31987654321', 'Responsável', 'ativo','2024-09-05', NULL),
+	(2, 3, 'Ana Pereira', MD5('Mar$3Clamo'), 'ana.pereira@email.com', '41987654321', 'Comum', 'ativo','2024-09-05', NULL),
+	(3, 3, 'Ricardo Lima', MD5('Lua%8Cheia'), 'ricardo.lima@email.com', '51987654321', 'Convidado', 'inativo','2024-09-10', '2024-10-10'),
+    (1, 4, 'Joane Damaceno', MD5('Vasc0#'), 'joane.damaceno@email.com', '21987123456', 'Responsável', 'ativo','2024-09-15', NULL);
     
 INSERT INTO talhao (numero, areaTalhao, fkTalhao_Empresa) VALUES
 	(1, 5000, 1),
@@ -233,4 +234,4 @@ SELECT
 		ON sensor.fkSensor_Talhao = talhao.idTalhao
 	JOIN empresa
 		ON sensor.fkSensor_Empresa = empresa.IdEmpresa
-	ORDER BY empresa.nomeFantasia;
+	ORDER BY empresa.nomeFantasia; 
