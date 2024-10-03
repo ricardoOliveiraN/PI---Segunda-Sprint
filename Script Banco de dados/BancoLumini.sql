@@ -111,7 +111,7 @@ CREATE TABLE dadosSensor (
 		CONSTRAINT chkAlerta
         CHECK (alerta IN('Sim', 'Não')),
         -- se houve alerta ou não
-    momentoCaptura DATETIME NOT NULL,
+    momentoCaptura DATETIME DEFAULT CURRENT_TIMESTAMP ,
     fkDadosSensor_Sensor INT,
 		CONSTRAINT fkReDadosSensor_Sensor FOREIGN KEY (fkDadosSensor_Sensor)
 		REFERENCES sensor(idSensor)
