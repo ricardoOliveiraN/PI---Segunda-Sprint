@@ -20,12 +20,12 @@
             <div class="class_registro">
                 <span id="lbl_signup">CADASTRAR</span>
                 <input type="text" placeholder="Nome" id="inp_nome">
-                <input type="text" placeholder="Email" id="inp_email">
-                <input type="text" placeholder="Celular" id="inp_celular">
+                <input oninput="validarEmail()" type="text" placeholder="Email" id="inp_email">
+                <input oninput="validarCelular()" type="number" placeholder="Celular" id="inp_celular">
                 <input oninput="validarSenha()" type="password" placeholder="Senha" id="inp_senha">
                 <div id="div_validarSenha"></div>
                 <input oninput="confirmarSenha()" type="password" placeholder="Confirmar senha" id="inp_ConfirmarSenha">
-                <select>
+                <select id="select_opcao">
                     <option disabled selected value="0">Tipo de usuário</option>
                     <option value="1">Comum</option>
                     <option value="2">Convidado</option>
