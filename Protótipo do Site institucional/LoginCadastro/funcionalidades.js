@@ -34,6 +34,7 @@ var qtdCorretoMais = 0;
 var qtdCorretoTam = 0;
 var qtdSenhaIgual = 0;
 var qtdEmailCorreto = 0;
+var qtdCelularCorreto = 0;
 // FIM DAS VARIAVEIS DE BLOQUEIO
 
 // VALIDAÇÃO DA SENHA INSERIDA, LEVANDO EM CONSIDERAÇÃO: QUANTIDADE MINÍMA DE CARACTERES (8), PRESENÇA DE MAIÚSCULA, PRESENÇA DE MINÚSCULA E PRESENÇA DE CARACTERES ESPECIAIS
@@ -130,9 +131,11 @@ function validarCelular() {
     var TamanhoCelular = Celular.length;
 
     if (TamanhoCelular == 11) { //colocar uma verificação de valor negativo?
+      
         qtdCelularCorreto += 1;
         inp_celular.style.borderColor = 'green';
     } else {
+     
         inp_celular.style.borderColor = 'red';
         // colocar uma div pra pessoa ver como faz o celular correto?
     }
@@ -144,13 +147,14 @@ function validarCelular() {
 
 function cadastrar() {
 
-    if (qtdCorretoTam >= 8 && qtdCorreto >= 1 && qtdCorretoMini >= 1 && qtdCorretoMais >= 1 && qtdSenhaIgual >= 1 && qtdEmailCorreto >= 1 && qtdEmailCorreto >= 1) {
-
+    if (qtdCorretoTam >= 1 && qtdCorreto >= 1 && qtdCorretoMini >= 1 && qtdCorretoMais >= 1 && qtdSenhaIgual >= 1 && qtdCelularCorreto >= 1 && qtdEmailCorreto >= 1) {
+        
         Senha = inp_senha.value;
         Email = inp_email.value;
         Nome = inp_nome.value;
         Celular = Number(inp_celular.value);
         Opcao = select_opcao.value;
+        abrirTelaLogin();
 
         // EU QUERO QUE QUANDO ENTRAR NESSE IF ABRA UMA NOVA TELA COM UMA IMAGEM DE CERTO E UMA FRASE "CADASTRADO COM SUCESSO"
 
@@ -169,5 +173,26 @@ function cadastrar() {
     }
 
 }
+function abrirTelaLogin(){
+    const urlLogin = "file:///C:/Users/ricar/OneDrive/%C3%81rea%20de%20Trabalho/SPTech%20Aulas/PI%20-%20Segunda%20Sprint/PI---Segunda-Sprint/Prot%C3%B3tipo%20do%20Site%20institucional/LoginCadastro/TelaLogin.html";
+    window.close();
+    window.open(urlLogin);
+}
 
-// 
+var UsuarioLogin = '';
+
+// Função da tela de Login
+
+function entrarSite(){
+
+    var SenhaLogin = inp_senha2.value;
+    alert(`${Senha}`)
+    
+    if (SenhaLogin == Senha){
+        const urlHome = "file:///C:/Users/ricar/OneDrive/%C3%81rea%20de%20Trabalho/SPTech%20Aulas/PI%20-%20Segunda%20Sprint/PI---Segunda-Sprint/Prot%C3%B3tipo%20do%20Site%20institucional/Home/TelaHome.html";
+        window.close();
+        window.open(urlHome);
+    }
+
+
+}
