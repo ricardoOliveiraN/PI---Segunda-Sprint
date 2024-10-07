@@ -64,24 +64,28 @@ function validarSenha() {
         qtdCorretoTam += 1;
     } else {
         mensagem = '<img src="../Imagens/SimboloErrado.png" style="width: 20px">Tamanho Incorreto (pelo menos 8)';
+        qtdCorretoTam = 0;
     }
     if (Senha != minisculaSenha) {
         mensagemDois = '<img src="../Imagens/SimboloCertinho.png" style="width: 20px">Maiúscula';
         qtdCorretoMini += 1;
     } else {
         mensagemDois = '<img src="../Imagens/SimboloErrado.png" style="width: 20px">Maiúscula ';
+        qtdCorretoMini = 0;
     }
     if (Senha != maisculaSenha) {
         mensagemQuatro = `<img src="../Imagens/SimboloCertinho.png" style="width: 20px"> Minúscula`;
         qtdCorretoMais += 1;
     } else {
         mensagemQuatro = '<img src="../Imagens/SimboloErrado.png" style="width: 20px">Minúscula';
+        qtdCorretoMais = 0;
     }
     if (possuiArroba || possuiHash || possuiCifrao || possuiPorcent || possuiE || possuiAsterisco || possuiInterrogacao) {
         mensagemTres = '<img src="../Imagens/SimboloCertinho.png" style="width: 20px">Caractere especial (! @ # $ % & *)';
         qtdCorreto += 1;
     } else {
-        mensagemTres = '<img src="../Imagens/SimboloErrado.png" style="width: 20px">Caractere especial (! @ # $ % & *)'
+        mensagemTres = '<img src="../Imagens/SimboloErrado.png" style="width: 20px">Caractere especial (! @ # $ % & *)';
+        qtdCorreto = 0
     }
     div_validarSenha.innerHTML = `${mensagem} <br> ${mensagemDois} <br> ${mensagemQuatro} <br> ${mensagemTres}`
 
@@ -98,6 +102,7 @@ function confirmarSenha() {
         qtdSenhaIgual += 1;
     } else {
         inp_ConfirmarSenha.style.borderColor = 'red';
+        qtdSenhaIgual = 0;
     }
 }
 // FIM VALIDAÇÃO DA CONFIRMAÇÃO
@@ -116,6 +121,7 @@ function validarEmail() {
         inp_email.style.borderColor = 'green';
     } else {
         inp_email.style.borderColor = 'red';
+        qtdEmailCorreto = 0;
     }
 
 }
@@ -135,7 +141,7 @@ function validarCelular() {
         qtdCelularCorreto += 1;
         inp_celular.style.borderColor = 'green';
     } else {
-
+        qtdCelularCorreto = 0;
         inp_celular.style.borderColor = 'red';
         // colocar uma div pra pessoa ver como faz o celular correto?
     }
