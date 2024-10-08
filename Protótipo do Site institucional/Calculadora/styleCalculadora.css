@@ -21,12 +21,36 @@ nav {
   box-shadow: 0px 0px 10px #0F1108;
 }
 
-.MenuLogo{
-  width: 15%;
+.MenuLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 12%;
+  padding: 5px;
+  box-sizing: border-box;
 }
-.MenuLogo a img{
+
+.MenuLogo a {
+  display: inline-block;
+  position: relative;
+}
+
+.MenuLogo a img {
   width: 100%;
+  height: auto;
+  display: block;
 }
+
+.MenuLogo a:hover img {
+  border: 2px solid yellow;
+}
+
+.MenuLogo a:hover {
+  box-shadow: 0 0 10px 2px yellow;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+
 
 nav .class_LinksMenu {
   width: 50%;
