@@ -103,25 +103,25 @@
         var PrecoTotalLumini = (QuiloTotalLumini * preco);
 
         var mensagem = `Atualmente sem o serviço Lumini, você produz <b>${QuiloTotal}kg</b> por ano. <br>
-        Cada safra te gera em média <b>R$${precoSafra}</b>. <br> 
+        É gerado em média <b>R$${precoSafra}</b> por safra. <br> 
         E Isso te gera uma total de <b>R$${PrecoTotal}</b> por ano. <br><br>`
 
         if (qtd_safra == 1){
-            mensagem += `Com o serviço LUMINI, e as tomadas de desições corretas, você produzirá <span>${QuiloTotalLumini}kg</span> por ano. <br>
+            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini}kg</span> por ano. <br>
             A safra gerará uma média de <span>R$${precoSafraLumini}.</span> <br><br>
 
             <span>Ainda o aumento de Safras anuais pode aumentar consideravelmente indo de 1 para até 3.
             Isso te geraria em média R$${precoSafraLumini * 3}!</span>
             `
         } else if (qtd_safra == 2){
-            mensagem += `Com o serviço LUMINI, e as tomadas de desições corretas, você produzirá <span>${QuiloTotalLumini}kg</span>por ano. <br>
+            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini}kg</span>por ano. <br>
             Cada safra gerará uma média de <span>R$${precoSafraLumini}</span>. <br>
             E Isso te gerará uma total de <span>R$${PrecoTotalLumini}</span> por ano. <br><br>
 
             <span>Ainda o aumento de Safras anuais pode aumentar  indo de 2 para até 3.
             Isso te geraria em média R$${PrecoTotalLumini + precoSafraLumini}</span>`
         } else if (qtd_safra == 3){
-            mensagem += `Com o serviço LUMINI, e as tomadas de desições corretas, você produzirá <span>${QuiloTotalLumini}kg</span> por ano. <br>
+            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini}kg</span> por ano. <br>
             Cada safra gerará uma média de <span>R$${precoSafraLumini}</span>. <br>
             E Isso te gerará uma total de <span>R$${PrecoTotalLumini}</span> por ano. <br>`
         }
