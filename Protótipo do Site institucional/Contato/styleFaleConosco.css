@@ -1,13 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Fredoka', sans-serif; /* Aplicado a todas as classes */
 }
-body{
+body {
     background-color: #FFFEFA;
 }
-nav{
+nav {
     background-color: #013220;
     padding-left: 10%;
     padding-right: 10%;
@@ -16,43 +16,65 @@ nav{
     align-items: center;
     height: 90px;
 }
-.MenuLogo{
-    width: 15%;
+.MenuLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12%;
+    padding: 5px;
+    box-sizing: border-box;
 }
-.MenuLogo a img{
+
+.MenuLogo a {
+    display: inline-block;
+    position: relative;
+}
+
+.MenuLogo a img {
     width: 100%;
+    height: auto;
+    display: block;
 }
-nav .class_LinksMenu{
+
+.MenuLogo a:hover img {
+    border: 2px solid yellow;
+}
+
+.MenuLogo a:hover {
+    box-shadow: 0 0 10px 2px yellow;
+    transition: box-shadow 0.3s ease-in-out;
+}
+nav .class_LinksMenu {
     width: 50%;
 }
-nav .class_LinksMenu ul{
+nav .class_LinksMenu ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
     font-weight: 500;
     font-size: 1.12rem;
 }
-nav .class_LinksMenu a{
+nav .class_LinksMenu a {
     text-decoration: none;
     color: #FFFEFA;
 }
-nav .class_LinksMenu a:hover{
+nav .class_LinksMenu a:hover {
     color: #FF9800;
     font-weight: 700;
 }
-nav .class_BotoesMenu button:hover a{
+nav .class_BotoesMenu button:hover a {
     color: white; 
 }
-nav .class_BotoesMenu a{
+nav .class_BotoesMenu a {
     text-decoration: none;
     color: #FF9800;    
 }
-nav .class_BotoesMenu{
+nav .class_BotoesMenu {
     width: 200px;
     display: flex;
     justify-content: space-around;
 }
-nav .class_BotoesMenu button{
+nav .class_BotoesMenu button {
     padding: 10px 15px;
     border-radius: 5px;
     background-color: #013220;
@@ -60,23 +82,21 @@ nav .class_BotoesMenu button{
     border: 2.3px solid #FF9800;
     color: #FF9800;
     cursor: pointer;
-
 }
-nav .class_BotoesMenu button:hover{
+nav .class_BotoesMenu button:hover {
     background-color: #FF9800;
     color: #FFFEFA;
     box-shadow: 0px 0px 10px #FF9800;
 }
 
-
 /* Conteudo */
 
-.class_Conteudo{
+.class_Conteudo {
     display: flex;
     flex-direction: column;
 }
 
-.class_Conteudo .class_Titulo{
+.class_Conteudo .class_Titulo {
     display: flex;
     flex-direction: row;
     margin: 41px;
@@ -85,25 +105,24 @@ nav .class_BotoesMenu button:hover{
     color: #013220;
 }
 
-.class_Conteudo .class_Titulo h1{
+.class_Conteudo .class_Titulo h1 {
     font-size: 40px;
 }
 
-.class_Conteudo .class_Container{
+.class_Conteudo .class_Container {
     display: flex;
     justify-content: space-around;
     padding: 10px;
 }
 
-
-.class_Conteudo .class_Container .class_FlexBox1{
+.class_Conteudo .class_Container .class_FlexBox1 {
     display: flex;
     align-content: center;
     flex-direction: column;
     align-items: center;
     padding: 10px;
 }
-.class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria{
+.class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -111,13 +130,13 @@ nav .class_BotoesMenu button:hover{
     width: 95%;
     border-bottom: solid #013220 2px;
 }
-.class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h1{
+.class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h1 {
     color: #FF9800;
     font-size: 30px;
     margin-top: 40px;
 }
 
-.class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h2{
+.class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h2 {
     font-size: 30px;
     font-weight: normal;
 }
@@ -131,7 +150,7 @@ nav .class_BotoesMenu button:hover{
     margin-left: 15px;
 }
 
-.class_Conteudo .class_Container .class_FlexBox1 h3{
+.class_Conteudo .class_Container .class_FlexBox1 h3 {
     font-size: 30px;
     font-style: bold;
     margin-bottom: 40px;
@@ -142,14 +161,14 @@ nav .class_BotoesMenu button:hover{
     justify-content: left;
 }
 
-.class_Conteudo .class_Container .class_FlexBox1 .class_Alinhamento .class_ImgRedes{
+.class_Conteudo .class_Container .class_FlexBox1 .class_Alinhamento .class_ImgRedes {
     display: flex;
     width: 50px;
     margin-left: -10px;
     margin-right: 50px;
 }
 
-.class_Conteudo .class_Container .class_FlexBox1 .class_TextoInfo{
+.class_Conteudo .class_Container .class_FlexBox1 .class_TextoInfo {
     margin: 10px;
     color: #013220;
     font-size: 25px;
@@ -157,7 +176,7 @@ nav .class_BotoesMenu button:hover{
     margin-bottom: 50px;
 }
 
-.class_Conteudo .class_Container .class_Mensagem{
+.class_Conteudo .class_Container .class_Mensagem {
     display: flex;
     flex-direction: column;
     height: 650px;
@@ -171,27 +190,44 @@ nav .class_BotoesMenu button:hover{
     justify-content: space-evenly;
 }
 
-.class_Conteudo .class_Container .class_Mensagem ::placeholder{
+.class_Conteudo .class_Container .class_Mensagem ::placeholder {
     color: #036e47bd;
     font-size: 20px;
-  }
+}
 
-.class_Conteudo .class_Container .class_Mensagem input{
+.class_Conteudo .class_Container .class_Mensagem input {
     padding: 20px;
     border-radius: 5px;
     height: 35px;
 }
 
-.class_Conteudo .class_Container .class_Mensagem .class_IptMensagem{
+.class_Conteudo .class_Container .class_Mensagem .class_IptMensagem {
     padding: 20px;
     border-radius: 5px;
-    height: 300px;
+    height: 300px;    
 }
+
+#ipt_mensagem {
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    overflow: auto;
+    font-size: 20px;
+}
+
+
+#ipt_mensagem::placeholder {
+    color: #036e47bd;
+    font-size: 20px;
+}
+
 
 /* footer */
 
-.class_Footer{
-    
+.class_Footer {
     background-color: #013220;
     border-bottom: 2px solid #013220;
     display: flex;
@@ -204,7 +240,7 @@ nav .class_BotoesMenu button:hover{
     align-items: center;
     height: 100%;
 }
-.class_Footer .class_Container img{
+.class_Footer .class_Container img {
     width: 11%;
 }
 .class_Footer .class_Container p {
@@ -212,10 +248,10 @@ nav .class_BotoesMenu button:hover{
     text-align: center;
     margin: 0; 
     width: 80%;
-    color:white;
+    color: white;
     font-size: 18px;
 }
-.class_Footer .class_Container div{
+.class_Footer .class_Container div {
     justify-content: space-evenly;
     display: flex;
     width: 199px;

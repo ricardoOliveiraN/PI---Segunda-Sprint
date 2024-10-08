@@ -1,13 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Fredoka', sans-serif; /* Fonte aplicada */
 }
-body{
+
+body {
     background-color: #FFFEFA;
 }
-nav{
+
+nav {
     background-color: #013220;
     padding-left: 10%;
     padding-right: 10%;
@@ -16,43 +18,74 @@ nav{
     align-items: center;
     height: 90px;
 }
-.MenuLogo{
-    width: 15%;
+
+.MenuLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12%;
+    padding: 5px;
+    box-sizing: border-box;
 }
-.MenuLogo a img{
+
+.MenuLogo a {
+    display: inline-block;
+    position: relative;
+}
+
+.MenuLogo a img {
     width: 100%;
+    height: auto;
+    display: block;
 }
-nav .class_LinksMenu{
+
+.MenuLogo a:hover img {
+    border: 2px solid yellow;
+}
+
+.MenuLogo a:hover {
+    box-shadow: 0 0 10px 2px yellow;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+nav .class_LinksMenu {
     width: 50%;
 }
-nav .class_LinksMenu ul{
+
+nav .class_LinksMenu ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
     font-weight: 500;
     font-size: 1.12rem;
 }
-nav .class_LinksMenu a{
+
+nav .class_LinksMenu a {
     text-decoration: none;
     color: #FFFEFA;
 }
-nav .class_LinksMenu a:hover{
+
+nav .class_LinksMenu a:hover {
     color: #FF9800;
     font-weight: 700;
 }
-nav .class_BotoesMenu button:hover a{
-    color: white; 
+
+nav .class_BotoesMenu button:hover a {
+    color: white;
 }
-nav .class_BotoesMenu a{
+
+nav .class_BotoesMenu a {
     text-decoration: none;
-    color: #FF9800;    
+    color: #FF9800;
 }
-nav .class_BotoesMenu{
+
+nav .class_BotoesMenu {
     width: 200px;
     display: flex;
     justify-content: space-around;
 }
-nav .class_BotoesMenu button{
+
+nav .class_BotoesMenu button {
     padding: 10px 15px;
     border-radius: 5px;
     background-color: #013220;
@@ -60,9 +93,9 @@ nav .class_BotoesMenu button{
     border: 2.3px solid #FF9800;
     color: #FF9800;
     cursor: pointer;
-
 }
-nav .class_BotoesMenu button:hover{
+
+nav .class_BotoesMenu button:hover {
     background-color: #FF9800;
     color: #FFFEFA;
     box-shadow: 0px 0px 10px #FF9800;
@@ -70,120 +103,133 @@ nav .class_BotoesMenu button:hover{
 
 /* BANNER */
 
-.class_Container{
+.class_Container {
     display: flex;
     width: 80%;
     margin: auto;
 }
 
-.class_Banner{
+.class_Banner {
     margin-top: 70px;
     height: 50px;
     display: flex;
     justify-content: space-between;
 }
-.class_Banner .class_Container img{
+
+.class_Banner .class_Container img {
     height: 120px;
 }
-.class_Banner .class_Container{
+
+.class_Banner .class_Container {
     justify-content: center;
     align-items: center;
     height: 100%;
 }
-.class_Banner p{
+
+.class_Banner p {
     font-size: 40px;
     color: #013220;
     font-weight: bold;
 }
-.class_Banner .class_Container img{
+
+.class_Banner .class_Container img {
     margin-bottom: 23px;
 }
 
 /* PARTE TEXTUAL */
 
-.class_Textos{
+.class_Textos {
     height: 1597px;
     display: flex;
     justify-content: space-between;
 }
-.class_Textos .class_Container{
+
+.class_Textos .class_Container {
     flex-direction: column;
 }
 
-.class_Problema{
-    margin-top: -69px;    
+.class_Problema {
+    margin-top: -69px;
 }
+
 .class_Sensor {
     display: flex;
     align-items: center; /* Alinha a imagem verticalmente com os textos */
 }
-.class_Sensor img{
+
+.class_Sensor img {
     margin-bottom: -11px;
     margin-right: 24px; /* Espaçamento entre a imagem e o texto */
     height: 345px; /* Ou mantenha seu controle de altura e largura */
     width: 30%;
 }
+
 .class_Sensor div {
     margin-right: 10px;
     display: flex;
     flex-direction: column; /* Mantém os textos em coluna */
 }
-.class_Dados{
+
+.class_Dados {
     display: flex;
     align-items: center;
 }
+
 .class_Dados div {
     margin-right: 10px;
     display: flex;
     flex-direction: column; /* Mantém os textos em coluna */
 }
-.class_Dados img{
+
+.class_Dados img {
     margin-bottom: -26px;
     margin-right: 24px; /* Espaçamento entre a imagem e o texto */
     height: 368px; /* Ou mantenha seu controle de altura e largura */
     width: 30%;
 }
-.class_Dados span{
+
+.class_Dados span {
     font-weight: bold;
 }
-.class_Avisos{
+
+.class_Avisos {
     display: flex;
     align-items: center;
 }
+
 .class_Avisos div {
     margin-right: 10px;
     display: flex;
     flex-direction: column; /* Mantém os textos em coluna */
 }
-.class_Avisos img{
+
+.class_Avisos img {
     margin-bottom: -26px;
     margin-right: 24px; /* Espaçamento entre a imagem e o texto */
     height: 368px; /* Ou mantenha seu controle de altura e largura */
     width: 30%;
 }
 
-
-
-
-.class_Titulo{
+.class_Titulo {
     color: #013220;
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 10px;
 }
-.class_TextoMenor{
+
+.class_TextoMenor {
     font-size: 20px;
 }
 
 /* FOOTER */
 
-.class_Footer{
-    
+.class_Footer {
     background-color: #013220;
     border-bottom: 2px solid #013220;
     display: flex;
     justify-content: space-between;
 }
+
 .class_Footer .class_Container {
     display: flex;
     width: 80%;
@@ -191,21 +237,23 @@ nav .class_BotoesMenu button:hover{
     align-items: center;
     height: 100%;
 }
-.class_Footer .class_Container img{
+
+.class_Footer .class_Container img {
     width: 11%;
 }
+
 .class_Footer .class_Container p {
     flex-grow: 1;
     text-align: center;
-    margin: 0; 
+    margin: 0;
     width: 80%;
-    color:white;
+    color: white;
     font-size: 18px;
 }
-.class_Footer .class_Container div{
+
+.class_Footer .class_Container div {
     justify-content: space-evenly;
     display: flex;
     width: 199px;
     align-items: center;
 }
-

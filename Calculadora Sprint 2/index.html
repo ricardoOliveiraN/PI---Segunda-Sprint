@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,43 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="faixa-esquerda">
-            <div class="faixa-amarela esquerda"></div>
-            <img src="C:\Users\Master\Downloads\LUMINI logo.PNG" alt="Logo Lumini">
-        </div>
-        <div class="conteudo-central">
-            <h1>Simulador Financeiro</h1>
-            <p>Insira as informações dos dois últimos anos:</p>
+    <h1>Simulador Financeiro</h1>
+    
+    <p>Insira as informações dos dois últimos anos:</p>
 
-            <div class="ano">
-                <h3 id="ano2Label"></h3>
-                <label for="lucro2023">Lucro Anual Obtido (R$):</label>
-                <input type="number" id="lucro2023"><br><br>
+    <h3 id="ano2Label"></h3>
+    <label for="lucro2">Lucro Anual Obtido (R$): </label>
+    <input type="number" id="lucro2" required><br>
 
-                <label for="producao2023">Total de Lúpulo Produzido no Ano (kg):</label>
-                <input type="number" id="producao2023">
-            </div>
+    <label for="produzido2">Total de Lúpulo Produzido no Ano (kg): </label>
+    <input type="number" id="produzido2" required><br>
 
-            <div class="ano">
-                <h3 id="ano1Label"></h3>
-                <label for="lucro2022">Lucro Anual Obtido (R$):</label>
-                <input type="number" id="lucro2022"><br><br>
 
-                <label for="producao2022">Total de Lúpulo Produzido no Ano (kg):</label>
-                <input type="number" id="producao2022">
-            </div>
+    <h3 id="ano1Label"></h3>
+    <label for="lucro1">Lucro Anual Obtido (R$): </label>
+    <input type="number" id="lucro1" required><br>
 
-            <button class="botao" onclick="calcular()">Iniciar simulação</button>
+    <label for="produzido1">Total de Lúpulo Produzido no Ano (kg): </label>
+    <input type="number" id="produzido1" required><br>
 
-            <h3>Resultados:</h3>
-            <div id="resultados"></div>
-        </div>
-        <div class="faixa-direita">
-            <div class="faixa-amarela direita"></div>
-            <img src="C:\Users\Master\Downloads\LUMINI logo.PNG" alt="Logo Lumini">
-        </div>
-    </div>
+
+    <button class="botao" onclick="calcularMedias()">Iniciar simulação</button>
+
+    <h2>Resultados:</h2>
+    <p id="resultados"></p>
 
     <script src="script.js"></script>
 </body>

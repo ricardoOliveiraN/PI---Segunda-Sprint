@@ -1,13 +1,15 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Fredoka', sans-serif; /* Fonte aplicada globalmente, exceto nas classes excluídas */
 }
-body{
+
+body {
     background-color: #FFFEFA;
 }
-nav{
+
+nav {
     background-color: #013220;
     padding-left: 10%;
     padding-right: 10%;
@@ -16,43 +18,74 @@ nav{
     align-items: center;
     height: 90px;
 }
-.MenuLogo{
-    width: 15%;
+
+.MenuLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12%;
+    padding: 5px;
+    box-sizing: border-box;
 }
-.MenuLogo a img{
+
+.MenuLogo a {
+    display: inline-block;
+    position: relative;
+}
+
+.MenuLogo a img {
     width: 100%;
+    height: auto;
+    display: block;
 }
-nav .class_LinksMenu{
+
+.MenuLogo a:hover img {
+    border: 2px solid yellow;
+}
+
+.MenuLogo a:hover {
+    box-shadow: 0 0 10px 2px yellow;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+nav .class_LinksMenu {
     width: 50%;
 }
-nav .class_LinksMenu ul{
+
+nav .class_LinksMenu ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
     font-weight: 500;
     font-size: 1.12rem;
 }
-nav .class_LinksMenu a{
+
+nav .class_LinksMenu a {
     text-decoration: none;
     color: #FFFEFA;
 }
-nav .class_LinksMenu a:hover{
+
+nav .class_LinksMenu a:hover {
     color: #FF9800;
     font-weight: 700;
 }
-nav .class_BotoesMenu button:hover a{
+
+nav .class_BotoesMenu button:hover a {
     color: white; 
 }
-nav .class_BotoesMenu a{
+
+nav .class_BotoesMenu a {
     text-decoration: none;
     color: #FF9800;    
 }
-nav .class_BotoesMenu{
+
+nav .class_BotoesMenu {
     width: 200px;
     display: flex;
     justify-content: space-around;
 }
-nav .class_BotoesMenu button{
+
+nav .class_BotoesMenu button {
     padding: 10px 15px;
     border-radius: 5px;
     background-color: #013220;
@@ -60,221 +93,223 @@ nav .class_BotoesMenu button{
     border: 2.3px solid #FF9800;
     color: #FF9800;
     cursor: pointer;
-
 }
-nav .class_BotoesMenu button:hover{
+
+nav .class_BotoesMenu button:hover {
     background-color: #FF9800;
     color: #FFFEFA;
     box-shadow: 0px 0px 10px #FF9800;
 }
 
-        /* BODY */
-        /* SOBRE A EMPRESA */
-        /* BIO DA EMPRESA */
+/* BODY */
+/* SOBRE A EMPRESA */
+/* BIO DA EMPRESA */
 
-        .body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-        .sobreEmpresa {
-            display: flex;
-            width: 85%;
-            flex-direction: column;
-            margin-bottom: 100px;
-        }
+.sobreEmpresa {
+    display: flex;
+    width: 85%;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
 
-        .sobreEmpresa .bio {
-            margin: 40px 0;
-            padding: 0 14%;
-        }
+.sobreEmpresa .bio {
+    margin: 40px 0;
+    padding: 0 14%;
+}
 
-        .bio .titulo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.bio .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .titulo .logo img {
-            height: 120px;
-            margin-bottom: 10px;
-        }
+.titulo .logo img {
+    height: 120px;
+    margin-bottom: 10px;
+}
 
+.sobreEmpresa .bio .texto p {
+    line-height: 18px;
+    text-align: justify;
+    font-size: 20px;
+}
 
-        .sobreEmpresa .bio .texto p {
-            line-height: 18px;
-            text-align: justify;
-            font-size: 20px;
-        }
+h1 {
+    color: #013220;
+    font-size: 40px;
+}
 
-        h1 {
-            color: #013220;
-            font-size: 40px;
+/* MISSÃO VISÃO E VALORES */
 
-        }
+.topicos {
+    margin: 40px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-between;
+}
 
-        /* MISSÃO VISÃO E VALORES */
+.topicos p {
+    line-height: 22px;
+    text-align: center;
+}
 
+.topicos .container {
+    width: 30%;
+    box-shadow: 0px 0px 3px gray;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+}
 
-        .topicos {
-            margin: 40px 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            justify-content: space-between;
-        }
+.topicos .container .titulo {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    color: #ff9800;
+}
 
-        .topicos p {
-            line-height: 22px;
-            text-align: center;
-        }
+.negrito {
+    font-weight: bold;
+}
 
-        .topicos .container {
-            width: 30%;
-            box-shadow: 0px 0px 3px gray;
-            height: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-        }
+.topicos .container .texto {
+    margin: 0 8%;
+}
 
-        .topicos .container .titulo {
-            height: 70px;
-            display: flex;
-            align-items: center;
-            font-size: 35px;
-            color: #ff9800;
-        }
+/* SOBRE A EQUIPE */
 
-        .topicos .container .texto {
-            margin: 0 8%;
-        }
+.sobreEquipe {
+    background-color: #013220;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        /* SOBRE A EQUIPE */
+.conteudoSobreEquipe {
+    margin: 40px 0;
+    width: 70%;
+}
 
-        .sobreEquipe {
-            background-color: #013220;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.conteudoSobreEquipe .titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+}
 
-        .conteudoSobreEquipe {
-            margin: 40px 0;
-            width: 70%;
-        }
+.conteudoSobreEquipe .titulo h1 {
+    color: #fafaff;
+    font-size: 40px;
+}
 
-        .conteudoSobreEquipe .titulo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 40px;
-        }
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-        .conteudoSobreEquipe .titulo h1 {
-            color: #fafaff;
-            font-size: 40px;
-        }
+.cardsTrio {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 90%;
+}
 
-        .cards {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
+.card {
+    background-color: #fafaff;
+    width: 24%;
+    margin: 3%;
+    height: 300px;
+    box-shadow: 0px 0px 3px #68a357;
+}
 
-        .cardsTrio {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            width: 90%;
-        }
+.card .foto {
+    height: 50%;
+    width: 100%;
+}
 
-        .card {
-            background-color: #fafaff;
-            width: 24%;
-            margin: 3%;
-            height: 300px;
-            box-shadow: 0px 0px 3px #68a357;
-        }
+.card .foto img {
+    height: 100%;
+    width: 100%;
+}
 
-        .card .foto {
-            height: 50%;
-            width: 100%;
+.card .bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
 
-        }
+.card .titulo {
+    margin: 10px;
+}
 
-        .card .foto img {
-            height: 100%;
-            width: 100%;
-        }
+.card .titulo h6 {
+    font-size: 18px;
+}
 
-        .card .bio {
-            display: flex;
-            flex-direction: column;
-            justify-content: left;
-        }
+.card .bio {
+    margin: 10px;
+}
 
-        .card .titulo {
-            margin: 10px;
-        }
+.card .bio p {
+    display: flex;
+    font-size: 14px;
+    line-height: 24px;
+}
 
-        .card .titulo h6 {
-            font-size: 18px;
-        }
+.footerSobreEquipe {
+    background-color: white;
+    height: 5px;
+    width: 100%;
+}
 
-        .card .bio {
-            margin: 10px;
-        }
+/* FOOTER */
 
-        .card .bio p {
-            display: flex;
-            font-size: 14px;
-            line-height: 24px;
-        }
+.class_Footer {
+    background-color: #013220;
+    border-bottom: 2px solid #013220;
+    display: flex;
+    justify-content: center;
+}
 
+.class_Footer .class_Container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
 
-        .footerSobreEquipe {
-            background-color: white;
-            height: 5px;
-            width: 100%;
-        }
+.class_Footer .class_Container img {
+    width: 11%;
+}
 
-        /* FOOTER */
+.class_Footer .class_Container p {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0; 
+    width: 80%;
+    color: white;
+    font-size: 18px;
+}
 
-        .class_Footer{
-    
-            background-color: #013220;
-            border-bottom: 2px solid #013220;
-            display: flex;
-            justify-content: center;
-        }
-        .class_Footer .class_Container {
-            display: flex;
-            width: 80%;
-            justify-content: space-between;
-            align-items: center;
-            height: 100%;
-        }
-        .class_Footer .class_Container img{
-            width: 11%;
-        }
-        .class_Footer .class_Container p {
-            flex-grow: 1;
-            text-align: center;
-            margin: 0; 
-            width: 80%;
-            color:white;
-            font-size: 18px;
-        }
-        .class_Footer .class_Container div{
-            justify-content: space-evenly;
-            display: flex;
-            width: 199px;
-            align-items: center;
-        }
+.class_Footer .class_Container div {
+    justify-content: space-evenly;
+    display: flex;
+    width: 199px;
+    align-items: center;
+}

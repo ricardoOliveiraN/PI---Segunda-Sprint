@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumini</title>
+    <link rel="icon" href="../Imagens/iconeLuz.png" type="image/png">
+    <link rel="stylesheet" href="styleCalculadora.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+        <header>
+                <nav>
+                    <div class="MenuLogo">
+                        <a href="../Home/TelaHome.html">
+                            <img src="../Imagens/logo-sem-fundo.png" alt="Logotipo da empresa Lumini">
+                        </a>
+                    </div>
+                    <div class="class_LinksMenu">
+                        <ul>
+                            <li><a href="../QuemSomos/TelaSobreNos.html">Quem somos</a></li>
+                            <li><a href="../Serviços/TelaServicos.html">Serviços</a></li>
+                            <li><a href="../Calculadora/Calculadora.html">Simulador</a></li>
+                            <li><a href="../Contato/TelaFaleConosco.Html">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="class_BotoesMenu">
+                        <button><a href="../LoginCadastro/TelaLogin.html">Entrar</a></button>
+                        <button><a href="../LoginCadastro/TelaCadastro.html">Cadastrar</a></button>
+                    </div>
+                </nav>
+            </header>
+
+    <div class="container">
+      <div class="card-container">
+        <div class="titulo">
+          <h1>SIMULADOR FINANCEIRO</h1>
+        </div>
+
+        <div class="input-hectar">
+          Quantos hectares você possuí?
+          <input type="number" id="input_hectare" />
+        </div>
+        <div class="input-producao">
+          Qual sua produção média por safra?(kg):<input
+            type="number"
+            id="input_producao"
+          />
+        </div>
+        <div class="input-kg">
+          Por quanto você vende o kg do lúpulo?
+          <input type="number" id="input_kg" />
+        </div>
+        <div class="botao">
+          <button onclick="calcular()">Calcular rendimento</button>
+        </div>
+
+        <div id="div_msg"></div>
+      </div>
+    </div>
+
+    <footer></footer>
+        <div class="class_Footer">
+
+            <div class="class_Container">
+    
+                <img src="../Imagens/logo-sem-fundo.png" alt="">
+                <p>Todos os direitos reservados</p>
+                
+                <div>
+                    <img src="../Imagens/instagram (2).png" alt="">
+                    <img src="../Imagens/twitter.png" alt="">
+                    <img src="../Imagens/youtube.png" alt="">
+                </div>
+    
+            </div>
+    
+        </div>
+
+    </footer>
+  </body>
+</html>
+
+<script>
+  function calcular() {
+    var hectare = Number(input_hectare.value);
+    var producaoHec = Number(input_producao.value);
+    var kg = Number(input_kg.value);
+
+    var producao = producaoHec * hectare
+
+    var semMonit = producao * kg;
+
+    var aumentoProd = producao * 0.5;
+    var prodFinal = producao + aumentoProd;
+
+    var comMonit = prodFinal * kg;
+
+    var lucro = comMonit - semMonit;
+
+    if (kg > 320 ) {
+      div_msg.innerHTML = `<b>RENDIMENTO SEM MONITORAMENTO</b>
+
+<br>        
+        Sem nosso serviço de monitoramento de luminosidade: 
+<br>
+        Multiplicando a quantidade de <b>hectares</b> X <b>produção média</b> por hectare X <b>preço de venda</b> por KG, temos que
+<br>
+        Você fatura <b>R$${semMonit}</b> por safra.
+<br> <br>
+        <b>RENDIMENTO COM MONITORAMENTO</b>
+<br>    
+        Uau, o valor que você está vendendo seu lúpulo hoje está <b>acima da média</b> do mercado! 
+        Hoje o lúpulo está sendo vendido entre <b>R$100</b> e <b>R$300</b>.
+<br>
+<br>
+        Já com a nossa solução, sua produção total poderá aumentar em até <b>50%</b>! 
+<br>
+        Saltando de <b>${producao}kg</b> para <b>${prodFinal}kg</b> por safra.
+
+<br>
+        Assim, aproximadamente o seu faturamento passaria para, 
+        <b>R$${comMonit}</b> por safra.
+<br>
+        Gerando um aumento em <b style="color:green">R$${lucro}</b>!`
+
+    }else {
+
+      div_msg.innerHTML = `<b>RENDIMENTO SEM MONITORAMENTO</b>
+  
+<br>        
+        Sem nosso serviço de monitoramento de luminosidade: 
+<br>
+        Multiplicando a quantidade de <b>hectares</b> X <b>produção média</b> por hectare X <b>preço de venda</b> por KG, temos que
+<br>
+        Você fatura <b>R$${semMonit}</b> por safra.
+  <br> <br>
+          <b>RENDIMENTO COM MONITORAMENTO</b>
+  <br>
+          Já com a nossa solução, sua produção total poderá aumentar em até <b>50%</b>! 
+  <br>
+          Saltando de <b>${producao}kg</b> para <b>${prodFinal}kg</b> por safra.
+  <br>
+  <br>
+          Assim, aproximadamente o seu faturamento passaria para, 
+          <b>R$${comMonit}</b> por safra.
+  <br>
+          Gerando um aumento em <b style="color:green">R$${lucro}</b>!
+          `;
+    }
+
+  }
+</script>

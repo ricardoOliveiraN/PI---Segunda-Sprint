@@ -92,9 +92,6 @@ CREATE TABLE sensor (
 		CONSTRAINT chkUltimaManutencao
         CHECK (dtUltimaManutencao >= dtInstalacao), 
         -- data da última manuntenção deve ser obrigatoriamente depois da data de instalação
-    fkSensor_Empresa INT,
-		CONSTRAINT fkReSensor_Empresa FOREIGN KEY (fkSensor_Empresa)
-		REFERENCES empresa(idEmpresa),
     fkSensor_Talhao INT,
 		CONSTRAINT fkReSensor_Talhao FOREIGN KEY (fkSensor_Talhao)
 		REFERENCES talhao(idTalhao)
@@ -157,16 +154,16 @@ INSERT INTO talhao (numero, areaTalhao, fkTalhao_Empresa) VALUES
 	(3, 300000, 3),
     (1, 160000, 4);
 
-INSERT INTO sensor (statusFuncionamento, dtInstalacao, dtUltimaManutencao, fkSensor_Empresa, fkSensor_Talhao) VALUES
-	('Inativo', '2024-09-05', '2024-09-20', 1, 100), 
-	('Inativo', '2024-09-05', NULL, 1, 100), 
-	('Manutenção', '2024-09-08', NULL, 2, 101), 
-	('Ativo', '2024-09-10', '2024-09-12', 3,102),
-	('Inativo', '2024-09-20', NULL, 2, 103),
-	('Ativo', '2024-09-20', NULL, 3, 104), 
-	('Ativo', '2024-09-21', NULL, 2, 105),
-	('Ativo', '2024-09-30', NULL, 3, 105),
-	('Ativo', '2024-09-30', NULL, 4, 106);
+INSERT INTO sensor (statusFuncionamento, dtInstalacao, dtUltimaManutencao, fkSensor_Talhao) VALUES
+	('Inativo', '2024-09-05', '2024-09-20', 100), 
+	('Inativo', '2024-09-05', NULL, 100), 
+	('Manutenção', '2024-09-08', NULL, 101), 
+	('Ativo', '2024-09-10', '2024-09-12',102),
+	('Inativo', '2024-09-20', NULL, 103),
+	('Ativo', '2024-09-20', NULL, 104), 
+	('Ativo', '2024-09-21', NULL, 105),
+	('Ativo', '2024-09-30', NULL, 105),
+	('Ativo', '2024-09-30', NULL, 106);
 
 INSERT INTO dadosSensor (qtdLuz, statusLuminosidade, alerta, momentoCaptura, fkDadosSensor_Sensor) VALUES
 	(35.50, 'Satisfatória', 'Não', '2024-09-08 08:00:00', 10000),
@@ -233,5 +230,6 @@ SELECT
 	JOIN talhao
 		ON sensor.fkSensor_Talhao = talhao.idTalhao
 	JOIN empresa
-		ON sensor.fkSensor_Empresa = empresa.IdEmpresa
+		ON talhao.fkTalhao_Empresa = empresa.IdEmpresa
+	WHERE idEmpresa = 3
 	ORDER BY empresa.nomeFantasia; 

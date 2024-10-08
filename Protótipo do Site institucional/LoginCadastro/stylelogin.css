@@ -94,25 +94,40 @@ input::placeholder {
     align-items: center;
     justify-content: center;
     position: fixed;
-    width: 500px;
-    margin: 80px 0px 0px 0px;
+    top: 20px;
+    right: 20px; 
+    width: auto; /* Mantém o tamanho de acordo com o conteúdo */
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .class_home2 a {
-    position: fixed;
-    font-size: 30px;
+    display: inline-block;
+    position: relative;
+    font-size: 30px; /* Mantém o estilo de fonte */
     color: #FF9800;
     font-weight: 700;
-    margin: 15px 0px 0px -600px;
     cursor: pointer;
     text-decoration: none;
+    margin-right: 10px; /* Espaçamento entre o texto e a imagem */
 }
 
 .class_home2 img {
-    position: fixed;
-    margin: 0px -600px 0px 0px;
-    width: 250px;
+    width: 200px; /* Ajuste o tamanho para que não fique muito largo */
+    height: auto;
+    display: block;
+    margin: 0; /* Remove margens desnecessárias */
 }
+
+.class_home2 a:hover img {
+    border: 2px solid yellow; /* Borda amarela ao passar o mouse */
+}
+
+.class_home2 a:hover {
+    box-shadow: 0 0 10px 2px yellow; /* Sombra amarela no hover */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
 
 .class_registro2 {
     display: flex; 
@@ -258,27 +273,35 @@ input::placeholder {
     font-weight: 1000;
 }
 
-.class_home {
-    display: flex;   
-    align-items: center;
+.MenuLogo {
+    display: flex;
     justify-content: center;
-    position: fixed;
-    width: 500px;
-    /* margin: 0px 0px 0px 0px; */
+    align-items: center;
+    width: 12%;
+    padding: 5px;
+    box-sizing: border-box;
+    position: fixed; /* Torna a posição fixa na tela */
+    top: 20px; /* Define a distância do topo */
+    left: 20px; /* Posiciona no canto superior esquerdo */
 }
 
-.class_home a {
-    position: fixed;
-    font-size: 30px;
-    color: #FF9800;
-    font-weight: 700;
-    margin: -730px 0px 0px 600px;
-    cursor: pointer;
-    text-decoration: none;
+.MenuLogo a {
+    display: inline-block;
+    position: relative;
 }
 
-.class_home img {
-    position: fixed;
-    margin: -750px 600px 0px 0px;
-    width: 250px;
+.MenuLogo a img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
+
+.MenuLogo a:hover img {
+    border: 2px solid yellow; /* Adiciona borda amarela no hover */
+}
+
+.MenuLogo a:hover {
+    box-shadow: 0 0 10px 2px yellow; /* Sombra amarela no hover */
+    transition: box-shadow 0.3s ease-in-out; /* Animação suave */
+}
+

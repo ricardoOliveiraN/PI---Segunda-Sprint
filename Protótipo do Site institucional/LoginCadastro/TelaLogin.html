@@ -19,12 +19,13 @@
     </div>
     <div class="class_signin">
         <div class="class_home2">
-            <a href="../Home/TelaHome.html">HOME</a>
-            <img src="../Imagens/logo-sem-fundo.png" id="img_logo2">
+            <a href="../Home/TelaHome.html">
+                <img src="../Imagens/logo-sem-fundo.png" alt="Logotipo da empresa Lumini">
+            </a>
         </div>
          <div class="class_registro2">
             <span id="lbl_signin">LOGIN</span>
-            <input type="text" placeholder="Usuário">
+            <input type="text" placeholder="Usuário" id="inp_usuario">
             <div class="class_olhos">
                 <input type="password" placeholder="Senha" id="inp_senha2">
                 <span class="class_imagemOlho" onclick="VisualizarSenha()">
@@ -32,8 +33,9 @@
                 </span>
             </div>
             <span id="lbl_esqueceu">Esqueceu a senha?</span>
+            <div id="div_alerta" style="color: red;"></div>
                 
-            <button id="btn_acessar">ACESSAR</button>
+            <button onclick="entrarSite()" id="btn_acessar">ACESSAR</button>
         </div> 
     </div>
 </body>
