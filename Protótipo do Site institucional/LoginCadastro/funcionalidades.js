@@ -122,7 +122,8 @@ function validarEmail() {
 
     if (posicaoCOM > posicaoArroba || posicaoBR > posicaoArroba) {
 
-        if ((posicaoCOM + 3) == (tamanhoEmail - 1) || (posicaoBR + 2) == (tamanhoEmail - 1)) {
+
+        if ((Email[tamanhoEmail - 1] == 'm' && Email[tamanhoEmail - 2] == 'o' && Email[tamanhoEmail - 3] == 'c' && Email[tamanhoEmail - 4] == '.') || (Email[tamanhoEmail - 1] == 'r' && Email[tamanhoEmail - 2] == 'b' && Email[tamanhoEmail - 3] == '.')) {
             qtdEmailCorreto += 1;
             inp_email.style.borderColor = 'green';
         } else {
@@ -131,19 +132,10 @@ function validarEmail() {
         }
     } else {
 
-        if (
-            (Email[tamanhoEmail - 1] == 'm' && Email[tamanhoEmail - 2] == 'o' && Email[tamanhoEmail - 3] == 'c' && Email[tamanhoEmail - 4] == '.') ||
-            (Email[tamanhoEmail - 1] == 'r' && Email[tamanhoEmail - 2] == 'b' && Email[tamanhoEmail - 3] == '.')
-        ) {
+        if ((Email[tamanhoEmail - 1] == 'm' && Email[tamanhoEmail - 2] == 'o' && Email[tamanhoEmail - 3] == 'c' && Email[tamanhoEmail - 4] == '.') || (Email[tamanhoEmail - 1] == 'r' && Email[tamanhoEmail - 2] == 'b' && Email[tamanhoEmail - 3] == '.')) {
             qtdEmailCorreto += 1;
             inp_email.style.borderColor = 'green';
-         } // else if ((
-        //     Email[tamanhoEmail - 1] == 'r' && Email[tamanhoEmail - 2] == 'b' && Email[tamanhoEmail - 3] == '.' && Email[tamanhoEmail - 4] == 'm' && Email[tamanhoEmail - 5] == 'o' && Email[tamanhoEmail - 6] == 'c' && Email[tamanhoEmail - 7] == '.')
-        // ) {
-        //     qtdEmailCorreto += 1;
-        //     inp_email.style.borderColor = 'green';
-        // }
-        else {
+        } else {
             inp_email.style.borderColor = 'red';
             qtdEmailCorreto = 0;
         }
