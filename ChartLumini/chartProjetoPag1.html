@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Lumini</title>
+    <link rel="stylesheet" href="styleDash.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
+
+
 <body>
     <!DOCTYPE html>
 <html lang="en">
@@ -12,23 +17,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gráficos</title>
+    <link rel="stylesheet" href="styleDash.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+</head> 
+
+
 <body style="display: flex;">
 
     Total Talhões: 4 <br>
     Talhões em alerta: 1 <br>
 
-    <div>
-        <canvas id="myChartA" style="position: relative; height: 40vh; width: 40vw;"></canvas>
+    <button onclick="DashBoardTalhao()" class="class_button"></button>
+    <div id="div_Container" class="class_Container">
+    <div id="div_BarraTalhao">
+        <canvas id="myChartA"style="position: relative; height: 40vh; width: 40vw;"></canvas> 
     </div>
     <div>
         <canvas id="myChart2" style="position: relative; height: 40vh; width: 40vw;"></canvas>
     </div>
+</div>
 </body>
 
-<script>
 
+
+
+
+
+<script>
+    
+//     PERGUNTAR AMANHÃ EM TI COMO FAZER A DIV NÃO SUMIR AO CLICAR NO BOTÃO, TENTEI DIVERSAR VEZES E NÃO CONSEGUI COM MEUS CONHECIMENTOS ATUAIS
+//     function DashBoardTalhao(){
+    
+
+//     div_BarraTalhao.innerHTML = `<canvas id="myChartA" style="position: relative; height: 40vh; width: 40vw;" class="class_Dash"></canvas>`
+//         console.log(div_BarraTalhao.innerHTML)
+
+// }
 
     // Primeiro Gráfico
 
@@ -130,7 +154,7 @@
 </script>
 
 <script>
-    const myChart = new Chart(
+     const myChart = new Chart(
         document.getElementById('myChartA'),
         configA
         
@@ -140,6 +164,10 @@
         document.getElementById('myChart2'),
         configB
     )
+</script>
+
+
+    
 </script>
 
 </html>
