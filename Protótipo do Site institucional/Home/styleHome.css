@@ -1,8 +1,15 @@
+/* Aplicando a nova fonte padrão */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Fredoka', sans-serif; /* Fonte padrão para todo o site */
+    font-family: 'Lato', sans-serif; /* Fonte padrão atualizada para 'Lato' */
+}
+
+/* Ajustando a fonte original apenas nas classes especificadas */
+.MenuLogo,
+.class_Home2 {
+    font-family: 'Lato', sans-serif; /* Mantendo 'Lato' em todas as classes */
 }
 
 body {
@@ -27,7 +34,6 @@ nav {
     width: 12%;
     padding: 5px;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif; /* Mantendo a fonte original aqui */
 }
 
 .MenuLogo a {
@@ -236,12 +242,14 @@ main .class_ImgSobreNosHOME2 img {
     justify-content: center;
     border-radius: 5px;
     border: 6px solid #FFFEFA;
+    transition: all 0.3s ease;
 }
 
 .class_CardSimuladorHome:hover {
     background-color: #90d26d;
     border: none;
     box-shadow: 0px 0px 10px #90d26d;
+    transform: scale(1.05);
 }
 
 .class_CardSimuladorHome img {
@@ -329,4 +337,46 @@ p {
     background-color: #FF9800;
     color: #fffefa;
     box-shadow: 0px 0px 10px #FF9800;
+}
+
+/* CLASSE PARA REMOVER O SUBLINHADO NA TAG a DE TODOS OS BOTOES */
+.sem-sublinhado {
+    text-decoration: none;
+}
+
+/* footer */
+
+.class_Footer {
+    background-color: #013220;
+    border-bottom: 2px solid #013220;
+    display: flex;
+    justify-content: center;
+}
+
+.class_Footer .class_Container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.class_Footer .class_Container img {
+    width: 11%;
+}
+
+.class_Footer .class_Container p {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0; 
+    width: 80%;
+    color: white;
+    font-size: 18px;
+}
+
+.class_Footer .class_Container div {
+    justify-content: space-evenly;
+    display: flex;
+    width: 199px;
+    align-items: center;
 }

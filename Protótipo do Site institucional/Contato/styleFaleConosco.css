@@ -2,11 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Fredoka', sans-serif; /* Aplicado a todas as classes */
+    font-family: 'Lato', sans-serif; /* Aplicado a todas as classes */
 }
+
 body {
     background-color: #FFFEFA;
 }
+
 nav {
     background-color: #013220;
     padding-left: 10%;
@@ -16,6 +18,7 @@ nav {
     align-items: center;
     height: 90px;
 }
+
 .MenuLogo {
     display: flex;
     justify-content: center;
@@ -44,9 +47,11 @@ nav {
     box-shadow: 0 0 10px 2px yellow;
     transition: box-shadow 0.3s ease-in-out;
 }
+
 nav .class_LinksMenu {
     width: 50%;
 }
+
 nav .class_LinksMenu ul {
     display: flex;
     justify-content: space-around;
@@ -54,26 +59,32 @@ nav .class_LinksMenu ul {
     font-weight: 500;
     font-size: 1.12rem;
 }
+
 nav .class_LinksMenu a {
     text-decoration: none;
     color: #FFFEFA;
 }
+
 nav .class_LinksMenu a:hover {
     color: #FF9800;
     font-weight: 700;
 }
+
 nav .class_BotoesMenu button:hover a {
     color: white; 
 }
+
 nav .class_BotoesMenu a {
     text-decoration: none;
     color: #FF9800;    
 }
+
 nav .class_BotoesMenu {
     width: 200px;
     display: flex;
     justify-content: space-around;
 }
+
 nav .class_BotoesMenu button {
     padding: 10px 15px;
     border-radius: 5px;
@@ -83,6 +94,7 @@ nav .class_BotoesMenu button {
     color: #FF9800;
     cursor: pointer;
 }
+
 nav .class_BotoesMenu button:hover {
     background-color: #FF9800;
     color: #FFFEFA;
@@ -122,6 +134,7 @@ nav .class_BotoesMenu button:hover {
     align-items: center;
     padding: 10px;
 }
+
 .class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria {
     display: flex;
     flex-direction: column;
@@ -130,6 +143,7 @@ nav .class_BotoesMenu button:hover {
     width: 95%;
     border-bottom: solid #013220 2px;
 }
+
 .class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h1 {
     color: #FF9800;
     font-size: 30px;
@@ -155,6 +169,7 @@ nav .class_BotoesMenu button:hover {
     font-style: bold;
     margin-bottom: 40px;
 }
+
 .class_Conteudo .class_Container .class_FlexBox1 .class_Alinhamento {
     display: flex;
     width: 90%;
@@ -218,12 +233,10 @@ nav .class_BotoesMenu button:hover {
     font-size: 20px;
 }
 
-
 #ipt_mensagem::placeholder {
     color: #036e47bd;
     font-size: 20px;
 }
-
 
 /* footer */
 
@@ -233,6 +246,7 @@ nav .class_BotoesMenu button:hover {
     display: flex;
     justify-content: center;
 }
+
 .class_Footer .class_Container {
     display: flex;
     width: 80%;
@@ -240,9 +254,11 @@ nav .class_BotoesMenu button:hover {
     align-items: center;
     height: 100%;
 }
+
 .class_Footer .class_Container img {
     width: 11%;
 }
+
 .class_Footer .class_Container p {
     flex-grow: 1;
     text-align: center;
@@ -251,6 +267,7 @@ nav .class_BotoesMenu button:hover {
     color: white;
     font-size: 18px;
 }
+
 .class_Footer .class_Container div {
     justify-content: space-evenly;
     display: flex;

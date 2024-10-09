@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Fredoka', sans-serif; /* Fonte aplicada globalmente, exceto nas classes excluídas */
+    font-family: 'Lato', sans-serif; /* Fonte aplicada globalmente */
 }
 
 body {
@@ -144,6 +144,7 @@ nav .class_BotoesMenu button:hover {
 h1 {
     color: #013220;
     font-size: 40px;
+    font-family: 'Lato', sans-serif; /* Mantém Lato para h1 */
 }
 
 /* MISSÃO VISÃO E VALORES */
@@ -157,8 +158,9 @@ h1 {
 }
 
 .topicos p {
-    line-height: 22px;
-    text-align: center;
+    line-height: 26px; /* Aumentado para melhor legibilidade */
+    text-align: justify; /* Alinhamento justificado */
+    font-size: 16px; /* Aumentado o tamanho da fonte */
 }
 
 .topicos .container {
@@ -169,7 +171,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    text-align: center;
+    text-align: justify; /* Adicionando justificação ao contêiner também */
 }
 
 .topicos .container .titulo {
@@ -187,6 +189,7 @@ h1 {
 .topicos .container .texto {
     margin: 0 8%;
 }
+
 
 /* SOBRE A EQUIPE */
 
@@ -213,6 +216,7 @@ h1 {
 .conteudoSobreEquipe .titulo h1 {
     color: #fafaff;
     font-size: 40px;
+    font-family: 'Lato', sans-serif; /* Mantém Lato para o título */
 }
 
 .cards {
@@ -238,7 +242,7 @@ h1 {
 }
 
 .card .foto {
-    height: 50%;
+    height: 100%;
     width: 100%;
 }
 
@@ -247,15 +251,55 @@ h1 {
     width: 100%;
 }
 
-.card .bio {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
+/* Estilo para o nome na cor branca */
+.card .titulo {
+    color: white; /* Define a cor do nome como branca */
+    text-align: center; /* Centraliza o nome */
+    font-size: 18px; /* Tamanho do texto */
+    font-weight: bold; /* Negrito */
+    margin: 10px 0; /* Espaçamento */
 }
 
-.card .titulo {
-    margin: 10px;
+/* Define a área da biografia com novo layout e fundo */
+.card .bio {
+    display: flex; /* Mantém flex para posicionamento */
+    flex-direction: column; /* Organiza o texto em coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    position: absolute; /* Posição absoluta para controle do posicionamento */
+    bottom: -10px; /* Posiciona no final da foto */
+    left: -10px; /* Alinha à esquerda */
+    width: 100%; /* Ocupa toda a largura da foto */
+    height: 50%; /* Aumenta a altura para destacar */
+    background: linear-gradient( rgba(0, 0, 0, 0.6) 0%, hsla(0, 0%, 0%, 0.8) 100%); /* Degradê de transparente para preto */
+    color: white; /* Texto em branco */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.5s ease-in-out; /* Transição mais lenta */
 }
+
+/* Mostra a biografia com transição suave ao passar o mouse */
+.card:hover .bio {
+    opacity: 1; /* Torna o texto visível */
+}
+
+/* Ajuste para o container da foto */
+.card {
+    position: relative; /* Define posição relativa para a biografia */
+}
+
+.card .foto {
+    height: 100%; /* Ajuste a altura conforme necessário */
+    overflow: hidden; /* Evita que o texto ultrapasse a área da foto */
+}
+
+/* Ajustes para o texto */
+.card .bio p {
+    margin: 5px 15px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
+    font-size: 16px; /* Ajusta o tamanho */
+    line-height: 1.4; /* Define a altura da linha */
+}
+
 
 .card .titulo h6 {
     font-size: 18px;
