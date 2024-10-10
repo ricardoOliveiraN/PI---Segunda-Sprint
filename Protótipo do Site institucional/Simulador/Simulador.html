@@ -29,7 +29,7 @@
                 <ul>
                     <li><a href="../QuemSomos/TelaSobreNos.html">Quem somos</a></li>
                     <li><a href="../Serviços/TelaServicos.html">Serviços</a></li>
-                    <li><a href="#">Simulador</a></li>
+                    <li><a href="../Simulador/Simulador.html">Simulador</a></li>
                     <li><a href="../Contato/TelaFaleConosco.Html">Contato</a></li>
                 </ul>
             </div>
@@ -45,15 +45,13 @@
         <div class="div_calculadora">
             <h1>Simulador Financeiro</h1>
             <span>Quantas safras você colhe por ano:</span>
-            <input oninput="analisar()" placeholder="Digite quantas safras colhe por ano" type="number" max="3"
-                id="input_safra">
+            <input placeholder="Digite quantas safras colhe por ano" type="number" max="3" id="input_safra">
 
             <span>Qual sua produção média por safra (kg): </span>
-            <input oninput="analisar()" placeholder="Digite o peso em média da plantação" type="number"
-                id="input_quilo">
+            <input placeholder="Digite o peso em média da plantação" type="number" id="input_quilo">
 
             <span>Por quanto você vende o quilo do lúpulo (R$): </span><br>
-            <input oninput="analisar()" placeholder="Digite o valor do quilo do lúpulo" type="number" id="input_preco">
+            <input placeholder="Digite o valor do quilo do lúpulo" type="number" id="input_preco">
             <!-- Botões que chamam a função -->
             <Button class="btn_lucro" onclick="Calcular()">Calcular rendimento</Button>
         </div>
@@ -86,35 +84,10 @@
 <script>
 
     var preco = 0
-    var qtd_safra = 0
+    var safra = 0
     var quilo = 0
 
-    function analisar() {
-        preco = Number(input_preco.value)
-        qtd_safra = Number(input_safra.value)
-        quilo = Number(input_quilo.value)
-
-        if (qtd_safra < 0) {
-            input_safra.style.border = "1.7px solid #ff0000"
-        } else {
-            input_safra.style.border = ""
-        }
-
-        if (quilo < 0) {
-            input_quilo.style.border = "1.7px solid #ff0000"
-        } else {
-            input_quilo.style.border = ""
-        }
-
-        if (preco < 0) {
-            input_preco.style.border = "1.7px solid #ff0000"
-        } else {
-            input_preco.style.border = ""
-        }
-
-
-    }
-    function Calcular() {
+    function Calcular(){
         preco = Number(input_preco.value)
         qtd_safra = Number(input_safra.value)
         quilo = Number(input_quilo.value)
@@ -129,48 +102,30 @@
         var PrecoTotal = (QuiloTotal * preco);
         var PrecoTotalLumini = (QuiloTotalLumini * preco);
 
-
         var mensagem = `Atualmente sem o serviço Lumini, você produz <b>${QuiloTotal}kg</b> por ano. <br>
-        É gerado em média <b>R$${precoSafra.toFixed(2)}</b> por safra. <br> 
-        E Isso te gera uma total de <b>R$${PrecoTotal.toFixed(2)}</b> por ano. <br><br>`
+        É gerado em média <b>R$${precoSafra}</b> por safra. <br> 
+        E Isso te gera uma total de <b>R$${PrecoTotal}</b> por ano. <br><br>`
 
-        if (qtd_safra < 0 || preco < 0 || quilo < 0){
-            mensagem = `<span style="color: red";> Valores Invalidos, coloque apenas valores positivos.</span>`
-        } else if (qtd_safra == 0) {
-
-            mensagem = `Atualmente você ainda não produz lúpulo. <br><br>Começando a produzir corretamente e implementando o sistema Lumini, com uma estimativa de produzir <b>${quilo}kg</b> por safra. <br>
-            Você irá gerar em média <span>R$${precoSafraLumini.toFixed(2)}</span> por safra. <br><br>
-
-            <span>Com a Lumini e os cuidados corretos as safras anuais pode chegar a ser até 3.<br>
-            Que te geraria em média R$${(precoSafraLumini * 3).toFixed(2)}!</span>
-            `
-
-        } else if (qtd_safra == 1) {
+        if (qtd_safra == 1){
             mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini}kg</span> por ano. <br>
-            A safra gerará uma média de <span>R$${precoSafraLumini.toFixed(2)}.</span> <br><br>
+            A safra gerará uma média de <span>R$${precoSafraLumini}.</span> <br><br>
 
             <span>Ainda o aumento de Safras anuais pode aumentar consideravelmente indo de 1 para até 3.
-            Isso te geraria em média R$${(precoSafraLumini * 3).toFixed(2)}!</span>
+            Isso te geraria em média R$${precoSafraLumini * 3}!</span>
             `
-        } else if (qtd_safra == 2) {
-            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini.toFixed(2)}kg</span>por ano. <br>
-            Cada safra gerará uma média de <span>R$${precoSafraLumini.toFixed(2)}</span>. <br>
-            E Isso te gerará uma total de <span>R$${PrecoTotalLumini.toFixed(2)}</span> por ano. <br><br>
+        } else if (qtd_safra == 2){
+            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini}kg</span>por ano. <br>
+            Cada safra gerará uma média de <span>R$${precoSafraLumini}</span>. <br>
+            E Isso te gerará uma total de <span>R$${PrecoTotalLumini}</span> por ano. <br><br>
 
             <span>Ainda o aumento de Safras anuais pode aumentar  indo de 2 para até 3.
-            Isso te geraria em média R$${(PrecoTotalLumini + precoSafraLumini).toFixed(2)}</span>`
-        } else {
-            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini.toFixed(2)}kg</span> por ano. <br>
-            Cada safra gerará uma média de <span>R$${precoSafraLumini.toFixed(2)}</span>. <br>
-            E Isso te gerará uma total de <span>R$${PrecoTotalLumini.toFixed(2)}</span> por ano. <br>`
-        }
-        
-        
-        if (qtd_safra < 0 || preco < 0 || quilo < 0) {
-            
-
+            Isso te geraria em média R$${PrecoTotalLumini + precoSafraLumini}</span>`
+        } else if (qtd_safra == 3){
+            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini}kg</span> por ano. <br>
+            Cada safra gerará uma média de <span>R$${precoSafraLumini}</span>. <br>
+            E Isso te gerará uma total de <span>R$${PrecoTotalLumini}</span> por ano. <br>`
         }
 
-    p_info.innerHTML = mensagem
+        p_info.innerHTML = mensagem
     }
 </script>

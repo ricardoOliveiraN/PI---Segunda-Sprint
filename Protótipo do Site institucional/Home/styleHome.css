@@ -132,8 +132,7 @@ nav .class_BotoesMenu button:hover {
     text-shadow: 0px 0px 60px #eaff00;
 }
 
-/* MAIN - CONTEUDO PRINCIPAL */
-
+/* PARTE1 - SOBRE NÓS */
 .PARTE1 {
     width: 80%;
     margin: auto;
@@ -181,33 +180,41 @@ main .class_ConteudoSobreNosHOME p {
     color: #0F1108;
 }
 
-main .class_ConteudoSobreNosHOME button {
+/* Estilo de botão na PARTE1 */
+/* Estilo de botão na PARTE1 */
+.PARTE1 button {
     font-size: 20px;
     padding: 13px 25px;
     border-radius: 5px;
-    border: 2.3px solid #FF9800;
-    color: #FF9800;
-    background-color: #fffefa00;
+    border: 2.3px solid orange; /* Borda laranja */
+    background-color: white;    /* Fundo branco */
     font-weight: 700;
     cursor: pointer;
+    transition: all 0.3s ease;  /* Transição suave */
 }
 
-main .class_ConteudoSobreNosHOME button:hover {
-    background-color: #FF9800;
-    color: #FFFEFA;
+.PARTE1 button:hover {
+    background-color: orange; /* Fundo laranja */
+    border: 2.3px solid orange; /* Borda laranja */
     box-shadow: 0px 0px 10px #FF9800;
 }
 
-main .class_ImgSobreNosHOME img {
-    width: 85%;
+/* Estilo padrão para os links dentro dos botões */
+.sem-sublinhado {
+    text-decoration: none; /* Remove o sublinhado */
+    color: orange;         /* Define o texto laranja */
+    transition: all 0.3s ease; /* Adiciona uma transição suave */
 }
 
+.PARTE1 button:hover .sem-sublinhado {
+    color: white; /* Altera para branco ao passar o mouse sobre o botão */
+}
+main .class_ImgSobreNosHOME img,
 main .class_ImgSobreNosHOME2 img {
     width: 85%;
 }
 
-/* PARTE2 SIMULADOR FINANCEIRO */
-
+/* PARTE2 - SIMULADOR FINANCEIRO */
 .PARTE2 {
     padding-left: 10%;
     padding-right: 10%;
@@ -263,26 +270,39 @@ main .class_ImgSobreNosHOME2 img {
     color: #FFFEFA;
 }
 
+/* Estilo de botão na PARTE2 */
 .PARTE2 button {
     font-size: 20px;
     padding: 13px 25px;
     border-radius: 5px;
-    border: 2.3px solid #FF9800;
-    color: #FF9800;
-    background-color: #fffefa00;
+    border: 2.3px solid orange; /* Borda laranja */
+    color: orange;              /* Texto laranja */
+    background-color: #013220;  /* Fundo escuro */
     font-weight: 700;
     cursor: pointer;
     margin: 30px 0px 60px 0px;
+    transition: all 0.3s ease; /* Transição suave */
 }
 
 .PARTE2 button:hover {
-    background-color: #FF9800;
-    color: #fffefa;
+    background-color: orange; /* Fundo laranja */
+    color: white;             /* Texto branco */
+    border: 2.3px solid orange; /* Borda laranja */
     box-shadow: 0px 0px 10px #FF9800;
 }
 
-/* PARTE3 CONTATO */
+/* Estilo padrão para os links dentro dos botões na PARTE2 */
+.PARTE2 .sem-sublinhado {
+    text-decoration: none; /* Remove o sublinhado */
+    color: orange;         /* Define o texto laranja */
+    transition: all 0.3s ease; /* Adiciona uma transição suave */
+}
 
+.PARTE2 button:hover .sem-sublinhado {
+    color: white; /* Altera para branco ao passar o mouse sobre o botão */
+}
+
+/* PARTE3 - CONTATO */
 .PARTE3 {
     width: 80%;
     margin: auto;
@@ -321,28 +341,50 @@ p {
     padding-right: 10%;
 }
 
+/* Estilo de botão na PARTE3 */
 .PARTE3 button {
     font-size: 20px;
     padding: 13px 25px;
     border-radius: 5px;
-    border: 2.3px solid #FF9800;
-    color: #FF9800;
-    background-color: #fffefa00;
+    border: 2.3px solid orange; /* Borda laranja */
+    color: orange;              /* Texto laranja */
+    background-color: white;    /* Fundo branco */
     font-weight: 700;
     cursor: pointer;
     margin: 30px 0px 60px 0px;
+    transition: all 0.3s ease; /* Transição suave */
 }
 
 .PARTE3 button:hover {
-    background-color: #FF9800;
-    color: #fffefa;
+    background-color: orange; /* Fundo laranja */
+    color: white;             /* Texto branco */
+    border: 2.3px solid orange; /* Borda laranja */
     box-shadow: 0px 0px 10px #FF9800;
 }
 
-/* CLASSE PARA REMOVER O SUBLINHADO NA TAG a DE TODOS OS BOTOES */
-.sem-sublinhado {
-    text-decoration: none;
+/* Estilo padrão para os links dentro dos botões na PARTE3 */
+.PARTE3 .sem-sublinhado {
+    text-decoration: none; /* Remove o sublinhado */
+    color: orange;         /* Define o texto laranja */
+    transition: all 0.3s ease; /* Adiciona uma transição suave */
 }
+
+.PARTE3 button:hover .sem-sublinhado {
+    color: white; /* Altera para branco ao passar o mouse sobre o botão */
+}
+
+/* CLASSE PARA REMOVER O SUBLINHADO NA TAG a DE TODOS OS BOTÕES */
+/* Estilo padrão para os links dentro dos botões */
+.sem-sublinhado {
+    text-decoration: none; /* Remove o sublinhado */
+    color: orange;         /* Define o texto laranja */
+    transition: all 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.sem-sublinhado:hover {
+    color: white; /* Altera para branco ao passar o mouse */
+}
+
 
 /* footer */
 
