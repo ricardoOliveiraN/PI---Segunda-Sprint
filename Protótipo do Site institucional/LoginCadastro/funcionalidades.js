@@ -51,6 +51,8 @@ function validarSenha() {
     var possuiAsterisco = Senha.includes('*');
     var possuiInterrogacao = Senha.includes('!');
 
+  
+
     var mensagem = '';
     var mensagemDois = '';
 
