@@ -90,7 +90,7 @@ function validarSenha() {
     }
     div_validarSenha.innerHTML = `${mensagem} <br> ${mensagemDois} <br> ${mensagemQuatro} <br> ${mensagemTres}`
 
-    if (Senha == '') {
+    if (Senha == '' || (qtdCorretoTam >= 1 && qtdCorreto >= 1 && qtdCorretoMini >= 1 && qtdCorretoMais >= 1) ) {
         div_validarSenha.innerHTML = '';
     }
 
