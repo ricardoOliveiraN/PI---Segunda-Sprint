@@ -205,4 +205,8 @@ input::placeholder {
     box-shadow: 0 0 10px 2px yellow; /* Sombra amarela no hover */
     transition: box-shadow 0.3s ease-in-out; /* Animação suave */
 }
-
+#div_CodigoInvalido{
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+}

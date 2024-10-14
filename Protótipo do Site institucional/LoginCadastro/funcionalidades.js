@@ -51,7 +51,7 @@ function validarSenha() {
     var possuiAsterisco = Senha.includes('*');
     var possuiInterrogacao = Senha.includes('!');
 
-  
+
 
     var mensagem = '';
     var mensagemDois = '';
@@ -90,7 +90,7 @@ function validarSenha() {
     }
     div_validarSenha.innerHTML = `${mensagem} <br> ${mensagemDois} <br> ${mensagemQuatro} <br> ${mensagemTres}`
 
-    if (Senha == '' || (qtdCorretoTam >= 1 && qtdCorreto >= 1 && qtdCorretoMini >= 1 && qtdCorretoMais >= 1) ) {
+    if (Senha == '' || (qtdCorretoTam >= 1 && qtdCorreto >= 1 && qtdCorretoMini >= 1 && qtdCorretoMais >= 1)) {
         div_validarSenha.innerHTML = '';
     }
 
@@ -223,7 +223,8 @@ function entrarSite() {
 
         inp_senha2.style.borderColor = 'red';
         inp_usuario.style.borderColor = 'red';
-        div_alerta.innerHTML = 'Usuário ou senha inválido(s)';
+        div_alerta.innerHTML = `Usuário ou senha inválido(s) <br> Você ainda possui ${contador}`;
+
     }
 
 }
