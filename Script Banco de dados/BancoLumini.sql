@@ -98,7 +98,11 @@ CREATE TABLE sensor (
 ) AUTO_INCREMENT 10000;
 
 CREATE TABLE dadosSensor (
-	idDadosSensor INT PRIMARY KEY AUTO_INCREMENT,
+	idDadosSensor INT AUTO_INCREMENT,
+    fkDadosSensor_Sensor INT,
+		CONSTRAINT fkReDadosSensor_Sensor FOREIGN KEY (fkDadosSensor_Sensor)
+		REFERENCES sensor(idSensor),
+	PRIMARY KEY (idDadosSensor, fkDadosSensor_Sensor),
     qtdLuz FLOAT NOT NULL,
 		CONSTRAINT chkQtdLuz
         CHECK (qtdLuz >= 0), 
@@ -111,10 +115,7 @@ CREATE TABLE dadosSensor (
 		CONSTRAINT chkAlerta
         CHECK (alerta IN('Sim', 'Não')),
         -- se houve alerta ou não
-    momentoCaptura DATETIME DEFAULT CURRENT_TIMESTAMP ,
-    fkDadosSensor_Sensor INT,
-		CONSTRAINT fkReDadosSensor_Sensor FOREIGN KEY (fkDadosSensor_Sensor)
-		REFERENCES sensor(idSensor)
+    momentoCaptura DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 INSERT INTO endereco (cep, uf, cidade, logradouro, numero, complemento) VALUES
@@ -165,18 +166,18 @@ INSERT INTO sensor (statusFuncionamento, dtInstalacao, dtUltimaManutencao, fkSen
 	('Ativo', '2024-09-30', NULL, 105),
 	('Ativo', '2024-09-30', NULL, 106);
 
-INSERT INTO dadosSensor (qtdLuz, statusLuminosidade, alerta, momentoCaptura, fkDadosSensor_Sensor) VALUES
-	(35.50, 'Satisfatória', 'Não', '2024-09-08 08:00:00', 10000),
-	(15.10, 'Baixa', 'Não', '2024-09-08 17:00:00', 10001),
-	(0.50, 'Crítica', 'Sim', '2024-09-11 23:00:00', 10002),
-	(25.80, 'Satisfatória', 'Não', '2024-09-13 07:00:00', 10003),
-	(25.90, 'Satisfatória', 'Não', '2024-09-13 07:00:01', 10003),
-	(45.10, 'Satisfatória', 'Não', '2024-09-25 13:00:00', 10004),
-	(30.90, 'Satisfatória', 'Não', '2024-09-25 14:00:00', 10004),
-	(12.10, 'Baixa', 'Não', '2024-09-26 08:00:00', 10005),
-	(8.70, 'Baixa', 'Não', '2024-09-26 18:00:00', 10006),
-	(50.25, 'Satisfatória', 'Não', '2024-10-04 12:00:00', 10007),
-    (16.00, 'Baixa', 'Sim', '2024-10-05 18:00:00', 10008);
+INSERT INTO dadosSensor (fkDadosSensor_Sensor, qtdLuz, statusLuminosidade, alerta, momentoCaptura) VALUES
+	(10000, 35.50, 'Satisfatória', 'Não', '2024-09-08 08:00:00'),
+	(10001, 15.10, 'Baixa', 'Não', '2024-09-08 17:00:00'),
+	(10002, 0.50, 'Crítica', 'Sim', '2024-09-11 23:00:00'),
+	(10003, 25.80, 'Satisfatória', 'Não', '2024-09-13 07:00:00'),
+	(10003, 25.90, 'Satisfatória', 'Não', '2024-09-13 07:00:01'),
+	(10004, 45.10, 'Satisfatória', 'Não', '2024-09-25 13:00:00'),
+	(10004, 30.90, 'Satisfatória', 'Não', '2024-09-25 14:00:00'),
+	(10005, 12.10, 'Baixa', 'Não', '2024-09-26 08:00:00'),
+	(10006, 8.70, 'Baixa', 'Não', '2024-09-26 18:00:00'),
+	(10007, 50.25, 'Satisfatória', 'Não', '2024-10-04 12:00:00'),
+    (10008, 16.00, 'Baixa', 'Sim', '2024-10-05 18:00:00');
     
 SELECT 
 	filial.nomeFantasia AS Filial,
