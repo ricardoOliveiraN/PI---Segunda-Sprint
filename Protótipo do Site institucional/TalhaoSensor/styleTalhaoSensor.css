@@ -123,7 +123,7 @@ main {
 
 .class_menuLateral {
     background-color: #013220;
-    height: 100%;
+    height: 130vh;
     width: 16%;
 }
 
@@ -183,18 +183,50 @@ main {
 }
 
 .class_dashs .container2 {
+    margin: 4% 10% 0 0;
     width: 70%;
-    height: auto;
-    margin: 10% 10% 0 0;
 }
 
 .class_dashs .container2 .container2_1 {
+    display: flex;
+    justify-content: start;
+}
+
+.class_dashs .container2 .container2_1 span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #013220;
+    margin: 0 10% 2% 0;
+}
+
+.class_dashs .container2 .container2_2 {
+    width: 60%;
+    display: flex;
+}
+
+#myChartA {
+    height: 10vh; 
+    width: 10vw;
+}
+
+#myChart2 {
+    height: 10vh; 
+    width: 10vw;
+}
+
+.class_dashs .container3 {
+    width: 70%;
+    height: auto;
+    margin: 4% 10% 0 0;
+}
+
+.class_dashs .container3 .container3_1 {
     display: flex;
     justify-content: space-between;
     height: auto;
 }
 
-.class_dashs .container2 .container2_1 .caixa {
+.class_dashs .container3 .container3_1 .caixa {
     width: 22vh;
     height: 30vh;
     display: flex;
@@ -204,7 +236,7 @@ main {
     border-radius: 15px;
 }
 
-.class_dashs .container2 .container2A{
+.class_dashs .container3 .container3A{
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -212,47 +244,47 @@ main {
     margin: 10% 0 0 5%;
 }
 
-.class_dashs .container2 .container2_2 .container2A span{
+.class_dashs .container3 .container3_2 .container3A span{
     font-size: 20px;
 }
 
-.class_dashs .container2 .container2_2 span{
+.class_dashs .container3 .container3_2 span{
     font-size: 50px;
     font-weight: bold;
 }
 
-.class_dashs .container2 .container2_3 .container2A span{
+.class_dashs .container3 .container3_3 .container3A span{
     font-size: 20px;
 }
 
-.class_dashs .container2 .container2_3 span{
+.class_dashs .container3 .container3_3 span{
     font-size: 50px;
     font-weight: bold;
 }
 
-.class_dashs .container2 .container2_4 .container2A span{
+.class_dashs .container3 .container3_4 .container3A span{
     font-size: 20px;
 }
 
-.class_dashs .container2 .container2_4 span{
+.class_dashs .container3 .container3_4 span{
     font-size: 50px;
     font-weight: bold;
 }
 
-.class_dashs .container2 .container2_5 .container2A span{
+.class_dashs .container3 .container3_5 .container3A span{
     font-size: 20px;
 }
 
-.class_dashs .container2 .container2_5 span{
+.class_dashs .container3 .container3_5 span{
     font-size: 50px;
     font-weight: bold;
 }
 
-.class_dashs .container2 .container2_1 .verde {
+.class_dashs .container3 .container3_1 .verde {
     color: #90D26D;
 }
 
-.class_dashs .container2 .container2_1 .laranja {
+.class_dashs .container3 .container3_1 .laranja {
     color: #FF9800;
 }
 
