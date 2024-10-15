@@ -66,16 +66,21 @@ function validarSenha() {
 // FIM DA VALIDAÇÃO DA SENHA
 function confirmarSenha() {
     div_validarSenha.innerHTML = '';
-    var senhaConfirmacao = ipt_ConfirmarSenha.value;
+    var senhaConfirmacao = ipt_ConfirmarSenha.value; 
 
-    if (senhaConfirmacao == Senha) {
+    if (senhaConfirmacao == Senha && senhaConfirmacao != '') {
         ipt_ConfirmarSenha.style.borderColor = 'green';
-        div_ConfirmarSenha.innerHTML = ''
+        div_ConfirmarSenha.innerHTML = '';
         qtdSenhaIgual += 1;
-    } else {
+    }else if (senhaConfirmacao != Senha && senhaConfirmacao != '') {
         ipt_ConfirmarSenha.style.borderColor = 'red';
         qtdSenhaIgual = 0;
-        div_ConfirmarSenha.innerHTML = `INCORRETO`
+        div_ConfirmarSenha.innerHTML = `Senhas não correspondentes`
+    }else if (senhaConfirmacao == '' && senhaConfirmacao == Senha){
+        ipt_ConfirmarSenha.style.borderColor = 'white';
+        div_ConfirmarSenha.innerHTML = '';
+    }else if (senhaConfirmacao == '' && senhaConfirmacao != Senha){
+        ipt_ConfirmarSenha.style.borderColor = 'red';
     }
 }
 // FIM VALIDAÇÃO DA CONFIRMAÇÃO
@@ -87,11 +92,11 @@ function CriarSenha() {
     if (qtdCorretoTam >= 1 && qtdCorreto >= 1 && qtdCorretoMini >= 1 && qtdCorretoMais >= 1 && qtdSenhaIgual >= 1) {
 
         ipt_Senha.style.borderColor = 'green';
-        Senha = inp_senha.value;
+        Senha = ipt_Senha;
         alert('Deu certo')
 
         // EU QUERO QUE QUANDO ENTRAR NESSE IF ABRA UMA NOVA TELA COM UMA IMAGEM DE CERTO E UMA FRASE "CADASTRADO COM SUCESSO"
-
+        abrirTelaInterna()
     } else {
 
         alert('Deu errado')
@@ -106,3 +111,9 @@ function CriarSenha() {
     }
 
 }   
+
+function abrirTelaInterna() {
+    var urlLogin = "file:///C:/Users/ricar/OneDrive/%C3%81rea%20de%20Trabalho/SPTech%20Aulas/PI%20-%20Segunda%20Sprint/PI---Segunda-Sprint/Prot%C3%B3tipo%20do%20Site%20institucional/TalhaoSensor/talhaoSensor.html";
+    window.close();
+    window.open(urlLogin);
+  }

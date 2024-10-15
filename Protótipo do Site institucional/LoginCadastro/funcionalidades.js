@@ -223,7 +223,7 @@ function entrarSite() {
 
         inp_senha2.style.borderColor = 'red';
         inp_usuario.style.borderColor = 'red';
-        div_alerta.innerHTML = `Usuário ou senha inválido(s) <br> Você ainda possui ${contador}`;
+        div_alerta.innerHTML = `Usuário ou senha inválido(s)`;
 
     }
 

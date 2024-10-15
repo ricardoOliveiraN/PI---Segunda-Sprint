@@ -164,11 +164,11 @@ input::placeholder {
     margin: 55px 0px 0px 260px;
     font-size: 16px;
     cursor: pointer;
+    color: white;
     font-weight: 600;
     text-decoration: underline;
     opacity: 0.9;
 }
-
 #btn_acessar {
     background-color: #FF9800;
     color: white;
