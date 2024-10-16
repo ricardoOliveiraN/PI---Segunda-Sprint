@@ -17,6 +17,8 @@ body {
 }
 
 nav {
+    position: fixed;
+    width: 100%;
     background-color: #013220;  
     padding-left: 2%;
     padding-right: 2%;
@@ -47,7 +49,7 @@ nav {
 }
 
 .MenuLogo a:hover img {
-    border: 2px solid yellow;
+    border: 1px solid yellow;
 }
 
 .MenuLogo a:hover {
@@ -55,13 +57,15 @@ nav {
     transition: box-shadow 0.3s ease-in-out;
 }
 
-nav .class_LinksMenu {
-    width: 50%;
-    margin: 25vh auto 0px auto;
+/* MENU LATERAL */
+
+.class_LinksMenu {
+    width: 100%;
+    margin: auto;
     justify-content: space-between;
 }
 
-nav .class_LinksMenu ul {
+.class_LinksMenu ul {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,17 +74,21 @@ nav .class_LinksMenu ul {
     font-size: 1.12rem;
 }
 
-nav .class_LinksMenu li {
-    margin: 0px 0px 20px 0px;
+.class_LinksMenu li {
+    width: 100%;
 }
 
-nav .class_LinksMenu a {
+.class_LinksMenu a {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     color: #FFFEFA;
 }
 
-nav .class_LinksMenu a:hover {
-    color: #FF9800;
+.class_LinksMenu a:hover {
+    background-color: #90D26D;
     font-weight: 700;
 }
 
@@ -116,27 +124,24 @@ nav .class_BotoesMenu button:hover {
 
 
 main {
+    
     display: flex;
     height: 86.3vh;
     width: 100%;
 }
 
 .class_menuLateral {
+    position: fixed;
     background-color: #013220;
     height: 100%;
     width: 16%;
+    margin-top: 7%;
 }
 /* MEXI A PARTIR DAQUI */
-
-.class_ConteudoCadastro{
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-}
-
-
 .class_cadastro {
-    width: 90%;
+    margin-top: 8%;
+    width: 84%;
+    margin-left: 16%;
     background-color: #FFFEFA;
 }
 
@@ -209,65 +214,53 @@ main {
     width: 20px;
 }
 
-#btn_VoltarFunc{
-    background-color: rgba(0, 0, 0, 0);
-    border: 2px solid; 
-    border-color: #FF9800;
-    color: #FF9800;
+/* TABELA */
+.container {
+    width: 92%;
+    margin: 30px auto;
+    background-color: #FFFEFA;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-#btn_VoltarFunc:hover{
-    cursor: pointer;
-    box-shadow: 0px 0px 10px #FF9800;
-}
-
-#btn_Novo_Func{
-    color: #90D26D;
-    background-color: rgba(0, 0, 0, 0);
-    border: 2px solid;
-    border-color: #90D26D;
-}
-
-#btn_Novo_Func:hover{
-    cursor: pointer;
-    box-shadow: 0px 0px 10px #90D26D;
-}
-
-.class_Funcionarios{
-    margin: 44.692px;
-    width: 83%;
-    border-radius: 6px;
-    margin-top: 4%;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) ;
-    padding: 40px;
+h1 {
     color: #013220;
 }
 
-.class_Funcionarios #div_Funcionarios h4{
-    display: flex;
-    font-weight: 900;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
-#div_Funcionarios{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    font-size: 30px;
+th, td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
 }
 
-#div_RegistroFunc img{
-    width: 35px;
-    
+th {
+    background-color: #f0f5f1;
+    color: #2c5e3e;
 }
-#div_RegistroFunc img:hover{
+
+td {
+    color: #333;
+}
+
+.delete-btn {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 8px 12px;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
 
-#div_RegistroFunc{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+.delete-btn:hover {
+    background-color: #e5533d;
+}
+.delete-btn img{
+    width: 20px;
 }

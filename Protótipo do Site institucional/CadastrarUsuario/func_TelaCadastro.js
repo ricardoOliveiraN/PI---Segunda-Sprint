@@ -6,11 +6,17 @@ var EmailDefinitivo = '';
 var TelefoneDefinitivo = '';
 var NomeDefinitivo = '';
 
+var Email = ""
+var Telefone = ""
+var Nome = ""
+var Tipo = ""
+var idUser = 0
+
 function validacoes() {
 
-    var Email = inp_email.value;
-    var Telefone = inp_telefone.value;
-    var Nome = inp_nome.value;
+    Email = inp_email.value;
+    Telefone = inp_telefone.value;
+    Nome = inp_nome.value;
 
     if (Email != '') {
 
@@ -104,11 +110,20 @@ function validacoes() {
 }
 
 function cadastrar(){
-
+    
     var TipoUser = inp_tipo.value;
 
-    if (qtdEmailCorreto >= 1 && qtdCelularCorreto >= 1 && qtdNomeCorreto >= 1 && TipoUser != 0){
-        alert('valido')
+    if (qtdEmailCorreto >= 1 && qtdCelularCorreto >= 1 && qtdNomeCorreto >= 1 && TipoUser != 0){ 
+        idUser++
+        tableCampo.innerHTML += ` <tr>
+                            <td>${idUser}</td>
+                            <td>${TipoUser}</td>
+                            <td>${Nome}</td>
+                            <td>${Email}</td>
+                            <td>${Telefone}</td>
+                            <td><button class="delete-btn"><img src="tabler--trash.png"></button></td>
+                        </tr>`
+       
     }else{
         alert('Inválido')
     }
