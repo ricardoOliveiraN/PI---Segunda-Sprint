@@ -45,21 +45,22 @@
                 <h1>Cadastro de Usuário</h1>
                 <div class="class_iptsCadastroFunc">
                     <div class="class_separacaoIpts">
-                        <input type="text" placeholder="Nome">
-                        <input type="tel" placeholder="Celular">
+                        <input oninput="validacoes()" type="text" placeholder="Nome" id="inp_nome">
+                        <input oninput="validacoes()" type="tel" placeholder="Celular" id="inp_telefone">
                     </div>
                     <div class="class_separacaoIpts">
-                        <input type="email" placeholder="Email">
-                        <select id="">
-                            <option value="" disabled selected>Tipo de Usuário</option>
-                            <option value=""></option>
-                            <option value=""></option>
+                        <input oninput="validacoes()" type="text" placeholder="Email" id="inp_email">
+                        <select id="inp_tipo">
+                            <option value="0" disabled selected>Tipo de Usuário</option>
+                            <option value="">Administrador</option>
+                            <option value="">Convidado</option>
+                            <option value="">Comum</option>
                         </select>
                     </div>
                 </div>
                 <div class="class_btnCadastroFunc">
                     <button id="btn_buscarFunc"><img src="./ic--outline-search.png">Buscar</button>
-                    <button id="btn_CadastrarFunc"><img src="ic--check.png"> Cadastrar</button>
+                    <button id="btn_CadastrarFunc" onclick="cadastrar()"><img src="ic--check.png"> Cadastrar</button>
                     <button id="btn_Novo_Func"><img src="ic--round-plus.png">Novo</button>
                     <button id="btn_VoltarFunc"><img src="ic--Back.png">Voltar</button>
                 </div>
@@ -81,3 +82,4 @@
 </body>
 
 </html>
+<script src="func_TelaCadastro.js" ></script>
