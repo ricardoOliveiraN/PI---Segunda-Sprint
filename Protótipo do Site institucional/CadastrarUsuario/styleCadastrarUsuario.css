@@ -127,8 +127,16 @@ main {
     width: 16%;
 }
 /* MEXI A PARTIR DAQUI */
+
+.class_ConteudoCadastro{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+
 .class_cadastro {
-    width: 84%;
+    width: 90%;
     background-color: #FFFEFA;
 }
 
@@ -199,4 +207,67 @@ main {
 }
 .class_btnCadastroFunc button img{
     width: 20px;
+}
+
+#btn_VoltarFunc{
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid; 
+    border-color: #FF9800;
+    color: #FF9800;
+}
+
+#btn_VoltarFunc:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #FF9800;
+}
+
+#btn_Novo_Func{
+    color: #90D26D;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid;
+    border-color: #90D26D;
+}
+
+#btn_Novo_Func:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #90D26D;
+}
+
+.class_Funcionarios{
+    margin: 44.692px;
+    width: 83%;
+    border-radius: 6px;
+    margin-top: 4%;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2) ;
+    padding: 40px;
+    color: #013220;
+}
+
+.class_Funcionarios #div_Funcionarios h4{
+    display: flex;
+    font-weight: 900;
+}
+
+#div_Funcionarios{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 30px;
+}
+
+#div_RegistroFunc img{
+    width: 35px;
+    
+}
+#div_RegistroFunc img:hover{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2);
+}
+
+#div_RegistroFunc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
