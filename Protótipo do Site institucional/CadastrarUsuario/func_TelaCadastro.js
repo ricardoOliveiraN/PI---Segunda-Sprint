@@ -115,7 +115,7 @@ function cadastrar(){
 
     if (qtdEmailCorreto >= 1 && qtdCelularCorreto >= 1 && qtdNomeCorreto >= 1 && TipoUser != 0){ 
         idUser++
-        tableCampo.innerHTML += ` <tr>
+        tableCampo.innerHTML += ` <tr id="lajk1">
                             <td>${idUser}</td>
                             <td>${TipoUser}</td>
                             <td>${Nome}</td>

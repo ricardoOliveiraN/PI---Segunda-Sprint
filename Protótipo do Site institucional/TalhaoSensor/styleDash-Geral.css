@@ -1,0 +1,288 @@
+/* Aplicando a nova fonte padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif; /* Fonte padrão atualizada para 'Lato' */
+}
+
+/* Ajustando a fonte original apenas nas classes especificadas */
+.MenuLogo,
+.class_Home2 {
+    font-family: 'Lato', sans-serif; /* Mantendo 'Lato' em todas as classes */
+}
+
+body {
+    background-color: #FFFEFA;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background-color: #013220;  
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.MenuLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.MenuLogo a {
+    display: inline-block;
+    position: relative;
+}
+
+.MenuLogo a img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.MenuLogo a:hover img {
+    border: 1px solid yellow;
+}
+
+.MenuLogo a:hover {
+    box-shadow: 0 0 10px 2px yellow;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* MENU LATERAL */
+
+.class_LinksMenu {
+    width: 100%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.class_LinksMenu ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    font-weight: 500;
+    font-size: 1.12rem;
+}
+
+.class_LinksMenu li {
+    width: 100%;
+}
+
+.class_LinksMenu a {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #FFFEFA;
+}
+
+.class_LinksMenu a:hover {
+    background-color: #90D26D;
+    font-weight: 700;
+}
+
+nav .class_botaoUsuario {
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav .class_botaoUsuario a {
+    text-decoration: none;
+    color: #FF9800;    
+}
+
+nav .class_botaoUsuario {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #013220;
+    font-size: 1.0rem;
+    color: #FFFEFA;
+    cursor: pointer;
+}
+
+nav .class_botaoUsuario button:hover a {
+    color: white; 
+}
+
+nav .class_BotoesMenu button:hover {
+    background-color: #FF9800;
+    color: #FFFEFA;
+    box-shadow: 0px 0px 10px #FF9800;
+}
+
+
+main {
+    
+    display: flex;
+    height: 86.3vh;
+    width: 100%;
+}
+
+.class_menuLateral {
+    position: fixed;
+    background-color: #013220;
+    height: 100%;
+    width: 16%;
+    margin-top: 7%;
+}
+
+.class_dashs {
+    margin-top: 7%;
+    width: 84%;
+    margin-left: 16%;
+    background-color: #FFFEFA;
+}
+
+.class_dashs .class_kpisMenu {
+    background-color: #68A357;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 20%;
+    height: 10vh;
+
+}
+
+.class_kpi {
+    display: flex;
+    flex-direction: row;
+    color: #FFFEFA;
+    font-size: 22px;
+    justify-content: space-between;
+    width: 20vw;
+}
+
+.class_kpiTexto {
+    display: flex;
+    align-items: center;
+}
+
+.class_kpiNumero {
+    border: 1px solid #FFFEFA;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFEFA;
+    border-radius: 5px;
+    font-weight: 800;
+}
+
+.class_kpi1 .class_kpiNumero {
+    background-color: #013220;
+}
+.class_kpi2 .class_kpiNumero {
+    background-color:#FF9800;
+}
+
+.class_talhoes {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.class_talhoesGraficosContainer {
+    background-color: white;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    margin: 2%;
+    height: 95%;
+    padding: 0 1% 1% 1%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.class_talhoesGraficosTitulo {
+    text-align: center;
+    margin: 1.5vh 0 1.5vh 1vw;
+    font-weight: 900;
+    font-size: 35px;
+    color: #013220;
+}
+
+.class_talhoesGraficos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #013220;
+    box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.class_talhoesGrafico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.class_talhoesSelecionar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 9%;
+    background-color: #FFFEFA;
+    border-radius: 8px;
+    height: 95%;
+    margin: 2% auto auto auto;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2)
+}
+
+.class_tituloSelecionar {
+    margin: 3vh;
+    color: #013220;
+}
+
+.class_talhoesSelecionarOpcoes {
+    color: #68A357;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFEFA;
+    border-radius: 8px;
+    width: 85%;
+    height: 40vh;
+}
+
+.class_talhoesSelecionarOpcao a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2vh;
+    width: 80px;
+    height: 30px;
+    background-color: #68A357;
+    text-align: center;
+    border-radius: 3px;
+    color: #FFFEFA;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+.class_talhoesSelecionarOpcao a:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+
+}
+
+.class_talhoesSelecionarOpcao a:active {
+    box-shadow: inset 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+    transform: translateY(0.1px)
+}
