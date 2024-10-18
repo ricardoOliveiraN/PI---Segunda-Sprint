@@ -217,7 +217,7 @@ function entrarSite() {
     var Usuario = inp_usuario.value;
 
     if (SenhaLogin == 'Urubu100@' && Usuario == 'Lumini') {
-        const urlHome = "file:///C:/Users/ricar/OneDrive/%C3%81rea%20de%20Trabalho/SPTech%20Aulas/PI%20-%20Segunda%20Sprint/PI---Segunda-Sprint/Prot%C3%B3tipo%20do%20Site%20institucional/Home/TelaHome.html";
+        const urlHome = "../TalhaoSensor/TelaDash-Geral.html";
         window.close();
         window.open(urlHome);
     } else {

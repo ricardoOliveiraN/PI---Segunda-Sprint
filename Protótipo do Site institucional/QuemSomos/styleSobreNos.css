@@ -52,6 +52,11 @@ nav .class_LinksMenu {
     width: 50%;
 }
 
+#QuemSomos {
+    color: #FF9800;
+    font-weight: 700;
+}
+
 nav .class_LinksMenu ul {
     display: flex;
     justify-content: space-around;
@@ -80,7 +85,6 @@ nav .class_BotoesMenu a {
 }
 
 nav .class_BotoesMenu {
-    width: 200px;
     display: flex;
     justify-content: space-around;
 }

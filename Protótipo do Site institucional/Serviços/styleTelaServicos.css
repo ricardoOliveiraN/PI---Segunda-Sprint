@@ -40,6 +40,11 @@ nav {
     display: block;
 }
 
+#Servicos {
+    color: #FF9800;
+    font-weight: 700;
+}
+
 .MenuLogo a:hover img {
     border: 2px solid yellow;
 }
@@ -81,7 +86,6 @@ nav .class_BotoesMenu a {
 }
 
 nav .class_BotoesMenu {
-    width: 200px;
     display: flex;
     justify-content: space-around;
 }
@@ -143,6 +147,7 @@ nav .class_BotoesMenu button:hover {
     height: 1597px;
     display: flex;
     justify-content: space-between;
+    margin: 100px 0 450px 0;
 }
 
 .class_Textos .class_Container {
@@ -150,10 +155,11 @@ nav .class_BotoesMenu button:hover {
 }
 
 .class_Problema {
-    margin-top: -69px;
+    margin: 0 0 150px 0;
 }
 
 .class_Sensor {
+    margin: 0 0 150px 0;
     display: flex;
     align-items: center; /* Alinha a imagem verticalmente com os textos */
 }
@@ -161,7 +167,6 @@ nav .class_BotoesMenu button:hover {
 .class_Sensor img {
     margin-bottom: -11px;
     margin-right: 24px; /* Espaçamento entre a imagem e o texto */
-    height: 345px; /* Ou mantenha seu controle de altura e largura */
     width: 30%;
 }
 
@@ -172,6 +177,7 @@ nav .class_BotoesMenu button:hover {
 }
 
 .class_Dados {
+    margin: 0 0 150px 0;
     display: flex;
     align-items: center;
 }
@@ -185,7 +191,6 @@ nav .class_BotoesMenu button:hover {
 .class_Dados img {
     margin-bottom: -26px;
     margin-right: 24px; /* Espaçamento entre a imagem e o texto */
-    height: 368px; /* Ou mantenha seu controle de altura e largura */
     width: 30%;
 }
 
@@ -207,7 +212,6 @@ nav .class_BotoesMenu button:hover {
 .class_Avisos img {
     margin-bottom: -26px;
     margin-right: 24px; /* Espaçamento entre a imagem e o texto */
-    height: 368px; /* Ou mantenha seu controle de altura e largura */
     width: 30%;
 }
 

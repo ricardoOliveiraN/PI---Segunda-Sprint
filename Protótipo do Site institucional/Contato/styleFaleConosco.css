@@ -33,6 +33,11 @@ nav {
     position: relative;
 }
 
+#Contato {
+    color: #FF9800;
+    font-weight: 700;
+}
+
 .MenuLogo a img {
     width: 100%;
     height: auto;
@@ -80,7 +85,6 @@ nav .class_BotoesMenu a {
 }
 
 nav .class_BotoesMenu {
-    width: 200px;
     display: flex;
     justify-content: space-around;
 }
@@ -125,6 +129,8 @@ nav .class_BotoesMenu button:hover {
     display: flex;
     justify-content: space-around;
     padding: 10px;
+    width: 80%;
+    margin: auto;
 }
 
 .class_Conteudo .class_Container .class_FlexBox1 {
@@ -156,12 +162,11 @@ nav .class_BotoesMenu button:hover {
 }
 
 #zapCompras {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 #arroba {
-    margin-top: 40px;
-    margin-left: 15px;
+    margin: 40px 0 20px -80px;
 }
 
 .class_Conteudo .class_Container .class_FlexBox1 h3 {
@@ -178,17 +183,16 @@ nav .class_BotoesMenu button:hover {
 
 .class_Conteudo .class_Container .class_FlexBox1 .class_Alinhamento .class_ImgRedes {
     display: flex;
-    width: 50px;
+    width: 30px;
     margin-left: -10px;
     margin-right: 50px;
 }
 
 .class_Conteudo .class_Container .class_FlexBox1 .class_TextoInfo {
-    margin: 10px;
+    margin: 10px 0 50px 15px;
     color: #013220;
-    font-size: 25px;
+    font-size: 20px;
     width: 500px;
-    margin-bottom: 50px;
 }
 
 .class_Conteudo .class_Container .class_Mensagem {

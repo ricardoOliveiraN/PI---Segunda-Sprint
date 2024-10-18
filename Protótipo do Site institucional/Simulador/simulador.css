@@ -49,6 +49,11 @@ nav .class_LinksMenu a:hover {
     font-weight: 700;
 }
 
+#Simulador {
+    color: #FF9800;
+    font-weight: 700;
+}
+
 nav .class_BotoesMenu button:hover a {
     color: white;
 }
@@ -59,7 +64,6 @@ nav .class_BotoesMenu a {
 }
 
 nav .class_BotoesMenu {
-    width: 200px;
     display: flex;
     justify-content: space-around;
 }

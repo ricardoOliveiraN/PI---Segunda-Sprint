@@ -129,6 +129,9 @@ input::placeholder {
     transition: box-shadow 0.3s ease-in-out;
 }
 
+#div_validarSenha {
+    margin: 0 0 0 -140px;
+}
 
 .class_registro2 {
     display: flex; 

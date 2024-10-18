@@ -48,7 +48,7 @@ function ENVIAR() {
 // validando tela com botão
 
 function abrirTelaLogin() {
-  var urlLogin = "file:///C:/Users/ricar/OneDrive/%C3%81rea%20de%20Trabalho/SPTech%20Aulas/PI%20-%20Segunda%20Sprint/PI---Segunda-Sprint/Prot%C3%B3tipo%20do%20Site%20institucional/Codigo/TelaCodigo.html";
+  var urlLogin = "../Codigo/TelaCodigo.html";
   window.close();
   window.open(urlLogin);
 }
