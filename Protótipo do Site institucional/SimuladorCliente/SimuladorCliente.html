@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumini</title>
+    <link rel="icon" href="../Imagens/iconeLuz.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="StyleSimuladorCliente.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="MenuLogo">
+                <a href="../Home/TelaHome.html">
+                    <img src="../Imagens/logo-sem-fundo.png" alt="Logotipo da empresa Lumini">
+                </a>
+            </div>
+            <div class="class_botaoUsuario">
+                Ricardo José ▼
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="class_menuLateral">
+                <div class="class_LinksMenu">
+                    <ul>
+                        <li><a href="../TalhaoSensor/TelaDash-Geral.html">Dashboard</a></li>
+                        <li><a href="../Serviços/TelaServicos.html">Funcionários</a></li>
+                        <li><a href="SimuladorCliente.html">Simulador</a></li>
+                        <li id="id_btnSair"><a href="../LoginCadastro/TelaLogin.html">Sair</a></li>
+                    </ul>
+                </div>
+        </div>
+        <div class="class_simulador">
+            <div class="class_Conteudo">
+
+                <div class="div_calculadora">
+                    <h1>Simulador Financeiro</h1>
+                    <span>Quantas safras você colhe por ano:</span>
+                    <input oninput="analisar()" placeholder="Digite quantas safras colhe por ano" type="number" max="3"
+                        id="input_safra">
+        
+                    <span>Qual sua produção média por safra (kg): </span>
+                    <input oninput="analisar()" placeholder="Digite o peso em média da plantação" type="number"
+                        id="input_quilo">
+        
+                    <span>Por quanto você vende o quilo do lúpulo (R$): </span><br>
+                    <input oninput="analisar()" placeholder="Digite o valor do quilo do lúpulo" type="number" id="input_preco">
+                    <!-- Botões que chamam a função -->
+                    <Button class="btn_lucro" onclick="Calcular()">Calcular rendimento</Button>
+                </div>
+                <!-- p onde irá aparecer a mensagem -->
+                <div class="div_mensagem">
+                    <h3>Resultado:</h3>
+                    <p id="p_info"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+<script src="func_TelaCadastro.js" ></script>
