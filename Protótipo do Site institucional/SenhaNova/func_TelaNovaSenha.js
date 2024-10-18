@@ -93,13 +93,11 @@ function CriarSenha() {
 
         ipt_Senha.style.borderColor = 'green';
         Senha = ipt_Senha;
-        alert('Deu certo')
 
         // EU QUERO QUE QUANDO ENTRAR NESSE IF ABRA UMA NOVA TELA COM UMA IMAGEM DE CERTO E UMA FRASE "CADASTRADO COM SUCESSO"
         abrirTelaInterna()
     } else {
 
-        alert('Deu errado')
         if (qtdSenhaIgual >= 1 && (qtdCorretoTam < 1 || qtdCorreto < 1 || qtdCorretoMini < 1 || qtdCorretoMais < 1)) {
             ipt_ConfirmarSenha.style.borderColor = 'red';
             ipt_Senha.style.borderColor = 'red';
@@ -113,7 +111,7 @@ function CriarSenha() {
 }   
 
 function abrirTelaInterna() {
-    var urlLogin = "file:///C:/Users/ricar/OneDrive/%C3%81rea%20de%20Trabalho/SPTech%20Aulas/PI%20-%20Segunda%20Sprint/PI---Segunda-Sprint/Prot%C3%B3tipo%20do%20Site%20institucional/TalhaoSensor/talhaoSensor.html";
+    var urlLogin = "../LoginCadastro/TelaLogin.html";
     window.close();
     window.open(urlLogin);
   }
