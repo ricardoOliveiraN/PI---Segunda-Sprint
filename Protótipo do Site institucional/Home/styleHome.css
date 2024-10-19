@@ -5,13 +5,6 @@
     box-sizing: border-box;
     font-family: 'Lato', sans-serif; /* Fonte padrão atualizada para 'Lato' */
 }
-
-/* Ajustando a fonte original apenas nas classes especificadas */
-.MenuLogo,
-.class_Home2 {
-    font-family: 'Lato', sans-serif; /* Mantendo 'Lato' em todas as classes */
-}
-
 body {
     background-color: #FFFEFA;
 }
