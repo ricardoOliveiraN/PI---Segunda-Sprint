@@ -137,6 +137,11 @@ main {
     width: 16%;
     margin-top: 7%;
 }
+#id_btnSair{
+    margin-top: 100%;
+}
+
+
 
 .class_dashs {
     margin-top: 7%;

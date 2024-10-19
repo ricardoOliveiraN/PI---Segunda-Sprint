@@ -31,8 +31,8 @@
                 <div class="class_LinksMenu">
                     <ul>
                         <li><a href="../TalhaoSensor/TelaDash-Geral.html">Dashboard</a></li>
-                        <li><a href="../Serviços/TelaServicos.html">Funcionários</a></li>
-                        <li><a href="SimuladorCliente.html">Simulador</a></li>
+                        <li><a href="../CadastrarUsuario/CadastrarUsuario.html">Funcionários</a></li>
+                        <li><a href="../SimuladorCliente/SimuladorCliente.html">Simulador</a></li>
                         <li id="id_btnSair"><a href="../LoginCadastro/TelaLogin.html">Sair</a></li>
                     </ul>
                 </div>
@@ -66,4 +66,51 @@
 </body>
 
 </html>
-<script src="func_TelaCadastro.js" ></script>
+<script>
+
+    var preco = 0
+    var safra = 0
+    var quilo = 0
+
+    function Calcular(){
+        preco = Number(input_preco.value)
+        qtd_safra = Number(input_safra.value)
+        quilo = Number(input_quilo.value)
+        var quiloLumini = (quilo * 1.2)
+
+        var QuiloTotal = (qtd_safra * quilo);
+        var QuiloTotalLumini = (qtd_safra * quiloLumini);
+
+        var precoSafra = (quilo * preco);
+        var precoSafraLumini = (quiloLumini * preco);
+
+        var PrecoTotal = (QuiloTotal * preco);
+        var PrecoTotalLumini = (QuiloTotalLumini * preco);
+
+        var mensagem = `Atualmente sem o serviço Lumini, você produz <b>${QuiloTotal}kg</b> por ano. <br>
+        É gerado em média <b>R$${precoSafra}</b> por safra. <br> 
+        E Isso te gera uma total de <b>R$${PrecoTotal}</b> por ano. <br><br>`
+
+        if (qtd_safra == 1){
+            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini}kg</span> por ano. <br>
+            A safra gerará uma média de <span>R$${precoSafraLumini}.</span> <br><br>
+
+            <span>Ainda o aumento de Safras anuais pode aumentar consideravelmente indo de 1 para até 3.
+            Isso te geraria em média R$${precoSafraLumini * 3}!</span>
+            `
+        } else if (qtd_safra == 2){
+            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini}kg</span>por ano. <br>
+            Cada safra gerará uma média de <span>R$${precoSafraLumini}</span>. <br>
+            E Isso te gerará uma total de <span>R$${PrecoTotalLumini}</span> por ano. <br><br>
+
+            <span>Ainda o aumento de Safras anuais pode aumentar  indo de 2 para até 3.
+            Isso te geraria em média R$${PrecoTotalLumini + precoSafraLumini}</span>`
+        } else if (qtd_safra == 3){
+            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini}kg</span> por ano. <br>
+            Cada safra gerará uma média de <span>R$${precoSafraLumini}</span>. <br>
+            E Isso te gerará uma total de <span>R$${PrecoTotalLumini}</span> por ano. <br>`
+        }
+
+        p_info.innerHTML = mensagem
+    }
+</script>
