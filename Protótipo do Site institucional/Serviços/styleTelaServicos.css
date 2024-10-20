@@ -17,7 +17,11 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    height: 80px;
+    box-shadow: 0px 0px 5px #0f11088d;
+    position: fixed;
+    z-index: 1;
+    top: 0;
 }
 
 .MenuLogo {
@@ -63,7 +67,7 @@ nav .class_LinksMenu ul {
     justify-content: space-around;
     list-style: none;
     font-weight: 500;
-    font-size: 1.12rem;
+    font-size: 1.125rem;
 }
 
 nav .class_LinksMenu a {
@@ -74,10 +78,6 @@ nav .class_LinksMenu a {
 nav .class_LinksMenu a:hover {
     color: #FF9800;
     font-weight: 700;
-}
-
-nav .class_BotoesMenu button:hover a {
-    color: white; 
 }
 
 nav .class_BotoesMenu a {
@@ -91,139 +91,149 @@ nav .class_BotoesMenu {
 }
 
 nav .class_BotoesMenu button {
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
-    background-color: #013220;
-    font-size: 1.0rem;
+    background-color: #01322000;
+    font-size: 1.12rem;
     border: 2.3px solid #FF9800;
     color: #FF9800;
     cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s ease;  /* Transição suave */
+}
+
+nav .class_BotoesMenu button:hover a {
+    color: white; 
 }
 
 nav .class_BotoesMenu button:hover {
     background-color: #FF9800;
     color: #FFFEFA;
     box-shadow: 0px 0px 10px #FF9800;
+    transition: all 0.3s ease;  /* Transição suave */
 }
 
 /* BANNER */
 
 .class_Container {
-    display: flex;
     width: 80%;
     margin: auto;
 }
-
-.class_Banner {
-    margin-top: 70px;
-    height: 50px;
+.class_solucoes{
+    margin: 20px 160px;
+}
+.class_conteudo1{
+    margin-top: 80px;
     display: flex;
-    justify-content: space-between;
-}
-
-.class_Banner .class_Container img {
-    height: 120px;
-}
-
-.class_Banner .class_Container {
     justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.class_Banner p {
-    font-size: 40px;
-    color: #013220;
-    font-weight: bold;
-}
-
-.class_Banner .class_Container img {
-    margin-bottom: 23px;
-}
-
-/* PARTE TEXTUAL */
-
-.class_Textos {
-    height: 1597px;
-    display: flex;
-    justify-content: space-between;
-    margin: 100px 0 450px 0;
-}
-
-.class_Textos .class_Container {
     flex-direction: column;
 }
 
-.class_Problema {
-    margin: 0 0 150px 0;
-}
-
-.class_Sensor {
-    margin: 0 0 150px 0;
-    display: flex;
-    align-items: center; /* Alinha a imagem verticalmente com os textos */
-}
-
-.class_Sensor img {
-    margin-bottom: -11px;
-    margin-right: 24px; /* Espaçamento entre a imagem e o texto */
-    width: 30%;
-}
-
-.class_Sensor div {
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column; /* Mantém os textos em coluna */
-}
-
-.class_Dados {
-    margin: 0 0 150px 0;
+.titulo {
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
-.class_Dados div {
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column; /* Mantém os textos em coluna */
-}
-
-.class_Dados img {
-    margin-bottom: -26px;
-    margin-right: 24px; /* Espaçamento entre a imagem e o texto */
-    width: 30%;
-}
-
-.class_Dados span {
-    font-weight: bold;
-}
-
-.class_Avisos {
-    display: flex;
-    align-items: center;
-}
-
-.class_Avisos div {
-    margin-right: 10px;
-    display: flex;
-    flex-direction: column; /* Mantém os textos em coluna */
-}
-
-.class_Avisos img {
-    margin-bottom: -26px;
-    margin-right: 24px; /* Espaçamento entre a imagem e o texto */
-    width: 30%;
-}
-
-.class_Titulo {
-    color: #013220;
-    font-size: 40px;
-    font-weight: bold;
+.titulo .logo img {
+    height: 90px;
+    margin-left: -20px;
     margin-bottom: 10px;
 }
 
-.class_TextoMenor {
-    font-size: 20px;
+h1 {
+    color: #013220;
+    font-size: 2rem;
+    font-family: 'Lato', sans-serif; /* Mantém Lato para h1 */
+}
+
+/* PARTE TEXTUAL */
+.class_solucoes p{
+    font-size: 1.125rem;
+    text-align: justify;
+    color: hsla(73, 36%, 5%, 0.745);
+}
+.class_solucoes h2{
+    color: #FF9800;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+}
+.class_solucoes p b{
+    color: #0f1108e0;
+    font-weight: 700;
+}
+
+.class_Problema {
+    margin: 0 0 60px 0;
+}
+
+.class_Sensor {
+    margin: 0 0 60px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.class_ConteudoSensor{
+    width: 55%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.class_imgSensor{
+    width: 37%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.class_Sensor img {
+    width: 100%;
+    height: 100%;
+}
+
+.class_Dash {
+    margin: 0 0 60px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.class_ConteudoDash{
+    width: 55%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.class_imgDash{
+    width: 37%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.class_Dash img {
+    width: 100%;
+    height: 100%;
+}
+
+.class_Aviso {
+    margin: 0 0 60px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.class_ConteudoAviso{
+    width: 55%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.class_imgAviso{
+    width: 37%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.class_Aviso img {
+    width: 100%;
+    height: 100%;
 }
 
 /* FOOTER */
@@ -232,7 +242,8 @@ nav .class_BotoesMenu button:hover {
     background-color: #013220;
     border-bottom: 2px solid #013220;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    height: 80px;
 }
 
 .class_Footer .class_Container {
@@ -250,15 +261,18 @@ nav .class_BotoesMenu button:hover {
 .class_Footer .class_Container p {
     flex-grow: 1;
     text-align: center;
-    margin: 0;
+    margin: 0; 
     width: 80%;
-    color: white;
-    font-size: 18px;
+    color: rgb(255, 255, 255);
+    font-size: 10px;
 }
-
-.class_Footer .class_Container div {
+.class_redesSociais {
     justify-content: space-evenly;
     display: flex;
-    width: 199px;
+    width: 80px;
     align-items: center;
+}
+.class_Container .class_redesSociais img{
+    width: 25%;
+    margin: 4px;
 }

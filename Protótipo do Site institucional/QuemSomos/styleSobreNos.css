@@ -152,8 +152,7 @@ nav .class_BotoesMenu button:hover {
 
 h1 {
     color: #013220;
-    font-size: 2rem;
-    font-family: 'Lato', sans-serif; /* Mantém Lato para h1 */
+    font-size: 2rem; /* Mantém Lato para h1 */
 }
 
 /* MISSÃO VISÃO E VALORES */
