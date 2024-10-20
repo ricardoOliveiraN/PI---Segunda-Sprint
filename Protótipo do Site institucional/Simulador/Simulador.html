@@ -61,23 +61,25 @@
             <p id="p_info"></p>
         </div>
     </div>
-    <div class="class_Footer">
+    <footer>
+        <div class="class_Footer">
 
-        <div class="class_Container">
+            <div class="class_Container">
 
-            <img src="../Imagens/logo-sem-fundo.png" alt="">
-            <p>Todos os direitos reservados</p>
+                <img src="../Imagens/logo-sem-fundo.png" alt="">
+                <p>Todos os direitos reservados</p>
 
-            <div>
-                <img src="../Imagens/instagram (2).png" alt="">
-                <img src="../Imagens/twitter.png" alt="">
-                <img src="../Imagens/youtube.png" alt="">
+                <div class="class_redesSociais">
+                    <img src="../Imagens/instagram (2).png" alt="">
+                    <img src="../Imagens/twitter.png" alt="">
+                    <img src="../Imagens/youtube.png" alt="">
+                </div>
+
             </div>
 
         </div>
 
-    </div>
-    </div>
+    </footer>
 </body>
 
 </html>
@@ -102,28 +104,28 @@
         var PrecoTotal = (QuiloTotal * preco);
         var PrecoTotalLumini = (QuiloTotalLumini * preco);
 
-        var mensagem = `Atualmente sem o serviço Lumini, você produz <b>${QuiloTotal}kg</b> por ano. <br>
-        É gerado em média <b>R$${precoSafra}</b> por safra. <br> 
-        E Isso te gera uma total de <b>R$${PrecoTotal}</b> por ano. <br><br>`
+        var mensagem = `Atualmente sem o serviço Lumini, você produz <b>${QuiloTotal.toFixed(2)}kg</b> por ano. <br>
+        É gerado em média <b>R$${precoSafra.toFixed(2)}</b> por safra. <br> 
+        E Isso te gera uma total de <b>R$${PrecoTotal.toFixed(2)}</b> por ano. <br><br>`
 
         if (qtd_safra == 1){
-            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini}kg</span> por ano. <br>
-            A safra gerará uma média de <span>R$${precoSafraLumini}.</span> <br><br>
+            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini.toFixed(2)}kg</span> por ano. <br>
+            A safra gerará uma média de <span>R$${precoSafraLumini.toFixed(2)}.</span> <br><br>
 
             <span>Ainda o aumento de Safras anuais pode aumentar consideravelmente indo de 1 para até 3.
-            Isso te geraria em média R$${precoSafraLumini * 3}!</span>
+            Isso te geraria em média R$${(precoSafraLumini * 3).toFixed(2)}!</span>
             `
         } else if (qtd_safra == 2){
-            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini}kg</span>por ano. <br>
-            Cada safra gerará uma média de <span>R$${precoSafraLumini}</span>. <br>
-            E Isso te gerará uma total de <span>R$${PrecoTotalLumini}</span> por ano. <br><br>
+            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini.toFixed(2)}kg</span>por ano. <br>
+            Cada safra gerará uma média de <span>R$${precoSafraLumini.toFixed(2)}</span>. <br>
+            E Isso te gerará uma total de <span>R$${PrecoTotalLumini.toFixed(2)}</span> por ano. <br><br>
 
             <span>Ainda o aumento de Safras anuais pode aumentar  indo de 2 para até 3.
-            Isso te geraria em média R$${PrecoTotalLumini + precoSafraLumini}</span>`
+            Isso te geraria em média R$${(PrecoTotalLumini + precoSafraLumini).toFixed(2)}</span>`
         } else if (qtd_safra == 3){
-            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini}kg</span> por ano. <br>
-            Cada safra gerará uma média de <span>R$${precoSafraLumini}</span>. <br>
-            E Isso te gerará uma total de <span>R$${PrecoTotalLumini}</span> por ano. <br>`
+            mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini.toFixed(2)}kg</span> por ano. <br>
+            Cada safra gerará uma média de <span>R$${precoSafraLumini.toFixed(2)}</span>. <br>
+            E Isso te gerará uma total de <span>R$${PrecoTotalLumini.toFixed(2)}</span> por ano. <br>`
         }
 
         p_info.innerHTML = mensagem

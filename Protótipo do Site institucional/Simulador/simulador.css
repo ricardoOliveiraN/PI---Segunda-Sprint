@@ -95,8 +95,8 @@ nav .class_BotoesMenu button:hover {
 }
 
 h1 {
-    font-size: 26px;
-    margin-bottom: 16px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
     text-align: center;
     color: #013220;
 }
@@ -107,17 +107,17 @@ h1 {
     SOMBRA E ARREDONDAMENTO*/
     background-color: #FFFEFA;
     width: 50%;
-    padding: 30px 40px;
+    padding: 30px 30px;
     box-shadow: 0px 0px 10px #00000041;
     border-radius: 5px;
-    margin: 40px 20px 40px 40px;
+    margin: 40px 20px 40px 80px;
 
 }
 
 /* CHAMANDO A TAG SPAN QUE ESTA DENTRO DA DIV
 DANDO UM TAMANHO, DEIXANDO ELA MEDIUM E DANDO UMA COR*/
 .div_calculadora span {
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: 500;
     color: #013220;
     margin-bottom: 4px;
@@ -179,12 +179,12 @@ input:focus {
     SOMBRA E ARREDONDAMENTO*/
     width: 50%;
     padding: 30px 40px;
-    margin: 40px 40px 0px 20px;
+    margin: 40px 80px 0px 20px;
     background-color: #FFFEFA;
     height: 100%;
     border-radius: 8px;
     border: 1px solid #01322068;
-    font-size: 16px;
+    font-size: 1.125rem;
     color: #262421;
 
 }
@@ -197,7 +197,6 @@ input:focus {
 
 .div_mensagem #p_info {
     margin-top: 20px;
-    font-size: 18px;
 }
 
 .div_mensagem #p_info span {
@@ -238,9 +237,42 @@ input:focus {
     font-size: 18px;
 }
 
-.class_Footer .class_Container div {
+
+.class_Footer {
+    background-color: #013220;
+    border-bottom: 2px solid #013220;
+    display: flex;
+    justify-content: center;
+    height: 80px;
+}
+
+.class_Footer .class_Container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.class_Footer .class_Container img {
+    width: 11%;
+}
+
+.class_Footer .class_Container p {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0; 
+    width: 80%;
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+}
+.class_redesSociais {
     justify-content: space-evenly;
     display: flex;
-    width: 199px;
+    width: 80px;
     align-items: center;
+}
+.class_Container .class_redesSociais img{
+    width: 25%;
+    margin: 4px;
 }
