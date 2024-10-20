@@ -16,7 +16,11 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    height: 80px;
+    box-shadow: 0px 0px 5px #0f11088d;
+    position: fixed;
+    z-index: 1;
+    top: 0;
 }
 
 .MenuLogo {
@@ -90,140 +94,130 @@ nav .class_BotoesMenu {
 }
 
 nav .class_BotoesMenu button {
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
-    background-color: #013220;
-    font-size: 1.0rem;
+    background-color: #01322000;
+    font-size: 1.12rem;
     border: 2.3px solid #FF9800;
     color: #FF9800;
     cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s ease;  /* Transição suave */
 }
 
 nav .class_BotoesMenu button:hover {
     background-color: #FF9800;
     color: #FFFEFA;
     box-shadow: 0px 0px 10px #FF9800;
+    transition: all 0.3s ease;
 }
 
 /* Conteudo */
 
 .class_Conteudo {
-    display: flex;
-    flex-direction: column;
-}
-
-.class_Conteudo .class_Titulo {
-    display: flex;
-    flex-direction: row;
-    margin: 41px;
-    justify-content: center;
-    font-size: 30px;
-    color: #013220;
-}
-
-.class_Conteudo .class_Titulo h1 {
-    font-size: 40px;
-}
-
-.class_Conteudo .class_Container {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
     width: 80%;
     margin: auto;
 }
+.class_Conteudo{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
 
-.class_Conteudo .class_Container .class_FlexBox1 {
+.class_Conteudo h1 {
+    font-size: 1.2rem;
+    color: #FF9800;
+}
+.class_Conteudo p{
+    line-height: 32px;
+    font-size: 1.1rem;
+    color: #0f1108be;
+}
+
+.class_Contato {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 20px;
+}
+
+.class_conteudoContato{
     display: flex;
     align-content: center;
     flex-direction: column;
     align-items: center;
-    padding: 10px;
+    width: 60%;
 }
 
-.class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria {
+.class_Divisoria {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     width: 95%;
-    border-bottom: solid #013220 2px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: solid #013220ab 1.5px;
+}
+.class_arroba{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 95%;
+    margin-bottom: 20px;
+}
+.class_redesSociais2 {
+    justify-content: space-evenly;
+    display: flex;
+    width: 80px;
+    align-items: center;
+}
+.class_Contato .class_redesSociais2 img{
+    width: 30%;
+    margin: 4px;
+}
+.class_TextoInfo{
+    width: 95%; 
+}
+.class_TextoInfo p {
+    color: #013220;
+    line-height: 25px;
+    font-size: 1.1rem;
 }
 
-.class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h1 {
-    color: #FF9800;
-    font-size: 30px;
-    margin-top: 40px;
+.class_Mensagem {
+    display: flex;
+    flex-direction: column;
+    background-color: #013220;
+    border-radius: 10px;
+    padding: 20px 30px 40px 30px;
+    margin-left: 20px;
+    width: 60%;
+    height: 100%;
+}
+.class_Mensagem h2{
+    color: #FFFEFA;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
 }
 
-.class_Conteudo .class_Container .class_FlexBox1 .class_Divisoria h2 {
-    font-size: 30px;
-    font-weight: normal;
+.class_Conteudo .class_Contato .class_Mensagem ::placeholder {
+    color: #06412b8e;
+    font-size: 1rem;
 }
 
-#zapCompras {
+.class_Mensagem input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
     margin-bottom: 20px;
 }
 
-#arroba {
-    margin: 40px 0 20px -80px;
-}
-
-.class_Conteudo .class_Container .class_FlexBox1 h3 {
-    font-size: 30px;
-    font-style: bold;
-    margin-bottom: 40px;
-}
-
-.class_Conteudo .class_Container .class_FlexBox1 .class_Alinhamento {
-    display: flex;
-    width: 90%;
-    justify-content: left;
-}
-
-.class_Conteudo .class_Container .class_FlexBox1 .class_Alinhamento .class_ImgRedes {
-    display: flex;
-    width: 30px;
-    margin-left: -10px;
-    margin-right: 50px;
-}
-
-.class_Conteudo .class_Container .class_FlexBox1 .class_TextoInfo {
-    margin: 10px 0 50px 15px;
-    color: #013220;
-    font-size: 20px;
-    width: 500px;
-}
-
-.class_Conteudo .class_Container .class_Mensagem {
-    display: flex;
-    flex-direction: column;
-    height: 650px;
-    background-color: #013220;
-    margin: 3%;
-    border-radius: 10px;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 53px;
-    justify-content: space-evenly;
-}
-
-.class_Conteudo .class_Container .class_Mensagem ::placeholder {
-    color: #036e47bd;
-    font-size: 20px;
-}
-
-.class_Conteudo .class_Container .class_Mensagem input {
-    padding: 20px;
+.class_Conteudo .class_Contato .class_Mensagem .class_IptMensagem {
     border-radius: 5px;
-    height: 35px;
-}
-
-.class_Conteudo .class_Container .class_Mensagem .class_IptMensagem {
-    padding: 20px;
-    border-radius: 5px;
-    height: 300px;    
+    height: 250px;    
 }
 
 #ipt_mensagem {
@@ -234,12 +228,12 @@ nav .class_BotoesMenu button:hover {
     box-sizing: border-box;
     resize: vertical;
     overflow: auto;
-    font-size: 20px;
+    font-size: 1rem;
 }
 
 #ipt_mensagem::placeholder {
     color: #036e47bd;
-    font-size: 20px;
+    font-size: 1rem;
 }
 
 /* footer */
@@ -249,6 +243,7 @@ nav .class_BotoesMenu button:hover {
     border-bottom: 2px solid #013220;
     display: flex;
     justify-content: center;
+    height: 80px;
 }
 
 .class_Footer .class_Container {
@@ -268,13 +263,16 @@ nav .class_BotoesMenu button:hover {
     text-align: center;
     margin: 0; 
     width: 80%;
-    color: white;
-    font-size: 18px;
+    color: rgb(255, 255, 255);
+    font-size: 10px;
 }
-
-.class_Footer .class_Container div {
+.class_redesSociais {
     justify-content: space-evenly;
     display: flex;
-    width: 199px;
+    width: 80px;
     align-items: center;
+}
+.class_Container .class_redesSociais img{
+    width: 25%;
+    margin: 4px;
 }
