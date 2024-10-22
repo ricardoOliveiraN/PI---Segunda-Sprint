@@ -217,7 +217,7 @@ function entrarSite() {
     var Usuario = inp_usuario.value;
 
     if (SenhaLogin == 'Urubu100@' && Usuario == 'Lumini') {
-        const urlHome = "../TalhaoSensor/TelaDash-Geral.html";
+        const urlHome = "../SenhaNova/TelaSenhaNova.html";
         window.close();
         window.open(urlHome);
     } else {

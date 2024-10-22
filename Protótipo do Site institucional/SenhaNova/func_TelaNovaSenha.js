@@ -111,7 +111,7 @@ function CriarSenha() {
 }   
 
 function abrirTelaInterna() {
-    var urlLogin = "../LoginCadastro/TelaLogin.html";
+    var urlLogin = "../TalhaoSensor/TelaDash-Geral.html";
     window.close();
     window.open(urlLogin);
   }
