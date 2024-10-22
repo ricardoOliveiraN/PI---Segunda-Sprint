@@ -243,6 +243,10 @@ main {
     margin: auto;
 }
 
+#btnVoltar {
+    width: 80%;
+}
+
 .class_talhoesSelecionar {
     display: flex;
     flex-direction: column;
