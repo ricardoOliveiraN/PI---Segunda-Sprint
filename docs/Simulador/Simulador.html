@@ -21,7 +21,7 @@
     <header>
         <nav>
             <div class="MenuLogo">
-                <a href="../Home/TelaHome.html">
+                <a href="../index.html">
                     <img src="../Imagens/logo-sem-fundo.png" alt="Logotipo da empresa Lumini">
                 </a>
             </div>
@@ -126,6 +126,8 @@
             mensagem += `Com o serviço LUMINI, e as tomadas de decisões corretas, você produzirá <span>${QuiloTotalLumini.toFixed(2)}kg</span> por ano. <br>
             Cada safra gerará uma média de <span>R$${precoSafraLumini.toFixed(2)}</span>. <br>
             E Isso te gerará uma total de <span>R$${PrecoTotalLumini.toFixed(2)}</span> por ano. <br>`
+        } else {
+            mensagem = "Verifique se está colocando corretamente as Safras anuais.<br><br> <b>(Coloque um valor de 1 à 3)</b>"
         }
 
         p_info.innerHTML = mensagem

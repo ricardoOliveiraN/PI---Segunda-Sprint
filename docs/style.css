@@ -108,7 +108,7 @@ nav .class_BotoesMenu button:hover {
 }
 
 .class_ImgInicial {
-    background-image: url(../Imagens/imgHOMElupulo.jpg);
+    background-image: url(./Imagens/imgHOMElupulo.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

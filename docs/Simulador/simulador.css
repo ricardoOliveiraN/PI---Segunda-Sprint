@@ -16,27 +16,55 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 90px;
+    height: 80px;
+    box-shadow: 0px 0px 5px #0f11088d;
+    position: fixed;
+    z-index: 1;
+    top: 0;
 }
 
 .MenuLogo {
-    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.MenuLogo a {
+    display: inline-block;
+    position: relative;
 }
 
 .MenuLogo a img {
     width: 100%;
+    height: auto;
+    display: block;
+}
+
+.MenuLogo a:hover img {
+    border: 2px solid yellow;
+}
+
+.MenuLogo a:hover {
+    box-shadow: 0 0 10px 2px yellow;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 nav .class_LinksMenu {
     width: 50%;
 }
-
 nav .class_LinksMenu ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
     font-weight: 500;
-    font-size: 1.12rem;
+    font-size: 1.125rem;
+}
+#QuemSomos {
+    color: #FF9800;
+    font-weight: 700;
 }
 
 nav .class_LinksMenu a {
@@ -49,18 +77,9 @@ nav .class_LinksMenu a:hover {
     font-weight: 700;
 }
 
-#Simulador {
-    color: #FF9800;
-    font-weight: 700;
-}
-
-nav .class_BotoesMenu button:hover a {
-    color: white;
-}
-
 nav .class_BotoesMenu a {
     text-decoration: none;
-    color: #FF9800;
+    color: #FF9800;    
 }
 
 nav .class_BotoesMenu {
@@ -69,29 +88,32 @@ nav .class_BotoesMenu {
 }
 
 nav .class_BotoesMenu button {
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
-    background-color: #013220;
-    font-size: 1.0rem;
+    background-color: #01322000;
+    font-size: 1.12rem;
     border: 2.3px solid #FF9800;
     color: #FF9800;
     cursor: pointer;
-
+    font-weight: 700;
+    transition: all 0.3s ease;  /* Transição suave */
 }
-
+nav .class_BotoesMenu button:hover a {
+    color: white; 
+}
 nav .class_BotoesMenu button:hover {
     background-color: #FF9800;
     color: #FFFEFA;
     box-shadow: 0px 0px 10px #FF9800;
+    transition: all 0.3s ease;  /* Transição suave */
 }
-
 
 /* Conteudo */
 
 .class_Conteudo {
     display: flex;
     width: 80%;
-    margin: auto;
+    margin: 80px auto 0px auto;
 }
 
 h1 {
@@ -184,7 +206,7 @@ input:focus {
     height: 100%;
     border-radius: 8px;
     border: 1px solid #01322068;
-    font-size: 1.125rem;
+    font-size: 1rem;
     color: #262421;
 
 }
