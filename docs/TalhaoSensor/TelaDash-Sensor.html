@@ -239,9 +239,9 @@
             type: 'line',
             data: {
                 datasets: [{
-                    label: 'Analogico',
-                    borderColor: '#63B1BC',
-                    backgroundColor: '#ED145B'
+                    label: 'Sensor 1.2',
+                    borderColor: '#FF9800',
+                    backgroundColor: '#FF9800'
                 }]
             },
             options: {
@@ -252,7 +252,7 @@
                     y: {
                         title: {
                             display: true,
-                            text: '(%)'
+                            text: '(Lux)'
                         },
                         beginAtZero: true,
                     },
@@ -299,7 +299,7 @@
 
 
         setInterval(() => {
-            obterDados(sensorAnalogico, 'analogico')
+            obterDados(sensorAnalogico, 'Sensor 1.2')
         }, 1000);
 
 // ATE AQUI O GRAFICO
