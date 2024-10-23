@@ -193,10 +193,10 @@ main {
     background-color: #013220;
 }
 .class_kpi3 .class_kpiNumero {
-    background-color:#FF9800;
+    background-color:#F44336;
 }
 .class_kpi4 .class_kpiNumero {
-    background-color:#FF9800;
+    background-color:#F44336;
 }
 
 .class_talhoes {
@@ -241,6 +241,10 @@ main {
     justify-content: center;
     align-items: center;
     margin: auto;
+}
+
+#btnVoltar {
+    width: 80%;
 }
 
 .class_talhoesSelecionar {
